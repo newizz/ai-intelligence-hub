@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 AI Intelligence Hub — iPAD</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2330;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --blue: #58a6ff;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --orange: #f0883e;
+    --purple: #bc8cff;
+    --red: #f85149;
+    --tag-bg: #1f2d40;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+  /* ── TOPBAR ─────────────────────────────────── */
+  .topbar {
+    background: #0d1f35;
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px; position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-size: 15px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; }
+  .logo-badge {
+    background: rgba(88,166,255,0.15); border: 1px solid rgba(88,166,255,0.3);
+    color: var(--blue); font-size: 11px; font-weight: 700; padding: 2px 8px;
+    border-radius: 4px; letter-spacing: 0.5px;
+  }
+  .week-nav { display: flex; align-items: center; gap: 10px; }
+  .week-label { font-size: 12px; color: var(--muted); }
+  .week-select {
+    background: var(--surface2); border: 1px solid var(--border); color: var(--text);
+    font-size: 13px; padding: 6px 12px; border-radius: 6px; cursor: pointer;
+    min-width: 200px; outline: none;
+  }
+  .week-select:focus { border-color: var(--blue); }
+  .nav-btn {
+    background: var(--surface2); border: 1px solid var(--border); color: var(--muted);
+    width: 30px; height: 30px; border-radius: 6px; cursor: pointer; font-size: 14px;
+    display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+  }
+  .nav-btn:hover { border-color: var(--blue); color: var(--blue); }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+
+  /* ── HEADER ─────────────────────────────────── */
+  .report-header {
+    background: linear-gradient(135deg, #0d1f35 0%, #1a0d35 50%, #0d1117 100%);
+    border-bottom: 1px solid var(--border); padding: 40px 40px 28px;
+    position: relative; overflow: hidden;
+  }
+  .report-header::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 25% 60%, rgba(88,166,255,0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 75% 40%, rgba(188,140,255,0.06) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .report-header-inner { max-width: 1060px; margin: 0 auto; position: relative; }
+  .week-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(63,185,80,0.12); border: 1px solid rgba(63,185,80,0.25);
+    color: var(--green); font-size: 11px; font-weight: 700; padding: 3px 12px;
+    border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .report-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.4px;
+    background: linear-gradient(90deg,#e6edf3 0%,#58a6ff 50%,#bc8cff 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 6px;
+  }
+  .report-sub { font-size: 14px; color: var(--muted); }
+  .report-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; }
+  .meta-chip { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--muted); }
+  .dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  /* ── STATS ──────────────────────────────────── */
+  .statsbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 40px; }
+  .stats-grid { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  .stat { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
+  .stat-num { font-size: 22px; font-weight: 800; color: var(--blue); }
+  .stat-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; margin-top: 1px; }
+
+  /* ── MAIN ───────────────────────────────────── */
+  .main { max-width: 1060px; margin: 0 auto; padding: 36px 40px; }
+
+  /* ── SECTION ────────────────────────────────── */
+  .section { margin-bottom: 44px; }
+  .sec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .sec-icon { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .sec-icon.b { background: rgba(88,166,255,0.15); }
+  .sec-icon.g { background: rgba(63,185,80,0.15); }
+  .sec-icon.p { background: rgba(188,140,255,0.15); }
+  .sec-title { font-size: 1.15rem; font-weight: 700; }
+  .sec-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+  /* ── NEWS CARDS ─────────────────────────────── */
+  .news-grid { display: grid; gap: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+  .card:hover { border-color: rgba(88,166,255,0.35); }
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+  .card-title { font-size: 15px; font-weight: 700; }
+  .src { background: var(--tag-bg); border: 1px solid var(--border); border-radius: 5px; padding: 2px 9px; font-size: 11px; color: var(--blue); white-space: nowrap; font-weight: 600; }
+  .body-txt { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .ctx { background: rgba(88,166,255,0.06); border-left: 3px solid var(--blue); padding: 8px 12px; font-size: 12px; color: var(--muted); margin-top: 8px; border-radius: 0 5px 5px 0; }
+  .ctx strong { color: var(--blue); }
+  .imp { background: rgba(63,185,80,0.06); border-left: 3px solid var(--green); padding: 8px 12px; font-size: 12px; color: var(--muted); margin-top: 6px; border-radius: 0 5px 5px 0; }
+  .imp strong { color: var(--green); }
+  .tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
+  .tag { background: var(--tag-bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; font-size: 11px; color: var(--muted); }
+
+  /* ── TOOL CARDS ─────────────────────────────── */
+  .tools-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+  .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .tool-card:hover { border-color: rgba(63,185,80,0.35); }
+  .th { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .tn { font-size: 14px; font-weight: 700; }
+  .tbadge { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 700; text-transform: uppercase; }
+  .tm { background: rgba(88,166,255,0.15); color: var(--blue); }
+  .tr { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tp { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .tt { background: rgba(240,136,62,0.15); color: var(--orange); }
+  .cap { list-style: none; }
+  .cap li { font-size: 12px; color: var(--muted); padding: 3px 0 3px 14px; position: relative; }
+  .cap li::before { content: '▸'; position: absolute; left: 0; color: var(--green); font-size: 9px; top: 5px; }
+  .brow { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+  .blbl { font-size: 11px; color: var(--muted); width: 130px; flex-shrink: 0; }
+  .btrack { flex: 1; background: var(--surface2); border-radius: 3px; height: 7px; overflow: hidden; }
+  .bfill { height: 100%; border-radius: 3px; }
+  .bval { font-size: 11px; font-weight: 700; width: 40px; text-align: right; }
+  .lim { display: inline-flex; align-items: center; gap: 4px; background: rgba(248,81,73,0.1); border: 1px solid rgba(248,81,73,0.2); border-radius: 5px; padding: 2px 8px; font-size: 11px; color: var(--red); margin-top: 7px; }
+  .tlink { display: inline-flex; align-items: center; gap: 5px; color: var(--green); font-size: 12px; font-weight: 600; text-decoration: none; background: rgba(63,185,80,0.08); border: 1px solid rgba(63,185,80,0.2); border-radius: 5px; padding: 4px 10px; margin-top: 10px; transition: background 0.15s, border-color 0.15s; }
+  .tlink:hover { background: rgba(63,185,80,0.16); border-color: rgba(63,185,80,0.4); }
+  .com-ref { display: inline-flex; align-items: center; gap: 5px; color: var(--purple); font-size: 12px; font-weight: 600; text-decoration: none; background: rgba(188,140,255,0.08); border: 1px solid rgba(188,140,255,0.2); border-radius: 5px; padding: 4px 10px; margin-top: 6px; transition: background 0.15s, border-color 0.15s; }
+  .com-ref:hover { background: rgba(188,140,255,0.16); border-color: rgba(188,140,255,0.4); }
+  .news-ref {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: var(--blue); font-size: 12px; font-weight: 600; text-decoration: none;
+    background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2);
+    border-radius: 5px; padding: 4px 10px; margin-top: 10px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .news-ref:hover { background: rgba(88,166,255,0.16); border-color: rgba(88,166,255,0.4); }
+
+  /* ── COMMUNITY ───────────────────────────────── */
+  .com-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+  .pulse { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+  .pi { font-size: 18px; width: 28px; flex-shrink: 0; }
+  .pt { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+  .pd { font-size: 12px; color: var(--muted); }
+  .ipad-box {
+    background: linear-gradient(135deg,rgba(240,136,62,0.08) 0%,rgba(188,140,255,0.06) 100%);
+    border: 1px solid rgba(240,136,62,0.2); border-radius: 10px; padding: 14px 18px; margin-top: 14px;
+  }
+  .ipad-title { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .ipad-txt { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* ── EMPTY STATE ─────────────────────────────── */
+  .empty { text-align: center; padding: 80px 40px; color: var(--muted); }
+  .empty-icon { font-size: 48px; margin-bottom: 16px; }
+  .empty h3 { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  .footer { background: var(--surface); border-top: 1px solid var(--border); padding: 20px 40px; text-align: center; }
+  .footer-txt { font-size: 11px; color: var(--muted); }
+
+  @media (max-width: 680px) {
+    .topbar { padding: 0 16px; flex-wrap: wrap; height: auto; gap: 8px; padding-top: 8px; padding-bottom: 8px; }
+    .main { padding: 24px 16px; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="logo">
+    <span>🚀</span>
+    <span>AI Intelligence Hub</span>
+    <span class="logo-badge">iPAD</span>
+  </div>
+  <div class="week-nav">
+    <span class="week-label">เลือกสัปดาห์:</span>
+    <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" title="สัปดาห์ก่อน">‹</button>
+    <select class="week-select" id="weekSelect" onchange="showReport(this.value)"></select>
+    <button class="nav-btn" id="nextBtn" onclick="navigate(1)" title="สัปดาห์ถัดไป">›</button>
+  </div>
+</div>
+
+<!-- DYNAMIC CONTENT -->
+<div id="reportContainer"></div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-txt" id="footerSources"></div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════
+   REPORT DATA STORE
+   เพิ่ม entry ใหม่ในรูปแบบเดิมทุกสัปดาห์
+   ════════════════════════════════════════════════ */
+const REPORTS = {
+
+  /* ─── WEEK: 19–25 April 2026 ─────────────────── */
+  "2026-04-25": {
+    weekLabel: "19–25 เมษายน 2026",
+    publishDate: "25 เมษายน 2026",
+    stats: { news: 8, tools: 7, community: 4, industrial: 3 },
+    sources: "OpenAI Blog · Anthropic News · Google DeepMind · TechCrunch · HuggingFace · GitHub · arXiv · Reddit r/LocalLLaMA · Microsoft Industry Blog · MDPI Research",
+    bigMoves: [
+      {
+        title: "🤖 OpenAI เปิดตัว GPT-5.5 — Smartest & Most Intuitive Model",
+        source: "openai.com",
+        link: "https://openai.com/index/introducing-gpt-5-5/",
+        summary: "GPT-5.5 เปิดตัว 23 เม.ย. 2026 เป็นโมเดลที่ฉลาดและ intuitive ที่สุดของ OpenAI มีความสามารถด้าน Agentic Coding, Computer Use, Knowledge Work และ Scientific Research ขั้นต้น พร้อมให้บริการผู้ใช้ Plus, Pro, Business, Enterprise ทันที",
+        context: "GPT-5.5 ถูกออกแบบมาเพื่อ Super App strategy ของ OpenAI ที่ต้องการให้ ChatGPT ทำงานข้ามเครื่องมือได้อัตโนมัติ (Agentic workflow) แทนการ query ทีละ step",
+        impact: "ความสามารถ Computer Use และ Agentic Coding เปิดโอกาสพัฒนา AI Agent ดึงข้อมูลจาก SCADA/DCS สร้าง Maintenance Report ได้อัตโนมัติ",
+        tags: ["Agentic AI","LLM","Computer Use","OpenAI"]
+      },
+      {
+        title: "🧬 GPT-Rosalind — Frontier Model สำหรับ Life Sciences & Drug Discovery",
+        source: "openai.com",
+        link: "https://openai.com/index/introducing-gpt-rosalind/",
+        summary: "16 เม.ย. 2026 — OpenAI เปิดตัว GPT-Rosalind โมเดล reasoning เฉพาะทางสำหรับงานวิจัยชีววิทยา การค้นพบยา และ Translational Medicine รองรับ protein engineering, genomics และ chemistry",
+        context: "สัญญาณว่า OpenAI กำลัง verticalize โมเดลเพื่อ domain เฉพาะ — เป็นแนวทางที่อาจเห็น Industrial/Manufacturing-specific model ตามมา",
+        impact: "Domain-specific reasoning model เช่น Rosalind เป็น blueprint สำหรับสร้าง Industrial Reasoning Model สำหรับ Process Chemistry หรือ Failure Mode Analysis",
+        tags: ["Domain-Specific LLM","Scientific AI","Vertical AI"]
+      },
+      {
+        title: "🟠 Anthropic เปิดตัว Claude Opus 4.7 — Vision + Coding SOTA",
+        source: "anthropic.com",
+        link: "https://www.anthropic.com/news/claude-opus-4-7",
+        summary: "16 เม.ย. 2026 — Claude Opus 4.7 เปิดให้ใช้งาน มีจุดเด่น Software Engineering ขั้นสูง (SWE-bench 87.6%), High-resolution Image, Creative Output คุณภาพสูง ราคาเท่าเดิม",
+        context: "Opus 4.7 ขึ้นแท่น SOTA บน SWE-bench Verified 87.6% ภายใต้ Claude Code harness ยืนยันความเป็นผู้นำด้าน Agentic Coding",
+        impact: "ความสามารถ Vision ที่แม่นยำขึ้นเหมาะสำหรับ Visual Inspection บน Shopfloor เช่น ตรวจสอบความผิดปกติจากภาพกล้อง CCTV หรือ Thermal Imaging",
+        tags: ["Vision AI","Coding Agent","SOTA","Anthropic"]
+      },
+      {
+        title: "🔒 Claude Mythos Preview + Project Glasswing — AI Cybersecurity",
+        source: "anthropic.com",
+        link: "https://red.anthropic.com/2026/mythos-preview/",
+        summary: "7 เม.ย. 2026 — Anthropic เปิดตัว Claude Mythos Preview โมเดลที่เชี่ยวชาญ Computer Security Tasks พร้อม Project Glasswing ใช้ Mythos เพื่อ secure critical software ทั่วโลก",
+        context: "การที่ Anthropic ลงทุนใน Security-focused AI บ่งบอก trend ที่ AI จะเป็น AI-powered Security Layer ในระบบ critical infrastructure",
+        impact: "OT/IT Security ในโรงงานเป็นช่องโหว่สำคัญ — AI ที่เชี่ยวชาญ cybersecurity อาจนำมา monitor และ defend ระบบ SCADA จาก cyber threats แบบ real-time",
+        tags: ["Cybersecurity AI","OT Security","Critical Infrastructure"]
+      },
+      {
+        title: "🤖 Gemini Robotics-ER 1.6 — Robot ที่ 'เข้าใจ' สภาพแวดล้อม",
+        source: "deepmind.google",
+        link: "https://deepmind.google/blog/gemini-robotics-er-1-6/",
+        summary: "Google DeepMind อัปเกรด Gemini Robotics-ER เป็น v1.6 ซึ่งเป็น reasoning-first model สำหรับ robotics ช่วยให้หุ่นยนต์เข้าใจสภาพแวดล้อมด้วยความแม่นยำ unprecedented ควบคู่กับ Boston Dynamics ที่นำ DeepMind DNA ไปใส่ใน next-gen humanoid",
+        context: "การ merge ระหว่าง Foundation Model กับ Robotics accelerate อย่างรวดเร็วในปี 2026 ก่อนหน้านี้ทั้งสองเป็น separate domains",
+        impact: "Embodied AI + Robotics กำลังเป็น standard สำหรับ Smart Factory ใน 2-3 ปีข้างหน้า ควร pilot autonomous inspection robot ที่ใช้ reasoning model",
+        tags: ["Robotics AI","Embodied AI","Smart Factory"]
+      },
+      {
+        title: "⚡ Decoupled DiLoCo — Distributed AI Training ยุคใหม่จาก DeepMind",
+        source: "deepmind.google",
+        link: "https://deepmind.google/blog/decoupled-diloco/",
+        summary: "Google DeepMind เผยแพร่ Decoupled DiLoCo เทคนิค training ที่แบ่ง compute เป็น islands แบบ asynchronous ทำให้ scale การ train โมเดลขนาดใหญ่ได้ง่ายขึ้นและทนต่อ network disruption",
+        context: "แก้ปัญหา bottleneck ใหญ่ของการ train LLM scale ใหญ่ใน distributed datacenter เป็นก้าวสำคัญด้าน infrastructure AI",
+        tags: ["Distributed Training","LLM Architecture","Research"]
+      },
+      {
+        title: "💰 OpenAI ระดมทุน $122 Billion — เร่งสู่ Next Phase of AI",
+        source: "openai.com",
+        link: "https://openai.com/index/accelerating-the-next-phase-ai/",
+        summary: "OpenAI ประกาศระดมทุน $122B นับเป็นหนึ่งในการระดมทุน Tech startup ที่ใหญ่ที่สุดในประวัติศาสตร์ ส่งสัญญาณการแข่งขันด้าน compute และ talent จะยิ่งรุนแรงขึ้น",
+        context: "ขนาดการระดมทุนนี้บ่งบอกว่า race ไปสู่ AGI/Superintelligence ไม่ได้ชะลอ — ทุกบริษัทใหญ่กำลัง bet สูงมากกับ AI infrastructure",
+        tags: ["Funding","AI Race","Industry"]
+      },
+      {
+        title: "🏭 Hannover Messe 2026 — Agentic Manufacturing บน Microsoft Azure AI",
+        source: "microsoft.com",
+        link: "https://www.microsoft.com/en-us/microsoft-cloud/blog/manufacturing/2026/04/16/industrial-intelligence-unlocked-microsoft-at-hannover-messe-2026/",
+        summary: "Microsoft + Schneider Electric showcase Agentic Manufacturing framework ที่ Hannover Messe 2026 ระบบ adapt, optimize และ self-correct กระบวนการอุตสาหกรรมแบบ real-time บน Azure AI",
+        context: "Hannover Messe เป็น stage ใหญ่ที่สุดของโลกสำหรับ Industrial Technology — Agentic AI บนเวทีนี้ถือเป็นสัญญาณ mainstream adoption",
+        impact: "Framework นี้ validate แนวทาง iPAD — Agentic AI บน Industrial Shopfloor ไม่ใช่แค่ concept แต่ deploy จริงโดย Schneider Electric แล้ว",
+        tags: ["Agentic Manufacturing","Industrial AI","Azure AI","Hannover Messe"]
+      }
+    ],
+    tooling: [
+      {
+        name: "Claude Opus 4.7",
+        type: "model",
+        caps: ["SWE-bench Verified: 87.6% (SOTA #1)","High-resolution vision capabilities","Advanced software engineering tasks","Professional creative output"],
+        benchmarks: [{ label: "SWE-bench Verified", val: "87.6%", pct: 87.6, color: "#58a6ff" },
+                     { label: "Vision improvement", val: "+20%↑", pct: 82, color: "#bc8cff" }],
+        limit: "Context window ไม่ได้ขยาย pricing เท่าเดิม",
+        link: "https://www.anthropic.com/news/claude-opus-4-7"
+      },
+      {
+        name: "Qwen 3.5 / Qwen3-72B",
+        type: "model",
+        caps: ["First open model to beat GPT-4o on MMLU-Pro","640,000+ downloads ในสัปดาห์เดียว","Permissive licensing → community fine-tune เสรี","Llama-4-Scout-17B รันบน single 48GB GPU"],
+        benchmarks: [{ label: "MMLU-Pro (72B)", val: ">GPT-4o", pct: 79, color: "#3fb950" }],
+        limit: "Fine-tune ต้องใช้ compute สูง; alignment safety ต่ำกว่า proprietary",
+        link: "https://huggingface.co/Qwen"
+      },
+      {
+        name: "OpenClaw",
+        type: "repo",
+        caps: ["Personal AI assistant รันบน device ตัวเอง (Local)","เชื่อม AI models กับ 50+ integrations","ไม่ส่งข้อมูลออก cloud — privacy-first","Viral 9k → 210k stars ใน 3 เดือน"],
+        impact: "Architecture local gateway เหมาะสำหรับ Industrial AI ที่ต้องการ data sovereignty — ข้อมูล sensor/process ไม่ควรออก OT network",
+        link: "https://github.com"
+      },
+      {
+        name: "AgenticQwen (arXiv)",
+        type: "paper",
+        caps: ["Train Small LLM เป็น Agentic สำหรับ Industrial-Scale Tool Use","Dual Data Flywheel approach","เหมาะ deployment ใน edge devices บน shopfloor","ลด dependency บน large cloud model"],
+        impact: "เทคนิค Dual Flywheel อาจนำมา train small model เฉพาะ plant สำหรับ predictive maintenance โดยใช้ historical sensor data",
+        link: "https://arxiv.org/list/cs.AI/current"
+      },
+      {
+        name: "StructMem (ACL 2026)",
+        type: "paper",
+        caps: ["Structured Memory สำหรับ Long-Horizon Behavior ใน LLMs","Accept ที่ ACL 2026 — top-tier NLP conference","แก้ปัญหา agent ที่ลืม context ใน long task","เหมาะกับ multi-step maintenance workflow"],
+        limit: "ยังเป็น research paper — production implementation ต้องพัฒนาเพิ่ม",
+        link: "https://arxiv.org/list/cs.CL/recent"
+      },
+      {
+        name: "Tool Attention Is All You Need",
+        type: "paper",
+        caps: ["Dynamic Tool Gating + Lazy Schema Loading","ลด MCP/Tools Tax ใน scalable agentic workflows","ช่วย agent เลือก tool ถูกต้องโดยไม่ load schema ทั้งหมด","ลด latency และ token consumption"],
+        impact: "ระบบ iPAD ที่ query หลาย tools (SCADA, CMMS, sensor DB) พร้อมกันจะได้ประโยชน์อย่างมากด้าน response time",
+        link: "https://arxiv.org/list/cs.AI/current"
+      },
+      {
+        name: "n8n — Workflow Automation with Native AI",
+        type: "tool",
+        caps: ["Fair-code workflow automation + native AI integration","MCP client/server support built-in","Self-hostable — รันใน on-premise ได้","เชื่อมต่อ 350+ integrations ⭐162k"],
+        impact: "n8n เป็น orchestration layer ที่ดีสำหรับ industrial workflow เช่น auto-trigger maintenance work order เมื่อ AVEVA Alert ยิง",
+        link: "https://n8n.io"
+      }
+    ],
+    community: [
+      {
+        icon: "🔥",
+        title: "Open Source Model Explosion — Qwen & Gemma4 ครองใจ r/LocalLLaMA",
+        desc: "r/LocalLLaMA (694k members) ตื่นเต้นกับ Qwen 3.5 และ Gemma-4 ที่รันบน consumer GPU โดยไม่พึ่ง cloud API ชุมชนเน้น privacy, cost reduction (88% ถูกกว่า proprietary) และ customization ซึ่ง validate เส้นทาง on-premise AI deployment",
+        link: "https://www.reddit.com/r/LocalLLaMA/"
+      },
+      {
+        icon: "⚠️",
+        title: "Agent Benchmark Crisis — Berkeley RDI พบช่องโหว่ใน 8 Benchmarks หลัก",
+        desc: "งานวิจัยจาก Berkeley RDI 2026 พบว่า SWE-bench, WebArena, OSWorld และอีก 5 benchmarks สามารถ exploit ได้คะแนน perfect โดยไม่ได้แก้ปัญหาจริง นำไปสู่การถกเถียนว่า 'เราวัด AI capability ได้จริงแค่ไหน?'",
+        link: "https://rdi.berkeley.edu/"
+      },
+      {
+        icon: "🌊",
+        title: "Llama Ecosystem — 1.2 Billion Downloads & 1M downloads/day",
+        desc: "Meta Llama ecosystem ถึง 1.2 พันล้าน downloads รวม และเพิ่มขึ้น 1 ล้านครั้ง/วัน ใหญ่กว่า open-source AI project ใดๆ ในประวัติศาสตร์ ชุมชนกำลังถกเถียนหลัง Meta เปิดตัว proprietary model 'Muse Spark'",
+        link: "https://ai.meta.com/blog/llama-4-scout-maverick-open-source-multimodal-models/"
+      },
+      {
+        icon: "🏭",
+        title: "Manufacturing AI — จาก Pilot สู่ Agentic Profit ปี 2026",
+        desc: "Deloitte คาดการณ์ Agentic AI adoption ใน manufacturing เพิ่ม 4 เท่า (6% → 24%) ในปี 2026 กรณีศึกษา ceramic facility: 94% predictive accuracy, ลด false positive 67%, unplanned downtime 43% payback period 1.6 ปี",
+        link: "https://www2.deloitte.com/us/en/insights/industry/manufacturing/agentic-ai-manufacturing.html"
+      }
+    ],
+    ipadSummary: "ข้อมูลสัปดาห์นี้ชี้ให้เห็นว่า Agentic AI สำหรับอุตสาหกรรมกำลัง cross the chasm จาก early adopter สู่ mainstream — Hannover Messe 2026 และ Deloitte forecast ยืนยันตรงกัน สำหรับ iPAD แนะนำ focus 3 เรื่อง: (1) ทดสอบ Small Agentic Models (AgenticQwen) สำหรับ edge deployment บน shopfloor เพื่อลด cloud dependency (2) ประเมิน n8n หรือ OpenClaw เป็น orchestration layer สำหรับ AVEVA ↔ CMMS workflow automation (3) เตรียม pilot Embodied AI/Robot Inspection สำหรับ hazardous area โดยใช้ Gemini Robotics-ER เป็น baseline"
+  },
+
+  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
+  "2026-05-02": {
+    weekLabel: "26 เมษายน – 2 พฤษภาคม 2026",
+    publishDate: "2 พฤษภาคม 2026",
+    stats: { news: 0, tools: 0, community: 0, industrial: 0 },
+    sources: "",
+    bigMoves: [],
+    tooling: [],
+    community: [],
+    ipadSummary: ""
+  },
+  ────────────────────────────────────────────────── */
+};
+
+/* ════════════════════════════════════════════════
+   RENDERER
+   ════════════════════════════════════════════════ */
+const sortedKeys = Object.keys(REPORTS).sort((a,b) => b.localeCompare(a));
+let currentIdx = 0;
+
+function buildSelect() {
+  const sel = document.getElementById('weekSelect');
+  sortedKeys.forEach((k,i) => {
+    const opt = document.createElement('option');
+    opt.value = k;
+    opt.textContent = '📅 ' + REPORTS[k].weekLabel;
+    if (i === 0) opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+function navigate(dir) {
+  currentIdx = Math.max(0, Math.min(sortedKeys.length - 1, currentIdx + dir));
+  const key = sortedKeys[currentIdx];
+  document.getElementById('weekSelect').value = key;
+  showReport(key);
+  updateNavBtns();
+}
+
+function updateNavBtns() {
+  document.getElementById('prevBtn').disabled = currentIdx >= sortedKeys.length - 1;
+  document.getElementById('nextBtn').disabled = currentIdx <= 0;
+}
+
+function badge(type) {
+  const map = { model:'<span class="tbadge tm">MODEL</span>', repo:'<span class="tbadge tr">REPO</span>', paper:'<span class="tbadge tp">PAPER</span>', tool:'<span class="tbadge tt">TOOL</span>' };
+  return map[type] || '';
+}
+
+function showReport(key) {
+  currentIdx = sortedKeys.indexOf(key);
+  updateNavBtns();
+  const r = REPORTS[key];
+  if (!r) { document.getElementById('reportContainer').innerHTML = '<div class="empty"><div class="empty-icon">📭</div><h3>ไม่พบรายงานสำหรับสัปดาห์นี้</h3></div>'; return; }
+
+  const newsHTML = r.bigMoves.map(n => `
+    <div class="card">
+      <div class="card-top"><div class="card-title">${n.title}</div><span class="src">⚡ ${n.source}</span></div>
+      <p class="body-txt">${n.summary}</p>
+      ${n.context ? `<div class="ctx"><strong>🔍 Context:</strong> ${n.context}</div>` : ''}
+      ${n.impact ? `<div class="imp"><strong>🏭 iPAD Impact:</strong> ${n.impact}</div>` : ''}
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-top:10px;">
+        <div class="tags" style="margin-top:0">${(n.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        ${n.link ? `<a href="${n.link}" class="news-ref" target="_blank">🔗 อ่านต้นทาง</a>` : ''}
+      </div>
+    </div>`).join('');
+
+  const toolHTML = r.tooling.map(t => `
+    <div class="tool-card">
+      <div class="th"><span class="tn">${t.name}</span>${badge(t.type)}</div>
+      <ul class="cap">${(t.caps||[]).map(c=>`<li>${c}</li>`).join('')}</ul>
+      ${(t.benchmarks||[]).map(b=>`
+        <div class="brow">
+          <span class="blbl">${b.label}</span>
+          <div class="btrack"><div class="bfill" style="width:${b.pct}%;background:${b.color}"></div></div>
+          <span class="bval">${b.val}</span>
+        </div>`).join('')}
+      ${t.limit ? `<div class="lim">⚠️ Limitation: ${t.limit}</div>` : ''}
+      ${t.impact ? `<div class="imp" style="margin-top:8px"><strong>🏭 iPAD:</strong> ${t.impact}</div>` : ''}
+      ${t.link ? `<a href="${t.link}" class="tlink" target="_blank">🔗 ดูแหล่งข้อมูล</a>` : ''}
+    </div>`).join('');
+
+  const comHTML = r.community.map(c=>`
+    <div class="pulse">
+      <div class="pi">${c.icon}</div>
+      <div><div class="pt">${c.title}</div><div class="pd">${c.desc}</div>
+      ${c.link ? `<a href="${c.link}" class="com-ref" target="_blank">🔗 ดูแหล่งข้อมูล</a>` : ''}</div>
+    </div>`).join('');
+
+  document.getElementById('reportContainer').innerHTML = `
+    <div class="report-header">
+      <div class="report-header-inner">
+        <div class="week-pill">📅 ${r.weekLabel}</div>
+        <div class="report-title">🚀 Weekly AI Intelligence Report</div>
+        <div class="report-sub">รายงานแนวโน้ม AI ประจำสัปดาห์ · Industrial AI Product Development</div>
+        <div class="report-meta">
+          <div class="meta-chip"><div class="dot" style="background:#3fb950"></div><span>${r.weekLabel}</span></div>
+          <div class="meta-chip"><div class="dot" style="background:#58a6ff"></div><span>Published: ${r.publishDate}</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="statsbar">
+      <div class="stats-grid">
+        <div class="stat"><span style="font-size:22px">📰</span><div><div class="stat-num">${r.stats.news}</div><div class="stat-lbl">Big News Items</div></div></div>
+        <div class="stat"><span style="font-size:22px">🔧</span><div><div class="stat-num">${r.stats.tools}</div><div class="stat-lbl">Models & Repos</div></div></div>
+        <div class="stat"><span style="font-size:22px">💬</span><div><div class="stat-num">${r.stats.community}</div><div class="stat-lbl">Community Pulses</div></div></div>
+        <div class="stat"><span style="font-size:22px">🏭</span><div><div class="stat-num">${r.stats.industrial}</div><div class="stat-lbl">Industrial Insights</div></div></div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="section">
+        <div class="sec-head"><div class="sec-icon b">🏢</div><div><div class="sec-title">1. News & Corporate Updates — [Big Moves]</div><div class="sec-sub">ข่าวใหญ่จาก AI Labs และ Tech Media ในช่วง 7 วันที่ผ่านมา</div></div></div>
+        <div class="news-grid">${newsHTML}</div>
+      </div>
+      <hr class="div">
+      <div class="section">
+        <div class="sec-head"><div class="sec-icon g">🔬</div><div><div class="sec-title">2. Research, Repos & Tools — [Tooling & SOTA]</div><div class="sec-sub">โมเดล, GitHub Repos, และงานวิจัยที่น่าติดตามในสัปดาห์นี้</div></div></div>
+        <div class="tools-grid">${toolHTML}</div>
+      </div>
+      <hr class="div">
+      <div class="section">
+        <div class="sec-head"><div class="sec-icon p">💬</div><div><div class="sec-title">3. Community Highlights & Industrial View — [Community Pulse]</div><div class="sec-sub">สิ่งที่ AI Community กำลังตื่นเต้น และมุมมอง iPAD</div></div></div>
+        <div class="com-card">
+          ${comHTML}
+          <div class="ipad-box">
+            <div class="ipad-title">🏭 iPAD Application — Industrial AI Outlook</div>
+            <div class="ipad-txt">${r.ipadSummary}</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  document.getElementById('footerSources').textContent =
+    '🚀 Weekly AI Intelligence Report · iPAD — Industrial AI Product Development | Sources: ' + r.sources;
+}
+
+buildSelect();
+showReport(sortedKeys[0]);
+updateNavBtns();
+</script>
+</body>
+</html>
