@@ -374,10 +374,165 @@ const REPORTS = {
     ipadSummary: "ข้อมูลสัปดาห์นี้ชี้ให้เห็นว่า Agentic AI สำหรับอุตสาหกรรมกำลัง cross the chasm จาก early adopter สู่ mainstream — Hannover Messe 2026 และ Deloitte forecast ยืนยันตรงกัน สำหรับ iPAD แนะนำ focus 3 เรื่อง: (1) ทดสอบ Small Agentic Models (AgenticQwen) สำหรับ edge deployment บน shopfloor เพื่อลด cloud dependency (2) ประเมิน n8n หรือ OpenClaw เป็น orchestration layer สำหรับ AVEVA ↔ CMMS workflow automation (3) เตรียม pilot Embodied AI/Robot Inspection สำหรับ hazardous area โดยใช้ Gemini Robotics-ER เป็น baseline"
   },
 
+  /* ─── WEEK: 26 เมษายน – 1 พฤษภาคม 2026 ─────── */
+  "2026-05-01": {
+    weekLabel: "26 เม.ย. – 1 พ.ค. 2026",
+    publishDate: "1 พฤษภาคม 2026",
+    stats: { news: 8, tools: 6, community: 4, industrial: 4 },
+    sources: "OpenAI Blog · Anthropic News · Google DeepMind · TechCrunch · CNBC · Dataconomy · Robotics & Automation News · NVIDIA Blog · Microsoft Partner Center · Stanford HAI",
+    bigMoves: [
+      {
+        title: "🔐 OpenAI เปิดตัว GPT-5.5-Cyber — AI สำหรับ Critical Cyber Defenders",
+        source: "openai.com",
+        link: "https://openai.com/index/scaling-trusted-access-for-cyber-defense/",
+        summary: "30 เม.ย. 2026 — OpenAI ประกาศ GPT-5.5-Cyber โมเดลเฉพาะทางด้าน cybersecurity แจกจ่ายผ่าน Trusted Access for Cyber (TAC) program ให้กับ government, critical infrastructure operators, security vendors, cloud platforms และ financial institutions เพื่อใช้ใน threat detection, vulnerability analysis และ incident response",
+        context: "GPT-5.5-Cyber สร้างต่อจาก GPT-5.4-Cyber (mid-April) ซึ่ง OpenAI ให้ $10M API grants แก่ security organizations ที่ผ่านการ vet แล้ว ต่างจาก Anthropic Mythos ที่จำกัดแค่ 50 องค์กร OpenAI เปิดกว้างกว่ามาก",
+        impact: "OT/ICS Security ใน SCG Plant คือ top priority — GPT-5.5-Cyber อาจนำมา integrate กับ SOC สำหรับ monitor SCADA anomaly และ threat intelligence แบบ real-time",
+        tags: ["Cybersecurity AI","OT Security","GPT-5.5","Critical Infrastructure"]
+      },
+      {
+        title: "💰 Google ลงทุน $40B ใน Anthropic — Biggest Tech Deal of 2026",
+        source: "techcrunch.com",
+        link: "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
+        summary: "24 เม.ย. 2026 — Google ประกาศลงทุนสูงสุด $40 Billion ใน Anthropic ผ่านการให้ทั้ง cash และ compute (Google Cloud TPU) นับเป็น deal ใหญ่ที่สุดใน AI ecosystem ปี 2026 และเสริมความแข็งแกร่งของ Google ในการแข่งขันกับ Microsoft-OpenAI",
+        context: "หลัง Microsoft ลงทุนหนักใน OpenAI Google ตอบโต้ด้วยการ deepen partnership กับ Anthropic ที่เป็นคู่แข่งด้าน safety-focused AI การลงทุนนี้ยังรวม Broadcom partnership เพื่อ custom chip สำหรับ Claude",
+        impact: "Anthropic Claude ที่ iPAD ใช้อยู่จะได้ประโยชน์จาก compute ที่เพิ่มขึ้น — คาดว่า Claude จะมี context window ใหญ่ขึ้นและ response เร็วขึ้นใน Q3/Q4 2026",
+        tags: ["Google","Anthropic","Investment","AI Race"]
+      },
+      {
+        title: "🎻 OpenAI เปิด Symphony — Open-Source Orchestration Spec สำหรับ AI Agents",
+        source: "openai.com",
+        link: "https://openai.com/index/introducing-gpt-5-5/",
+        summary: "27 เม.ย. 2026 — OpenAI เปิดตัว Symphony open-source specification สำหรับ AI agent orchestration พร้อมกันกับการประกาศ Next Phase of Microsoft-OpenAI Partnership ที่ขยาย scale ของ Agentic Deployment บน Azure",
+        context: "Symphony เป็นมาตรฐาน orchestration ที่ OpenAI คาดว่า ecosystem จะนำไปใช้กว้างขวาง คล้ายกับที่ HTTP กลายเป็น standard ของ web",
+        impact: "Open orchestration standard ช่วยให้ iPAD สามารถ integrate AI agents หลาย provider (OpenAI, Anthropic, local models) เข้าด้วยกันได้ง่ายขึ้นโดยไม่ lock-in",
+        tags: ["Agent Orchestration","Open Source","OpenAI","Symphony"]
+      },
+      {
+        title: "🏢 Microsoft Agent 365 เปิดตัว 1 พ.ค. — Enterprise Agent Control Plane",
+        source: "microsoft.com",
+        link: "https://learn.microsoft.com/en-us/partner-center/announcements/2026-april",
+        summary: "1 พ.ค. 2026 — Microsoft เปิดตัว Agent 365 ระบบ control plane สำหรับ enterprise AI agents ใน Microsoft 365 ecosystem พร้อมกับ M365 E7 tier ใหม่ที่รองรับ CSP channel ช่วยให้องค์กรสามารถ deploy, track และ manage AI agents ในระดับ enterprise ได้",
+        context: "Microsoft กำลัง build layer ที่ซ้อนทับบน Copilot เดิม ทำให้ M365 กลายเป็น platform สำหรับ multi-agent workflows แทนที่จะเป็นเพียง productivity app",
+        impact: "Agent 365 + Copilot Studio สามารถนำมาสร้าง Manufacturing Agent ที่ sync กับ SAP PM / CMMS สำหรับ auto-generate Work Order เมื่อ AVEVA alert ยิง",
+        tags: ["Microsoft","Enterprise AI","Agent 365","M365"]
+      },
+      {
+        title: "⚙️ Siemens Eigen Engineering Agent — AI สำหรับ PLC Coding และ Automation",
+        source: "roboticsandautomationnews.com",
+        link: "https://roboticsandautomationnews.com/2026/04/20/siemens-launches-ai-engineering-agent-to-automate-plc-coding-and-industrial-workflows/100758/",
+        summary: "Siemens เปิดตัว Eigen Engineering Agent GA (Generally Available) โมเดล AI เฉพาะทางสำหรับ automation engineering ช่วย automate PLC coding, HMI design และ industrial workflow configuration ลดเวลา engineering ได้อย่างมีนัยสำคัญ",
+        context: "Eigen ถูก train บน Siemens industrial knowledge base อย่างกว้างขวาง — นี่คือตัวอย่าง domain-specific model ที่ Siemens เชื่อว่าจะแทนที่ general-purpose AI ใน industrial context",
+        impact: "หาก iPAD นำ concept นี้มาใช้ — fine-tune model บน SCG process knowledge, P&ID, และ CMMS history จะสร้าง SCG-specific Engineering Agent ที่ทรงพลังกว่า generic LLM มาก",
+        tags: ["Industrial AI","PLC","Siemens","Domain-Specific AI"]
+      },
+      {
+        title: "🏭 NVIDIA Industrial AI Cloud ที่ Hannover Messe — Physical AI Goes Live",
+        source: "blogs.nvidia.com",
+        link: "https://blogs.nvidia.com/blog/ai-manufacturing-hannover-messe/",
+        summary: "NVIDIA และ partners showcase Industrial AI Cloud ที่ Hannover Messe 2026 (20-24 เม.ย.) สร้างโดย Deutsche Telekom บน NVIDIA AI infrastructure เป็น AI Factory ใหญ่ที่สุดในยุโรป Invisible AI เปิดตัว Vision Execution System ที่ capture, structure และ analyze ทุก production cycle แบบ real-time ด้วย Cosmos models",
+        context: "Hannover Messe ปีนี้เป็นสัญญาณชัดว่า Physical AI (AI + robotics + vision) กลายเป็น mainstream สำหรับ industrial sector แล้ว ไม่ใช่ future concept อีกต่อไป",
+        impact: "Vision Execution System สามารถ apply กับ SCG plant เพื่อ QA inspection อัตโนมัติ, detect equipment anomaly จากกล้อง CCTV และ thermal imaging โดยไม่ต้องหยุดสายการผลิต",
+        tags: ["Physical AI","Vision AI","Hannover Messe","NVIDIA","Smart Factory"]
+      },
+      {
+        title: "🤖 OpenAI on AWS — Models, Codex & Managed Agents พร้อมใช้บน AWS",
+        source: "openai.com",
+        link: "https://openai.com/index/introducing-gpt-5-5/",
+        summary: "28 เม.ย. 2026 — OpenAI models รวมถึง GPT-5.5, Codex และ Managed Agents พร้อมให้บริการบน Amazon Web Services (AWS) อย่างเป็นทางการ เป็นการขยาย deployment channel จาก Azure ไปยัง AWS ecosystem ครั้งสำคัญ",
+        context: "การเปิดบน AWS ทำให้ OpenAI เข้าถึงกลุ่มลูกค้าองค์กรที่ใช้ AWS เป็น primary cloud รวมถึงหลายบริษัทใน SEA ที่ยังไม่ migrate ไป Azure",
+        impact: "หาก SCG ใช้ AWS เป็น cloud provider หลัก การเข้าถึง GPT-5.5 และ Managed Agents ผ่าน AWS Marketplace จะง่ายและ compliant กับ procurement policy มากขึ้น",
+        tags: ["OpenAI","AWS","Cloud","Enterprise AI"]
+      },
+      {
+        title: "📊 Stanford AI Index 2026 — AI Investment สูงสุดในประวัติศาสตร์",
+        source: "hai.stanford.edu",
+        link: "https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report",
+        summary: "Stanford HAI เผยแพร่ AI Index Report 2026 พบว่า AI investment ทั่วโลกสูงสุดในประวัติศาสตร์ ประเทศกำลังพัฒนา AI governance frameworks เพิ่มขึ้น 3 เท่า AI adoption ใน enterprise เพิ่มขึ้น 4 เท่าจากปี 2024 และ AI productivity gains ชัดเจนมากขึ้นใน sector ต่างๆ",
+        context: "Stanford AI Index เป็นรายงาน comprehensive ที่สุดเกี่ยวกับสถานะ AI ระดับโลก มักเป็น reference หลักสำหรับนโยบาย AI ของรัฐบาลและองค์กรใหญ่",
+        impact: "ข้อมูลจาก AI Index validate investment ใน iPAD — productivity gains จาก AI ใน industrial sector เป็น trend ที่ชัดเจนและ quantifiable แล้วในปี 2026",
+        tags: ["AI Research","Stanford","AI Index","Investment","Trends"]
+      }
+    ],
+    tooling: [
+      {
+        name: "GPT-5.5-Cyber",
+        type: "model",
+        caps: ["Purpose-built สำหรับ cybersecurity defense","Threat detection & vulnerability analysis","Incident response automation","TAC program: government & critical infrastructure"],
+        benchmarks: [{ label: "Cyber Risk Rating", val: "High", pct: 72, color: "#f85149" },
+                     { label: "Defender coverage", val: "Broad", pct: 88, color: "#58a6ff" }],
+        limit: "Access ถูกจำกัดผ่าน TAC program — ต้องผ่าน vetting process",
+        link: "https://openai.com/index/scaling-trusted-access-for-cyber-defense/"
+      },
+      {
+        name: "Siemens Eigen Engineering Agent",
+        type: "tool",
+        caps: ["Automate PLC coding & HMI design","Industrial workflow configuration","Train บน Siemens engineering knowledge","GA (Generally Available) แล้วในเดือนเม.ย."],
+        impact: "Blueprint สำหรับ SCG Engineering Agent — fine-tune บน P&ID, SOP และ maintenance history ของ SCG จะสร้าง asset ที่ทรงพลังมาก",
+        link: "https://roboticsandautomationnews.com/2026/04/20/siemens-launches-ai-engineering-agent-to-automate-plc-coding-and-industrial-workflows/100758/"
+      },
+      {
+        name: "OpenAI Symphony (Open-Source)",
+        type: "repo",
+        caps: ["Open-source agent orchestration specification","Multi-agent coordination standard","Compatible กับ multiple AI providers","ลด vendor lock-in ใน agentic systems"],
+        impact: "Standard orchestration spec ช่วย iPAD design multi-agent system ที่ switch ระหว่าง Claude, GPT, และ local models ตาม task ได้โดยไม่ต้องเขียนใหม่",
+        link: "https://openai.com/index/introducing-gpt-5-5/"
+      },
+      {
+        name: "Invisible AI — Vision Execution System",
+        type: "tool",
+        caps: ["Capture ทุก production cycle แบบ real-time","Structure & analyze ด้วย NVIDIA Cosmos models","Agent-based vision analysis บน factory floor","Built on NVIDIA Metropolis VSS Blueprint"],
+        impact: "นำ concept นี้มา apply กับ SCG inspection workflow — ติดกล้องที่ critical equipment แล้วให้ Vision Agent detect anomaly, ลด manual inspection round",
+        link: "https://blogs.nvidia.com/blog/ai-manufacturing-hannover-messe/"
+      },
+      {
+        name: "KUKA Automation 2.0",
+        type: "tool",
+        caps: ["AI-driven industrial robotics framework","Deploy & scale automation faster","Flexible production process configuration","Augment existing systems ไม่ replace"],
+        limit: "Strategy announcement — GA timeline ยังไม่ชัดเจน",
+        link: "https://roboticsandautomationnews.com/2026/04/13/kuka-outlines-automation-2-0-strategy-combining-ai-software-with-industrial-robotics/100547/"
+      },
+      {
+        name: "OpenAI on AWS Marketplace",
+        type: "tool",
+        caps: ["GPT-5.5, Codex บน AWS โดยตรง","Managed Agents deployment บน AWS","AWS-native billing & compliance","เข้าถึง OpenAI models ผ่าน existing AWS contract"],
+        impact: "Organizations ที่ใช้ AWS สามารถ deploy OpenAI models โดยไม่ต้อง setup Azure account แยก — ลด complexity ของ enterprise AI procurement",
+        link: "https://openai.com/index/introducing-gpt-5-5/"
+      }
+    ],
+    community: [
+      {
+        icon: "💸",
+        title: "Google $40B Anthropic Deal — ปรับสมดุล AI Arms Race ระดับโลก",
+        desc: "AI community ถกเถียงกันอย่างหนักถึง Google-Anthropic $40B deal ว่าจะเปลี่ยน landscape อย่างไร — ฝ่ายหนึ่งมองว่า Anthropic จะมี compute เพียงพอแข่งกับ GPT-5.5 ส่วนอีกฝ่ายกังวลว่า independence ของ Anthropic ในฐานะ 'safety-focused lab' จะลดลงเมื่อมี corporate investor ขนาดนี้",
+        link: "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/"
+      },
+      {
+        icon: "🔐",
+        title: "Cybersecurity AI Race — Mythos vs GPT-5.5-Cyber: Who Wins the Defense Game?",
+        desc: "ชุมชน security professionals เปรียบเทียบ Anthropic Mythos กับ GPT-5.5-Cyber: Mythos ค้นพบ zero-day exploits แบบ autonomous แต่ access จำกัด 50 org; GPT-5.5-Cyber broader access แต่ rated 'High' ไม่ถึง 'Critical' ดังนั้น true autonomous vuln discovery ยังอยู่ที่ Anthropic",
+        link: "https://techbriefly.com/2026/04/30/new-gpt-5-5-cyber-model-follows-anthropics-secret-mythos-release/"
+      },
+      {
+        icon: "🏭",
+        title: "Hannover Messe 2026 — Industrial AI เปลี่ยนจาก 'Future' เป็น 'Now'",
+        desc: "Hannover Messe 2026 สร้างแรงสั่นสะเทือนใน manufacturing community — NVIDIA, Siemens, Lenovo, KUKA ต่างนำ AI solutions จริงมาแสดง ไม่ใช่ demo เหมือนปีก่อน Lenovo อ้างว่าลด lead time 85% ด้วย AI; Siemens Eigen deploy PLC coding จริง; NVIDIA Industrial AI Cloud ทำงานจริงบน factory floor",
+        link: "https://blogs.nvidia.com/blog/ai-manufacturing-hannover-messe/"
+      },
+      {
+        icon: "📈",
+        title: "Stanford AI Index 2026 — 94% ขององค์กรเพิ่มงบ AI และ ROI เริ่มวัดได้ชัด",
+        desc: "Stanford AI Index 2026 พบว่า 94% ขององค์กรวางแผนเพิ่มงบ AI ใน 2026 โดย productivity gains เริ่ม quantifiable ชัดเจน ($2.86 return ต่อ $1 invested) และ AI ช่วยลด unplanned downtime ใน manufacturing sector เฉลี่ย 43% ตามกรณีศึกษา Deloitte ceramic facility ที่ส่งผลต่อ narrative ทั้ง industry",
+        link: "https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report"
+      }
+    ],
+    ipadSummary: "สัปดาห์ 26 เม.ย. – 1 พ.ค. 2026 มี 3 signal สำคัญสำหรับ iPAD: (1) Cybersecurity AI กลายเป็น standalone domain — ทั้ง OpenAI GPT-5.5-Cyber และ Anthropic Mythos ชี้ว่า OT/ICS Security ต้องการ AI-native solution ไม่ใช่ add-on แนะนำให้ประเมิน threat model ของ SCG SCADA และ pilot TAC access สำหรับ critical assets; (2) Domain-Specific AI ชนะ General-purpose ใน industrial context — Siemens Eigen และ Invisible AI เป็นหลักฐานว่า model ที่ fine-tune บน domain knowledge เฉพาะทางให้ผลลัพธ์ที่ดีกว่า ควรเริ่ม dataset curation จาก SCG P&ID, SOP, maintenance log สำหรับ future fine-tuning; (3) Vision AI + Production Analytics คือ low-hanging fruit — Vision Execution System ที่ Hannover แสดงให้เห็น ROI ชัดเจนจากการ monitor production cycle แบบ continuous ควร pilot ที่ 1 production line ใน SCG โดยใช้ existing camera infrastructure เป็นจุดเริ่มต้น"
+  },
+
   /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
-  "2026-05-02": {
-    weekLabel: "26 เมษายน – 2 พฤษภาคม 2026",
-    publishDate: "2 พฤษภาคม 2026",
+  "2026-05-09": {
+    weekLabel: "2–9 พฤษภาคม 2026",
+    publishDate: "9 พฤษภาคม 2026",
     stats: { news: 0, tools: 0, community: 0, industrial: 0 },
     sources: "",
     bigMoves: [],
