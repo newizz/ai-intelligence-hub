@@ -529,10 +529,165 @@ const REPORTS = {
     ipadSummary: "สัปดาห์ 26 เม.ย. – 1 พ.ค. 2026 มี 3 signal สำคัญสำหรับ iPAD: (1) Cybersecurity AI กลายเป็น standalone domain — ทั้ง OpenAI GPT-5.5-Cyber และ Anthropic Mythos ชี้ว่า OT/ICS Security ต้องการ AI-native solution ไม่ใช่ add-on แนะนำให้ประเมิน threat model ของ SCG SCADA และ pilot TAC access สำหรับ critical assets; (2) Domain-Specific AI ชนะ General-purpose ใน industrial context — Siemens Eigen และ Invisible AI เป็นหลักฐานว่า model ที่ fine-tune บน domain knowledge เฉพาะทางให้ผลลัพธ์ที่ดีกว่า ควรเริ่ม dataset curation จาก SCG P&ID, SOP, maintenance log สำหรับ future fine-tuning; (3) Vision AI + Production Analytics คือ low-hanging fruit — Vision Execution System ที่ Hannover แสดงให้เห็น ROI ชัดเจนจากการ monitor production cycle แบบ continuous ควร pilot ที่ 1 production line ใน SCG โดยใช้ existing camera infrastructure เป็นจุดเริ่มต้น"
   },
 
+  /* ─── WEEK: 2–8 พฤษภาคม 2026 ───────────────────── */
+  "2026-05-08": {
+    weekLabel: "2–8 พฤษภาคม 2026",
+    publishDate: "8 พฤษภาคม 2026",
+    stats: { news: 8, tools: 6, community: 4, industrial: 4 },
+    sources: "Google Blog · Google DeepMind · IBM Newsroom · Microsoft On the Issues · Siemens Press · RoboticsTomorrow · CNBC · TechCrunch · Manufacturing Dive · Apple Newsroom",
+    bigMoves: [
+      {
+        title: "🌟 Google เปิดตัว Gemini 3.1 Pro — Reasoning SOTA, ARC-AGI-2 สูงสุด 77.1%",
+        source: "blog.google",
+        link: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
+        summary: "Google เปิดตัว Gemini 3.1 Pro ซึ่งเป็น reasoning model รุ่นล่าสุด มีจุดเด่นด้าน complex problem-solving ทำคะแนน ARC-AGI-2 ที่ 77.1% (benchmark วัดการแก้ปัญหา logic pattern ใหม่ที่ไม่เคยเห็นมาก่อน) พร้อมให้บริการบน Gemini API, Vertex AI, Google AI Studio และ NotebookLM สำหรับผู้ใช้ Pro/Ultra",
+        context: "ARC-AGI-2 เป็น benchmark ที่ยากมาก เนื่องจากวัด reasoning ที่แท้จริงไม่ใช่แค่ memorization ผลลัพธ์ที่ 77.1% ถือเป็น milestone สำคัญ นอกจากนี้ยังมี endpoint เฉพาะสำหรับ custom tools prioritization",
+        impact: "Gemini 3.1 Pro ที่เก่งด้าน complex reasoning เหมาะสำหรับ AVEVA data analysis, Root Cause Analysis (RCA) ที่ต้องการ multi-step reasoning บน sensor data และ process parameter",
+        tags: ["Gemini 3.1","Google","Reasoning AI","ARC-AGI-2","SOTA"]
+      },
+      {
+        title: "🎙️ Gemini 3.1 Flash TTS — Text-to-Speech ด้วย SynthID Watermark",
+        source: "blog.google",
+        link: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
+        summary: "Google เปิดตัว Gemini 3.1 Flash TTS Preview โมเดล text-to-speech ที่ cost-efficient รองรับ 70+ ภาษา ใช้ audio tags ปรับ vocal style และ pacing ได้ audio ทุกชิ้นถูก watermark ด้วย SynthID เพื่อป้องกัน misinformation",
+        context: "SynthID watermark เป็นนวัตกรรมด้าน AI safety ที่ embed ตัวบ่งชี้ว่า content นี้สร้างด้วย AI โดยไม่กระทบคุณภาพเสียง — เป็น approach ที่ responsible มากกว่า competitors",
+        impact: "TTS ที่แม่นยำและ multi-language เปิดโอกาสสร้าง voice interface สำหรับ operator บน shopfloor ที่ต้องการรับ alert และ instruction ด้วยเสียง โดยไม่ต้องมองหน้าจอ",
+        tags: ["Text-to-Speech","Google","SynthID","Voice AI"]
+      },
+      {
+        title: "🏢 IBM Think 2026 — Blueprint สำหรับ AI Operating Model องค์กรยุคใหม่",
+        source: "newsroom.ibm.com",
+        link: "https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens",
+        summary: "5 พ.ค. 2026 — IBM ประกาศ AI Operating Model blueprint ที่ Think 2026 นำเสนอ watsonx Orchestrate สำหรับ multi-agent orchestration, IBM Confluent สำหรับ real-time data integration กับ AI, IBM Concert สำหรับ intelligent ops และ IBM Sovereign Core สำหรับ operational independence จาก cloud vendors",
+        context: "IBM ชี้ว่า 'AI Divide' กำลังขยาย — องค์กรที่ embed AI ในกระบวนการหลักจะได้เปรียบมหาศาลกว่าองค์กรที่ใช้ AI แบบ ad-hoc Blueprint นี้มุ่งให้ enterprise AI กลายเป็น systematic ไม่ใช่ project-by-project",
+        impact: "IBM Sovereign Core ตอบโจทย์ความกังวลด้าน data sovereignty ของโรงงาน SCG ที่ไม่ต้องการส่งข้อมูล process ออกนอก OT network — เป็น on-premise AI model ที่รองรับ industrial compliance",
+        tags: ["IBM","Enterprise AI","Multi-Agent","watsonx","AI Operating Model"]
+      },
+      {
+        title: "🤝 Novo Nordisk + OpenAI — AI ครอบคลุมทุก Business Function ภายในปี 2026",
+        source: "cnbc.com",
+        link: "https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html",
+        summary: "Novo Nordisk ประกาศ strategic partnership กับ OpenAI เพื่อ integrate AI ครอบคลุมทั้งองค์กร — ตั้งแต่ drug discovery, clinical trials ไปจนถึง manufacturing, supply chain และ commercial operations โดยวางแผน full deployment ภายในสิ้นปี 2026",
+        context: "นี่คือตัวอย่างแรกๆ ของ large enterprise ที่ bet ทุกอย่างกับ AI ทั้งองค์กรในคราวเดียว ไม่ใช่ pilot หรือ pilot-and-expand แบบทั่วไป สะท้อน confidence ที่สูงมากในความพร้อมของ AI สำหรับ critical business",
+        impact: "Model การ deploy AI ทั้งองค์กรของ Novo Nordisk เป็น case study ที่น่าสนใจสำหรับ SCG ในการวางแผน AI roadmap ที่ครอบคลุม value chain ตั้งแต่ R&D ถึง operations",
+        tags: ["Enterprise AI","OpenAI","Pharmaceutical","Full-Deployment","Partnership"]
+      },
+      {
+        title: "🤖 Automate 2026 — AI & Robotics Leaders กำหนด Future of Manufacturing",
+        source: "roboticstomorrow.com",
+        link: "https://www.roboticstomorrow.com/news/2026/05/05/ai-and-robotics-leaders-to-headline-automate-2026/26516/",
+        summary: "5 พ.ค. 2026 — A3 (Association for Advancing Automation) ประกาศ keynote lineup สำหรับ Automate 2026 ซึ่งจะเป็น showcase ใหญ่ที่สุดของ AI + Robotics ในอุตสาหกรรม มุ่งแก้ปัญหา workforce shortages, productivity และ competitive advantage ด้วย automation",
+        context: "Automate 2026 เป็น event สำคัญของ automation industry ในสหรัฐฯ — การที่ AI leaders headlining บ่งชี้ว่า AI ได้กลายเป็น core ของ automation ecosystem ไม่ใช่ add-on อีกต่อไป",
+        impact: "Technologies ที่ showcase ใน Automate 2026 มักเป็น signal ว่าอะไรจะ commercially available ใน 12-18 เดือนข้างหน้า เหมาะสำหรับ iPAD ในการ scout technologies สำหรับ roadmap 2027",
+        tags: ["Robotics","Manufacturing AI","Automation","Automate 2026"]
+      },
+      {
+        title: "🏭 Siemens + NVIDIA — โรงงาน AI-Driven 100% แห่งแรกของโลก เริ่มปี 2026",
+        source: "siemens.com",
+        link: "https://press.siemens.com/global/en/pressrelease/siemens-unveils-technologies-accelerate-industrial-ai-revolution-ces-2026",
+        summary: "Siemens และ NVIDIA ประกาศความร่วมมือสร้าง AI-accelerated industrial solutions โดยวางแผนสร้างโรงงาน fully AI-driven adaptive manufacturing sites แห่งแรกของโลก เริ่มต้นที่ Siemens Electronics Factory ใน Erlangen, Germany ภายในปี 2026",
+        context: "Siemens Electronics Factory ใน Erlangen จะเป็น living lab สำหรับทดสอบว่า AI-driven manufacturing จริงๆ หมายความว่าอะไร — ทุกอย่างตั้งแต่ scheduling, quality control, maintenance ถึง energy management ขับเคลื่อนด้วย AI",
+        impact: "ผลลัพธ์จาก Siemens-NVIDIA factory จะเป็น reference case สำคัญที่สุดสำหรับ iPAD ในการ design Smart Factory roadmap — ควรติดตามผลอย่างใกล้ชิดใน Q3-Q4 2026",
+        tags: ["Siemens","NVIDIA","Smart Factory","Physical AI","Adaptive Manufacturing"]
+      },
+      {
+        title: "🍎 Apple Manufacturing Academy — AI Training ฟรีสำหรับ SME Manufacturing",
+        source: "9to5mac.com",
+        link: "https://9to5mac.com/2026/05/05/apple-manufacturing-academy-highlights-ai-adoption-across-u-s-industry/",
+        summary: "5 พ.ค. 2026 — Apple จัด Spring Forum ของ Manufacturing Academy เน้น AI adoption ใน manufacturing workflows ให้การฝึกอบรมฟรีสำหรับพนักงาน SME ครอบคลุม AI, automation analysis และ hands-on consultation จาก experts",
+        context: "Apple Manufacturing Academy เป็น CSR initiative ที่ Apple ใช้เพื่อ build ecosystem ของ suppliers ที่ skilled ด้าน advanced manufacturing ช่วยให้ supply chain ของ Apple แข็งแกร่งขึ้น",
+        impact: "Model การ train workforce ด้าน AI แบบ cohort-based ที่ Apple ใช้เป็น benchmark ที่น่านำมาปรับใช้กับ iPAD ในการ upskill maintenance engineers ด้าน AI tools สำหรับ predictive maintenance",
+        tags: ["Manufacturing AI","Workforce Training","AI Adoption","Apple"]
+      },
+      {
+        title: "🌍 Microsoft: AI Adoption ทั่วโลกแตะ 17.8% ของ Working-Age Population แล้ว",
+        source: "blogs.microsoft.com",
+        link: "https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/",
+        summary: "7 พ.ค. 2026 — Microsoft เผยแพร่รายงาน 'State of Global AI Diffusion 2026' พบว่า AI usage เพิ่มจาก 16.3% เป็น 17.8% ของ working-age population ทั่วโลกใน Q1/2026 อัตราการเติบโต 1.5 percentage point ใน quarter เดียว",
+        context: "การเพิ่มขึ้นนี้เร็วกว่าการ adoption ของ internet, smartphone หรือ social media ในช่วงแรกๆ สะท้อนว่า AI กำลัง permeate กำลังแรงงานโลกอย่างรวดเร็วมาก",
+        impact: "เมื่อ AI adoption ใน workforce ถึง critical mass ทักษะ AI literacy จะกลายเป็น baseline requirement ไม่ใช่ competitive advantage iPAD ควรเร่ง upskill program ก่อนที่ gap จะใหญ่ขึ้น",
+        tags: ["AI Adoption","Global Trends","Microsoft","Workforce","AI Diffusion"]
+      }
+    ],
+    tooling: [
+      {
+        name: "Gemini 3.1 Pro",
+        type: "model",
+        caps: ["ARC-AGI-2: 77.1% (Reasoning SOTA)","Complex multi-step problem solving","Custom tools prioritization endpoint","Available บน Vertex AI, AI Studio, NotebookLM"],
+        benchmarks: [{ label: "ARC-AGI-2 Score", val: "77.1%", pct: 77, color: "#58a6ff" },
+                     { label: "Reasoning vs Gemini 3", val: "+Significant", pct: 85, color: "#bc8cff" }],
+        limit: "Pro/Ultra plan สำหรับ consumer; API pricing ยังสูงกว่า Flash รุ่น",
+        link: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/"
+      },
+      {
+        name: "IBM watsonx Orchestrate",
+        type: "tool",
+        caps: ["Multi-agent orchestration สำหรับ enterprise","Integrate กับ SAP, ServiceNow, Salesforce","Low-code agent builder ที่ business users ใช้ได้","On-premise + hybrid cloud deployment"],
+        impact: "watsonx Orchestrate เป็นทางเลือก enterprise-grade สำหรับ orchestrate AI agents ใน SCG แทน build-from-scratch โดยเฉพาะถ้าต้องการ integrate กับ SAP PM สำหรับ maintenance workflow",
+        link: "https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens"
+      },
+      {
+        name: "IBM Sovereign Core",
+        type: "tool",
+        caps: ["On-premise AI model deployment","Data sovereignty สำหรับ regulated industries","ไม่ส่งข้อมูลออก OT/enterprise network","Operational independence จาก cloud vendors"],
+        impact: "ตอบโจทย์ข้อกังวลหลักของ iPAD: process data ของ SCG ไม่ควรออกนอก OT network — Sovereign Core เป็น solution ที่ออกแบบมาสำหรับ industrial compliance โดยตรง",
+        link: "https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens"
+      },
+      {
+        name: "Gemini 3.1 Flash TTS",
+        type: "model",
+        caps: ["Text-to-speech รองรับ 70+ ภาษา","Audio tags ปรับ vocal style & pacing","SynthID watermark ทุกไฟล์เสียง","Cost-efficient inference"],
+        impact: "เปิดโอกาสสร้าง voice-based alert system สำหรับ operator บน shopfloor — เมื่อ AVEVA alert ยิง ระบบส่งเสียงแจ้งเตือน operator พร้อม context ด้วยภาษาไทย ไม่ต้องมองหน้าจอ",
+        link: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/"
+      },
+      {
+        name: "Siemens + NVIDIA AI Factory",
+        type: "tool",
+        caps: ["Fully AI-driven adaptive manufacturing","NVIDIA AI infrastructure + Siemens domain knowledge","Real-time adaptive scheduling & quality control","Living lab: Erlangen Electronics Factory"],
+        limit: "ยังอยู่ในระยะ pilot สำหรับ Siemens own factory — partner deployment ใน 2027",
+        link: "https://press.siemens.com/global/en/pressrelease/siemens-unveils-technologies-accelerate-industrial-ai-revolution-ces-2026"
+      },
+      {
+        name: "China Physical AI Strategy",
+        type: "paper",
+        caps: ["15th Five-Year Plan: Robotics เป็น core national strategy","Pivot จาก software AI สู่ physical AI applications","High-end intelligent robotics + AI integration","ผลักดัน economic growth ผ่าน AI-robotics fusion"],
+        impact: "การที่จีนกำหนด Robotics + Physical AI เป็น national strategy หมายความว่าอุตสาหกรรมไทยจะเผชิญการแข่งขันสูงขึ้นอีกมากใน 5 ปีข้างหน้า iPAD ควรเร่ง pilot physical AI ใน SCG",
+        link: "https://ifr.org/ifr-press-releases/news/china-makes-ai-powered-robots-core-of-national-strategy"
+      }
+    ],
+    community: [
+      {
+        icon: "🧠",
+        title: "AI Reasoning Revolution — ARC-AGI-2 กลายเป็น New Standard วัด 'ความฉลาดจริง'",
+        desc: "ชุมชน AI researcher ถกเถียงกันมากถึง ARC-AGI-2 หลัง Gemini 3.1 Pro ทำคะแนน 77.1% — หลายคนมองว่านี่คือก้าวแรกที่แท้จริงสู่ general reasoning ไม่ใช่แค่ pattern matching ขณะที่บางส่วนยังตั้งคำถามว่า benchmark ใดที่จะ 'proof' AGI ได้จริง",
+        link: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/"
+      },
+      {
+        icon: "🌐",
+        title: "AI Diffusion Hits 17.8% — ใกล้ถึง Tipping Point ที่เปลี่ยนตลาดแรงงาน",
+        desc: "รายงาน Microsoft ที่ชี้ว่า 17.8% ของ working-age population ใช้ AI กระตุ้นถกเถียงใหญ่ใน HR และ education community — นักวิเคราะห์หลายคนมองว่า tipping point อยู่ที่ 20% หลังจากนั้น AI literacy จะเป็น expectation พื้นฐาน ไม่ใช่ special skill",
+        link: "https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/"
+      },
+      {
+        icon: "🏭",
+        title: "Physical AI Race 2026 — China, Siemens, NVIDIA ทุ่มหนักสู่ AI-Driven Factory",
+        desc: "Manufacturing Dive รายงานว่า 'physical AI craze' คือ trend ที่ต้องจับตาที่สุดปี 2026 หลัง China ประกาศ national strategy, Siemens-NVIDIA เริ่ม AI factory แห่งแรก และ Automate 2026 เน้น robotics ชุมชน manufacturing engineer ถกเถียงว่า brownfield plant จะ transition อย่างไร",
+        link: "https://www.manufacturingdive.com/news/physical-ai-craze-2026-automation-trends-to-watch/810860/"
+      },
+      {
+        icon: "🔒",
+        title: "US Government ทดสอบ Google, Microsoft, xAI Models — AI Oversight Era เริ่มแล้ว",
+        desc: "CNBC รายงานว่า Trump administration กำลัง move further into AI oversight โดยทดสอบ models จาก Google, Microsoft และ xAI สำหรับการใช้งานภาครัฐ บ่งชี้ว่า government-grade AI evaluation เริ่มกลายเป็น requirement ที่ vendor ต้องผ่านก่อน deploy ในหน่วยงานสาธารณะและ critical infrastructure",
+        link: "https://www.cnbc.com/2026/05/05/ai-oversight-trump-google-microsoft-xai.html"
+      }
+    ],
+    ipadSummary: "สัปดาห์ 2–8 พ.ค. 2026 มี 3 signal สำคัญสำหรับ iPAD: (1) Reasoning AI ก้าวกระโดด — Gemini 3.1 Pro ที่ทำ ARC-AGI-2 ได้ 77.1% บ่งชี้ว่าโมเดล AI สามารถ reason บน novel problems ที่ไม่เคยเห็นได้แล้ว เหมาะอย่างยิ่งสำหรับ AVEVA Root Cause Analysis ที่ต้องการ multi-step reasoning บน sensor pattern ใหม่ แนะนำ test Gemini 3.1 Pro บน AVEVA fault diagnosis use case; (2) Data Sovereignty Solution ชัดขึ้น — IBM Sovereign Core ตอบโจทย์ข้อจำกัดที่ใหญ่ที่สุดของ iPAD ด้าน OT data privacy ควร evaluate เทียบกับ local deployment options อื่น; (3) Physical AI เป็น strategic imperative ไม่ใช่ nice-to-have — China national strategy + Siemens-NVIDIA AI factory ยืนยันว่า ใครที่ไม่ลงทุน physical AI ใน 2-3 ปีนี้จะเสียเปรียบมหาศาล iPAD ควรมี pilot physical AI (robot inspection หรือ vision system) ใน roadmap 2026-2027"
+  },
+
   /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
-  "2026-05-09": {
-    weekLabel: "2–9 พฤษภาคม 2026",
-    publishDate: "9 พฤษภาคม 2026",
+  "2026-05-15": {
+    weekLabel: "9–15 พฤษภาคม 2026",
+    publishDate: "15 พฤษภาคม 2026",
     stats: { news: 0, tools: 0, community: 0, industrial: 0 },
     sources: "",
     bigMoves: [],
