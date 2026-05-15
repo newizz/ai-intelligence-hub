@@ -684,10 +684,166 @@ const REPORTS = {
     ipadSummary: "สัปดาห์ 2–8 พ.ค. 2026 มี 3 signal สำคัญสำหรับ iPAD: (1) Reasoning AI ก้าวกระโดด — Gemini 3.1 Pro ที่ทำ ARC-AGI-2 ได้ 77.1% บ่งชี้ว่าโมเดล AI สามารถ reason บน novel problems ที่ไม่เคยเห็นได้แล้ว เหมาะอย่างยิ่งสำหรับ AVEVA Root Cause Analysis ที่ต้องการ multi-step reasoning บน sensor pattern ใหม่ แนะนำ test Gemini 3.1 Pro บน AVEVA fault diagnosis use case; (2) Data Sovereignty Solution ชัดขึ้น — IBM Sovereign Core ตอบโจทย์ข้อจำกัดที่ใหญ่ที่สุดของ iPAD ด้าน OT data privacy ควร evaluate เทียบกับ local deployment options อื่น; (3) Physical AI เป็น strategic imperative ไม่ใช่ nice-to-have — China national strategy + Siemens-NVIDIA AI factory ยืนยันว่า ใครที่ไม่ลงทุน physical AI ใน 2-3 ปีนี้จะเสียเปรียบมหาศาล iPAD ควรมี pilot physical AI (robot inspection หรือ vision system) ใน roadmap 2026-2027"
   },
 
-  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
+  /* ─── WEEK: 9–15 พฤษภาคม 2026 ──────────────────── */
   "2026-05-15": {
     weekLabel: "9–15 พฤษภาคม 2026",
     publishDate: "15 พฤษภาคม 2026",
+    stats: { news: 8, tools: 6, community: 4, industrial: 4 },
+    sources: "OpenAI Blog · Anthropic News · Google Blog · AI Insider · CNBC · LLM Stats · Oracle AI Blog · CNN Business · IBM Think · Crescendo AI · Fortune · Gartner",
+    bigMoves: [
+      {
+        title: "📈 Anthropic แซงหน้า OpenAI ในตลาด Business — 34.4% vs 32.3% และเล็งระดมทุน $950B",
+        source: "theaiinsider.tech",
+        link: "https://theaiinsider.tech/2026/05/14/anthropic-overtakes-openai-among-business-customers-as-it-courts-small-firms-and-eyes-950b-valuation/",
+        summary: "14 พ.ค. 2026 — Anthropic ขึ้นแท่นอันดับ 1 ด้านส่วนแบ่งลูกค้าธุรกิจเป็นครั้งแรก โดยมีสัดส่วน 34.4% แซง OpenAI ที่ 32.3% ซึ่งเป็นการพุ่งขึ้นจาก 9% ในเดือน พ.ค. 2568 เพียง 12 เดือนก่อน นอกจากนี้ Anthropic กำลังเจรจาระดมทุนรอบใหม่ที่มูลค่าใกล้แตะ $950 พันล้าน เกิน OpenAI ที่ $854 พันล้านในรอบเดือนมีนาคม",
+        context: "การก้าวขึ้นมาครองส่วนแบ่งตลาดธุรกิจของ Anthropic สะท้อนกลยุทธ์การเจาะตลาด SME ด้วย Claude for Small Business ที่มีการ integrate กับ QuickBooks, Canva, DocuSign, HubSpot และ PayPal — เป็นสัญญาณว่า enterprise AI market กำลังแตกตัวไปสู่ผู้เล่นหลายราย",
+        impact: "ความสำเร็จของ Anthropic ในตลาด SME ยืนยันว่า Claude API มีความเสถียรและ reliable เพียงพอสำหรับ production — เป็นสัญญาณบวกสำหรับ iPAD ที่ใช้ Claude เป็น backbone AI",
+        tags: ["Anthropic","Market Share","Business AI","Claude","SME"]
+      },
+      {
+        title: "🤖 OpenAI GPT-5.5 Instant — Hallucination ลด 50% และ Memory Integration",
+        source: "llm-stats.com",
+        link: "https://llm-stats.com/llm-updates",
+        summary: "OpenAI เปิดตัว GPT-5.5 Instant เป็น default model ใหม่สำหรับ ChatGPT ออกแบบให้ตอบสนองแม่นยำ เป็นส่วนตัว และรับรู้ context ได้ดีขึ้น ลด hallucinated claims มากกว่า 50% ในสถานการณ์ที่มีความเสี่ยงสูง พร้อมขยายความสามารถในการดึงข้อมูลจาก memory, ไฟล์ที่อัปโหลด และบริการที่เชื่อมต่อ เช่น Gmail โดยมี 'memory sources' controls ให้ผู้ใช้เห็นว่า context ใดส่งผลต่อคำตอบ",
+        context: "การลด hallucination 50% ใน high-stakes scenario เป็น milestone ที่สำคัญมากสำหรับ industrial use case ซึ่งข้อมูลผิดพลาดอาจทำให้เกิดการตัดสินใจผิดพลาดใน maintenance หรือ safety decision",
+        impact: "GPT-5.5 Instant ที่ hallucinate น้อยลงเหมาะสำหรับนำมาเปรียบเทียบกับ Claude ในงาน AVEVA Alert Analysis — ควรทดสอบ accuracy บน historical fault data เพื่อเลือก provider ที่เหมาะสมที่สุด",
+        tags: ["OpenAI","GPT-5.5","Hallucination","Memory","Reliability"]
+      },
+      {
+        title: "🦾 Anthropic เปิดตัว 'Dreaming' — เทคนิคให้ Agent ปรับปรุงตัวเองระหว่าง Session",
+        source: "crescendo.ai",
+        link: "https://www.crescendo.ai/news/latest-ai-news-and-updates",
+        summary: "Anthropic เปิดเผยเทคนิค AI agent ใหม่ชื่อ 'dreaming' ออกแบบให้ระบบอัตโนมัติสามารถทบทวนพฤติกรรมในอดีต ระบุ patterns และปรับปรุง performance ในอนาคตระหว่าง session — เป็นส่วนหนึ่งของความพยายามสร้าง managed agents ที่มีความสามารถสูงขึ้น",
+        context: "'Dreaming' คือก้าวสำคัญสู่ agentic AI ที่สามารถ self-improve โดยไม่ต้องการ human supervision ตลอดเวลา — เปลี่ยน agent จาก reactive เป็น adaptive",
+        impact: "เทคนิค dreaming เปิดโอกาสสร้าง iPAD Monitoring Agent ที่เรียนรู้ pattern ของ AVEVA alerts ใน plant แต่ละแห่งโดยอัตโนมัติ และปรับ sensitivity ของ alert ให้เหมาะสมกับ operating condition ที่เปลี่ยนแปลง",
+        tags: ["Anthropic","Agentic AI","Self-Improvement","Autonomous Agent","Research"]
+      },
+      {
+        title: "🤖 Google Gemma 4 — Open-Source Agentic Models ภายใต้ Apache 2.0",
+        source: "oracle.com",
+        link: "https://blogs.oracle.com/ai-and-datascience/whats-new-in-ai-may-2026",
+        summary: "Google เปิดตัว Gemma 4 series โมเดล open-source รุ่นล่าสุดที่สร้างมาเพื่อ advanced reasoning และ agentic workflows โดยเฉพาะ เปิดให้ใช้งานภายใต้ Apache 2.0 license — ใช้งานเชิงพาณิชย์ได้โดยไม่มีข้อจำกัด",
+        context: "Apache 2.0 license และ focus บน agentic workflows ทำให้ Gemma 4 เป็นตัวเลือกที่น่าสนใจมากสำหรับ on-premise deployment ในสภาพแวดล้อมอุตสาหกรรมที่ต้องการ data sovereignty",
+        impact: "Gemma 4 เป็นทางเลือก open-source ที่แข็งแกร่งสำหรับ deploy local AI agent บน OT network ของ SCG — ไม่ต้องส่งข้อมูล process ออก cloud และลดต้นทุน API subscription ระยะยาว",
+        tags: ["Google","Gemma 4","Open Source","Agentic AI","Apache 2.0","On-Premise"]
+      },
+      {
+        title: "📱 Google เปลี่ยน Android เป็น 'Intelligence System' ด้วย Gemini",
+        source: "cnbc.com",
+        link: "https://www.cnbc.com/2026/05/12/google-races-put-gemini-at-center-of-android-before-apples-ai-reboot.html",
+        summary: "12 พ.ค. 2026 — Google ประกาศ rebuild Android รอบ Gemini Intelligence เปลี่ยนจาก OS เป็น 'Intelligence System' ที่สามารถเคลื่อนข้ามแอปได้ เข้าใจ context บนหน้าจอ และ complete tasks แบบ agentic — ไม่ใช่แค่ voice assistant แต่เป็น autonomous on-device agent",
+        context: "การที่ Google ประกาศว่ากำลัง 'transition จาก OS สู่ Intelligence System' เป็น statement ที่แสดงให้เห็น direction ของ mobile platform ในอีก 3-5 ปีข้างหน้า",
+        impact: "Android-based edge devices (tablet, HMI) บน plant floor จะมีความสามารถ on-device AI agent สูงขึ้นมากในอนาคต — เปิดโอกาส deploy Gemini-powered field inspection tool บน ruggedized Android tablet โดยไม่ต้อง cloud",
+        tags: ["Google","Android","Gemini","Mobile AI","Edge AI","Agentic Platform"]
+      },
+      {
+        title: "🏛️ รัฐบาลสหรัฐฯ บังคับทดสอบ AI Models ก่อน Launch — Microsoft, Google, xAI เห็นชอบ",
+        source: "cnn.com",
+        link: "https://www.cnn.com/2026/05/05/tech/microsoft-google-xai-government-test-ai-models",
+        summary: "5 พ.ค. 2026 — สหรัฐฯ ก้าวเข้าสู่ยุค proactive AI oversight อย่างเป็นทางการ Microsoft, Google และ xAI ตกลงให้รัฐบาลเข้าทดสอบ AI models ก่อน deploy สู่สาธารณะ — เป็นก้าวสำคัญสู่ pre-deployment AI regulatory framework ในระดับรัฐบาลกลาง",
+        context: "การทดสอบระดับรัฐบาลเป็น signal ว่า AI regulation กำลังย้ายจาก voluntary guidelines สู่ mandatory testing — คล้ายกับ FDA approval process สำหรับยา แต่ยังอยู่ช่วงต้น",
+        impact: "AI Governance framework ระดับรัฐบาลจะกลายเป็น standard ที่ enterprise ต้องปฏิบัติตาม — iPAD ควรเริ่มสร้าง AI Governance documentation (model card, bias assessment) เพื่อเตรียมความพร้อมสำหรับ regulatory compliance ในอนาคต",
+        tags: ["AI Regulation","US Government","AI Governance","Microsoft","Google","xAI","Policy"]
+      },
+      {
+        title: "💰 Novo Nordisk + OpenAI — AI ครอบ End-to-End ตั้งแต่ Drug Discovery ถึง Supply Chain",
+        source: "crescendo.ai",
+        link: "https://www.crescendo.ai/news/latest-ai-news-and-updates",
+        summary: "Novo Nordisk ประกาศ strategic partnership กับ OpenAI เพื่อ integrate AI ครอบคลุมทั้ง value chain — drug discovery, clinical trials, manufacturing, supply chain และ commercial operations โดยมีเป้าหมายเร่งค้นพบการรักษาโรคอ้วนและเบาหวานรูปแบบใหม่",
+        context: "Novo Nordisk เป็น case study ล่าสุดของ large enterprise ที่เลือก full-stack AI transformation แทนการทำ pilot ทีละส่วน — เป็น pattern ที่เริ่มเห็นมากขึ้นในบริษัทชั้นนำระดับโลก",
+        impact: "AI integration ตลอด value chain ใน pharma (จาก R&D ถึง supply chain) เป็น template ที่ SCG สามารถนำมาประยุกต์ — เริ่มจาก plant operations ไปถึง procurement และ logistics ด้วย agentic AI",
+        tags: ["Enterprise AI","OpenAI","Partnership","Full-Stack AI","Manufacturing","Supply Chain"]
+      },
+      {
+        title: "🔐 Google GTIG: Hacker ใช้ AI Exploit Zero-Day — AI คือ Weapon ด้วย",
+        source: "fortune.com",
+        link: "https://fortune.com/2026/05/12/google-hackers-using-ai-to-weaponize-zero-day-vulnerabilities/",
+        summary: "12 พ.ค. 2026 — Google Threat Intelligence Group (GTIG) รายงานว่า hacker ใช้ AI model ค้นหาและ exploit zero-day vulnerability ได้สำเร็จ โดย Google ระบุว่า proactive AI-powered counter-discovery ของ GTIG อาจเป็นสิ่งที่หยุดปฏิบัติการนี้ได้ก่อนสำเร็จ",
+        context: "เหตุการณ์นี้ยืนยัน threat ที่นักความปลอดภัยเตือนมา 2 ปี — AI จะถูกใช้เป็น attack vector ไม่ใช่แค่ defense tool — เป็น real-world incident ครั้งแรกที่ document ชัดเจน",
+        impact: "OT/ICS security ของ SCG ต้องพิจารณา AI-powered threat detection เพิ่มเติม ระบบ SCADA และ DCS ที่มี known vulnerabilities ควรอยู่ใน priority list สำหรับ AI-assisted security monitoring โดยเร็ว",
+        tags: ["Cybersecurity","AI Attack","Zero-Day","OT Security","GTIG","Google","Critical Infrastructure"]
+      }
+    ],
+    tooling: [
+      {
+        name: "Grok 4.3 บน OCI Enterprise AI",
+        type: "model",
+        caps: ["Context window 1 ล้าน tokens (longest available)","เก่งด้าน advanced logic, math, coding, multi-step analysis","พร้อมใช้บน Oracle Cloud Infrastructure","เหมาะสำหรับ long-document analysis เช่น P&ID, SOP"],
+        benchmarks: [{ label: "Context Window", val: "1M tokens", pct: 95, color: "#58a6ff" },
+                     { label: "Reasoning Score", val: "High", pct: 85, color: "#bc8cff" }],
+        limit: "ต้องใช้ผ่าน OCI platform — pricing ขึ้นกับ Oracle contract",
+        link: "https://blogs.oracle.com/ai-and-datascience/whats-new-in-ai-may-2026"
+      },
+      {
+        name: "Google Gemma 4 (Apache 2.0)",
+        type: "repo",
+        caps: ["Open-source, ใช้งานเชิงพาณิชย์ได้ฟรี","ออกแบบมาสำหรับ agentic workflows","รองรับ local/on-premise deployment","เหมาะสำหรับ fine-tune บน domain-specific data"],
+        impact: "ทางเลือก open-source ที่แข็งแกร่งที่สุดสำหรับ deploy local AI agent บน OT network โดยไม่ต้องพึ่ง cloud API — ลด OPEX และเพิ่ม data sovereignty",
+        link: "https://blogs.oracle.com/ai-and-datascience/whats-new-in-ai-may-2026"
+      },
+      {
+        name: "Google TurboQuant (ICLR 2026)",
+        type: "paper",
+        caps: ["ลด KV Cache memory overhead อย่างมีนัยสำคัญ","ใช้ PolarQuant vector rotation + QJL compression","ลดต้นทุน inference สำหรับ long-context models","ผ่านการตรวจสอบที่ ICLR 2026 (top AI venue)"],
+        impact: "TurboQuant ทำให้ deploy long-context model บน edge hardware มีความเป็นไปได้มากขึ้น — เปิดโอกาสรัน Grok/Gemini ที่ context ยาวๆ บน on-premise server ของโรงงานโดยใช้ GPU memory น้อยลง",
+        link: "https://blogs.oracle.com/ai-and-datascience/whats-new-in-ai-may-2026"
+      },
+      {
+        name: "Meta Muse Spark",
+        type: "model",
+        caps: ["Flagship model จาก Meta Superintelligence Labs","Multimodal: perception, reasoning, health, agentic tasks","Compute cost ต่ำกว่า Llama 4 mid-size อย่างมาก","เหมาะสำหรับ multimodal industrial inspection"],
+        benchmarks: [{ label: "Compute vs Llama 4", val: "~40% less", pct: 60, color: "#3fb950" }],
+        limit: "ยังใหม่ — ecosystem และ fine-tuning support กำลังพัฒนา",
+        link: "https://llm-stats.com/ai-news"
+      },
+      {
+        name: "SS&C Blue Prism WorkHQ",
+        type: "tool",
+        caps: ["Agentic automation platform สำหรับ enterprise","ควบคุม end-to-end workflow อย่างโปร่งใส","แก้ปัญหา human-in-the-loop bottleneck","Deploy, monitor และ audit AI agents ได้จาก central control"],
+        impact: "WorkHQ เป็น orchestration platform ที่ออกแบบมาสำหรับ enterprise compliance — เหมาะนำมา evaluate เป็น control plane สำหรับ iPAD agents ที่ต้องการ audit trail ครบถ้วนตาม SCG governance requirements",
+        link: "https://investor.ssctech.com/news-releases/news-release-details/ssc-unveils-workhq-power-enterprise-agentic-automation"
+      },
+      {
+        name: "DeepSeek V4 Pro + Hunyuan HY3",
+        type: "model",
+        caps: ["DeepSeek V4 Pro: open-source reasoning model จากจีน","Hunyuan HY3: Tencent preview model","ทั้งคู่ available บน HuggingFace","เหมาะ evaluate เป็นทางเลือก cost-effective"],
+        limit: "Data residency และ compliance ด้านข้อมูลควรประเมินก่อน deploy ใน SCG environment",
+        link: "https://llm-stats.com/ai-news"
+      }
+    ],
+    community: [
+      {
+        icon: "🏆",
+        title: "Anthropic แซง OpenAI — AI Community ถกว่า 'Safety-First' ชนะ 'Move Fast'?",
+        desc: "การที่ Anthropic แซง OpenAI ในส่วนแบ่งลูกค้าธุรกิจจุดชนวนถกเถียงใน AI community — ฝ่ายหนึ่งมองว่าตลาดกำลัง reward approach ด้าน safety และ reliability ของ Anthropic ส่วนอีกฝ่ายชี้ว่า GPT-5.5 hallucination ที่ลดลง 50% อาจทำให้ OpenAI ยึดคืนตลาดได้ใน H2/2026 — race ยังไม่จบ",
+        link: "https://theaiinsider.tech/2026/05/14/anthropic-overtakes-openai-among-business-customers-as-it-courts-small-firms-and-eyes-950b-valuation/"
+      },
+      {
+        icon: "🔐",
+        title: "AI กลายเป็น Weapon จริงแล้ว — Google Zero-Day Report เขย่า Security Community",
+        desc: "รายงาน GTIG ที่ระบุว่า hacker ใช้ AI exploit zero-day vulnerability ทำให้ security community ตื่นตัวอย่างมาก Reddit r/netsec และ security blogs ต่างวิเคราะห์ว่า 'AI-powered attack era' เริ่มแล้ว — หลายคนเรียกร้องให้ทุก critical infrastructure operator ประเมิน OT security posture ใหม่ทันที",
+        link: "https://fortune.com/2026/05/12/google-hackers-using-ai-to-weaponize-zero-day-vulnerabilities/"
+      },
+      {
+        icon: "🏭",
+        title: "Enterprise Agents: IBM Forecast 1,600+ Agents ต่อองค์กร — Gartner ยังระวัง",
+        desc: "ตัวเลขจาก IBM Think 2026 ที่ระบุว่าองค์กรขนาดใหญ่จะ deploy กว่า 1,600 AI agents ภายในสิ้นปี 2026 กระตุ้นถกเถียงใน enterprise community — Gartner ตอบโต้ว่าปัจจุบัน deploy จริงเพียง 17% และ orchestration governance คือ bottleneck ที่ใหญ่ที่สุด องค์กรที่ invest ใน governance framework ก่อนมีโอกาส scale สำเร็จสูงกว่า 13 เท่า",
+        link: "https://www.ibm.com/think/news/think-2026-ai-recap"
+      },
+      {
+        icon: "🌐",
+        title: "Open-Source Wave ยังแรง — 500+ LLM Models พร้อมให้ใช้ฟรีในปี 2026",
+        desc: "Ecosystem open-source LLM เติบโตแตะ 500+ models บน commercial API และ open-source repositories ในสัปดาห์เดียวมีการ release Gemma 4, DeepSeek V4 Pro, Hunyuan HY3 และ MiMo v2.5 ชุมชน r/LocalLLaMA ชี้ว่า specialized models สำหรับ healthcare และ legal ได้รับ traction สูงมาก เป็น signal ว่า vertical AI จะเป็น next battleground",
+        link: "https://backlinko.com/list-of-llms"
+      }
+    ],
+    ipadSummary: "สัปดาห์ 9–15 พ.ค. 2026 มี 4 signal สำคัญสำหรับ iPAD: (1) AI Reliability กำลัง mature — GPT-5.5 Instant ที่ hallucinate น้อยลง 50% และ Anthropic ที่แซงหน้า OpenAI ในตลาด business ชี้ให้เห็นว่า AI provider กำลังแข่งกันด้าน reliability ไม่ใช่แค่ capability แนะนำทดสอบ GPT-5.5 Instant เปรียบเทียบกับ Claude บน AVEVA fault analysis use case เพื่อ benchmark ก่อน contract renewal; (2) Dreaming Agents = Self-Improving AVEVA Monitor — เทคนิค 'dreaming' ของ Anthropic เป็น breakthrough ที่ iPAD ควรติดตามใกล้ชิด โดยเฉพาะสำหรับ use case monitoring agent ที่ต้อง adapt กับ plant operating condition ที่เปลี่ยนแปลงตามฤดูกาล; (3) OT Security เป็น Priority เร่งด่วน — Google GTIG zero-day report เป็นสัญญาณเตือนว่า OT/ICS security ในโรงงาน SCG ต้องได้รับการประเมินและ upgrade ด้าน AI-powered threat detection โดยเร็ว ควรประสานงานกับ IT/OT security team เพื่อ roadmap AI-assisted SOC สำหรับ SCADA; (4) Governance ก่อน Scale — ข้อมูล Gartner ที่ชี้ว่าองค์กรที่มี AI governance framework ดีกว่ามีโอกาส scale สำเร็จสูงกว่า 13 เท่า เป็นเหตุผลชัดเจนให้ iPAD ลงทุนสร้าง AI Governance framework (audit trail, model documentation, bias assessment) ก่อนขยาย agent deployment ไปยังโรงงานอื่น"
+  },
+
+  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
+  "2026-05-22": {
+    weekLabel: "16–22 พฤษภาคม 2026",
+    publishDate: "22 พฤษภาคม 2026",
     stats: { news: 0, tools: 0, community: 0, industrial: 0 },
     sources: "",
     bigMoves: [],
