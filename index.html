@@ -840,10 +840,167 @@ const REPORTS = {
     ipadSummary: "สัปดาห์ 9–15 พ.ค. 2026 มี 4 signal สำคัญสำหรับ iPAD: (1) AI Reliability กำลัง mature — GPT-5.5 Instant ที่ hallucinate น้อยลง 50% และ Anthropic ที่แซงหน้า OpenAI ในตลาด business ชี้ให้เห็นว่า AI provider กำลังแข่งกันด้าน reliability ไม่ใช่แค่ capability แนะนำทดสอบ GPT-5.5 Instant เปรียบเทียบกับ Claude บน AVEVA fault analysis use case เพื่อ benchmark ก่อน contract renewal; (2) Dreaming Agents = Self-Improving AVEVA Monitor — เทคนิค 'dreaming' ของ Anthropic เป็น breakthrough ที่ iPAD ควรติดตามใกล้ชิด โดยเฉพาะสำหรับ use case monitoring agent ที่ต้อง adapt กับ plant operating condition ที่เปลี่ยนแปลงตามฤดูกาล; (3) OT Security เป็น Priority เร่งด่วน — Google GTIG zero-day report เป็นสัญญาณเตือนว่า OT/ICS security ในโรงงาน SCG ต้องได้รับการประเมินและ upgrade ด้าน AI-powered threat detection โดยเร็ว ควรประสานงานกับ IT/OT security team เพื่อ roadmap AI-assisted SOC สำหรับ SCADA; (4) Governance ก่อน Scale — ข้อมูล Gartner ที่ชี้ว่าองค์กรที่มี AI governance framework ดีกว่ามีโอกาส scale สำเร็จสูงกว่า 13 เท่า เป็นเหตุผลชัดเจนให้ iPAD ลงทุนสร้าง AI Governance framework (audit trail, model documentation, bias assessment) ก่อนขยาย agent deployment ไปยังโรงงานอื่น"
   },
 
-  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
+  /* ─── WEEK: 16–22 พฤษภาคม 2026 (Google I/O Week) ── */
   "2026-05-22": {
     weekLabel: "16–22 พฤษภาคม 2026",
     publishDate: "22 พฤษภาคม 2026",
+    stats: { news: 8, tools: 6, community: 4, industrial: 4 },
+    sources: "Google I/O 2026 · Google Blog · Anthropic News · 9to5Mac · TechCrunch · CNBC · NVIDIA Newsroom · HCLTech · Robotics & Automation News · eWeek · BusinessToday · Tom's Guide",
+    bigMoves: [
+      {
+        title: "🌟 Google I/O 2026 — Gemini 3.5 Flash: Default Model ใหม่ 4× เร็วกว่า Frontier Models",
+        source: "blog.google",
+        link: "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+        summary: "19 พ.ค. 2026 — Google I/O 2026 เปิดตัว Gemini 3.5 Flash เป็น default model ทันทีทั่วโลก ทั้งใน Gemini app และ AI Mode ใน Google Search ทำ benchmark ชนะ Gemini 3.1 Pro ด้าน coding, agentic และ multimodal ทำงานเร็วกว่า frontier models อื่น 4× ด้วย output tokens per second ที่สูงกว่า และราคาต่ำกว่าครึ่ง พร้อมให้บริการบน Gemini API, Vertex AI และ Google AI Studio",
+        context: "Google CTO สาธิตว่า Gemini 3.5 Flash สามารถ build operating system จากศูนย์ได้อย่างอิสระ และ manage iterative research projects ด้วยตัวเอง — ยืนยันว่า 2026 เป็นปีที่ AI ก้าวจาก assistant สู่ autonomous worker อย่างแท้จริง",
+        impact: "Gemini 3.5 Flash ที่เร็ว 4× และราคาลดลงครึ่งหนึ่งทำให้ cost-effective สำหรับ deploy บน AVEVA monitoring pipeline แบบ continuous — สามารถ analyze sensor data ทุก 5 นาทีแทนที่จะ batch รายชั่วโมงโดยไม่เพิ่มค่าใช้จ่าย",
+        tags: ["Gemini 3.5","Google I/O 2026","Agentic AI","Fast Inference","SOTA"]
+      },
+      {
+        title: "🤖 Google Gemini Spark — AI Agent 24/7 ที่ทำงานแม้ปิด Device",
+        source: "blog.google",
+        link: "https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/",
+        summary: "19 พ.ค. 2026 — Google เปิดตัว Gemini Spark agent ส่วนตัวที่รันบน dedicated virtual machines บน Google Cloud ทำงาน 24/7 ต่อเนื่องแม้เมื่อ device ผู้ใช้ปิดหรือ offline integrate กับ Google Docs, Gmail, Google Sheets ได้แบบ native มีตัวอย่าง จัดงาน party โดย Spark สร้าง RSVP tracker ใน Sheets และส่ง reminder ให้ผู้ที่ยังไม่ตอบรับอัตโนมัติ เริ่ม rollout ให้ trusted testers สัปดาห์นี้ และ Google AI Ultra ($100/เดือน) สัปดาห์หน้า",
+        context: "Spark ใช้ Gemini 3.5 บน Antigravity pipeline — เป็นก้าวสำคัญสู่ 'persistent agent' ที่ทำงานแทนคนต่อเนื่อง ไม่ใช่แค่ตอบ query เมื่อถูกถาม",
+        impact: "Concept Gemini Spark สามารถนำมาออกแบบ iPAD AVEVA Monitor Agent ที่รัน 24/7 บน server — คอยวิเคราะห์ค่า OMR% และ fault pattern ต่อเนื่อง แจ้งเตือน on-call engineer ทันทีเมื่อพบความผิดปกติโดยไม่ต้อง manual check",
+        tags: ["Gemini Spark","Persistent Agent","Google I/O 2026","24/7 AI","Agentic"]
+      },
+      {
+        title: "🎬 Google Gemini Omni — Any-to-Any Multimodal Model: Video, Audio, Image ในโมเดลเดียว",
+        source: "blog.google",
+        link: "https://betanews.com/article/google-io-2026-gemini-flash-omni-spark-search/",
+        summary: "19 พ.ค. 2026 — Google เปิดตัว Gemini Omni โมเดล any-to-any multimodal ที่รับ input ทุกรูปแบบ (text, image, video, audio) และ output กลับมาในรูปแบบใดก็ได้ โดย video launch เป็นรูปแบบแรก สามารถ feed output กลับเข้าตัวเองเพื่อ iterative editing ได้ Omni Flash พร้อมใช้งานทันทีสำหรับ Google AI Plus/Pro/Ultra ใน Gemini app, Google Flow และ YouTube Shorts; Omni Pro จะมาทาง API",
+        context: "Gemini Omni เป็น generalization ของ Veo ที่ถูก train เป็น multimodal ตั้งแต่ต้น ต่างจาก approach เดิมที่ bolt-on vision/audio ทีหลัง — ทำให้ความเข้าใจ cross-modal ดีกว่ามาก",
+        impact: "Omni's any-to-any capability เปิดโอกาสสร้าง iPAD Visual Inspection Agent ที่รับ input ได้ทั้ง thermal image, audio from vibration sensor และ text description แล้ว output report ในรูป text หรือ alert เดียวกัน",
+        tags: ["Gemini Omni","Multimodal AI","Video Generation","Google I/O 2026"]
+      },
+      {
+        title: "🧠 Anthropic Claude Managed Agents — 'Dreaming' + Multi-Agent Orchestration + Enterprise Security",
+        source: "anthropic.com",
+        link: "https://9to5mac.com/2026/05/19/anthropic-enhances-claude-managed-agents-with-two-new-privacy-and-security-features/",
+        summary: "19 พ.ค. 2026 — Anthropic ออก update สำคัญ 3 ด้านให้ Claude Managed Agents: (1) Dreaming (research preview): agent review past sessions เพื่อหา pattern และ self-improve อัตโนมัติ (2) Multi-agent orchestration: lead agent แบ่งงานให้ specialist subagents ทำงานพร้อมกันบน shared filesystem (3) Enterprise security: รองรับ self-hosted sandboxes และ MCP tunnels เพื่อ run agent execution ภายใน enterprise boundary โดยไม่ส่งข้อมูลออก cloud",
+        context: "'Dreaming' คือ AI ที่ review ประสบการณ์ผ่านมาเพื่อพัฒนาตัวเอง ใกล้เคียงกับแนวคิด continual learning มากที่สุดที่มีใน production model ณ ตอนนี้ ขณะที่ MCP tunnel ใน enterprise boundary ตอบโจทย์ OT security โดยตรง",
+        impact: "Enterprise security feature (self-hosted sandbox + MCP tunnel) ทำให้ Claude Managed Agents สามารถ connect กับ AVEVA OPC-UA server ภายใน OT network โดยไม่ต้องเปิด port ออก internet — ลด attack surface และ comply กับ IEC 62443 OT security standard",
+        tags: ["Claude Managed Agents","Dreaming","Multi-Agent","Enterprise Security","Anthropic","MCP"]
+      },
+      {
+        title: "⚗️ Mistral AI เข้าซื้อ Emmi AI — Physics Simulation สำหรับ Industrial Manufacturing",
+        source: "crescendo.ai",
+        link: "https://www.crescendo.ai/news/latest-ai-news-and-updates",
+        summary: "สัปดาห์นี้ Mistral AI เข้าซื้อกิจการ Emmi AI สตาร์ทอัปจาก Linz, Austria ที่เชี่ยวชาญด้าน physics modeling สำหรับ simulation — airflow, heat transfer และ material stress นำทีมนักฟิสิกส์ระดับ top เข้ามาเสริม Mistral ขยาย portfolio ไปสู่ industrial AI สำหรับ manufacturing, aerospace, automotive และ semiconductor clients อย่างเป็นทางการ",
+        context: "Mistral เป็น European AI lab ที่แข็งแกร่งด้าน open-source และ privacy — การซื้อ Emmi AI บ่งบอก strategy ที่ต้องการเจาะ industrial market ด้วย physics-informed AI ซึ่งเป็น niche ที่ OpenAI และ Anthropic ยังไม่ได้ focus",
+        impact: "Physics-informed AI ของ Mistral+Emmi เหมาะสำหรับ simulation โรงงาน petrochemical — เช่น simulate heat exchanger fouling, reactor temperature profile หรือ pipe stress analysis เพื่อ predict failure ก่อนที่จะเกิด breakage จริง",
+        tags: ["Mistral AI","Physics AI","Industrial Simulation","Manufacturing AI","Acquisition"]
+      },
+      {
+        title: "🏭 NVIDIA + Corning — 10× ขยาย US Optical Manufacturing เพื่อ AI Infrastructure",
+        source: "nvidianews.nvidia.com",
+        link: "https://nvidianews.nvidia.com/news/nvidia-and-corning-announce-long-term-partnership-to-strengthen-us-manufacturing-for-ai-infrastructure",
+        summary: "NVIDIA และ Corning ประกาศ multiyear partnership ขยาย US-based manufacturing ของ advanced optical connectivity สำหรับ AI infrastructure โดย Corning จะเพิ่ม capacity optical connectivity ขึ้น 10× และ US fiber production ขึ้นกว่า 50% รวม 3 โรงงานใหม่ใน North Carolina และ Texas นอกจากนี้ NVIDIA ยืนยัน ecosystem ใหม่ที่ Caterpillar, Foxconn, Toyota และ TSMC กำลัง build factory digital twins ด้วย Omniverse",
+        context: "การขยาย physical manufacturing เพื่อรองรับ AI infrastructure บ่งชี้ว่า race ด้าน AI compute กำลังขับเคลื่อนการลงทุนใน physical supply chain ด้วย — เป็น virtuous cycle ที่ AI สร้างความต้องการ manufacturing ที่ AI ช่วย optimize อีกทอด",
+        impact: "Caterpillar และ Toyota ที่กำลัง build Omniverse digital twin เป็น reference case ที่ iPAD ควรศึกษา — approach เดียวกันสามารถ apply กับ SCG plant สำหรับ virtual commissioning และ maintenance scenario simulation",
+        tags: ["NVIDIA","Corning","Physical AI","Digital Twin","Omniverse","US Manufacturing"]
+      },
+      {
+        title: "⚠️ HCLTech Report: 43% ของ Enterprise AI Initiatives อาจล้มเหลว",
+        source: "prnewswire.com",
+        link: "https://www.prnewswire.com/news-releases/hcltech-report-warns-43-of-enterprise-ai-initiatives-may-fail-as-leaders-face-shrinking-timelines-for-impact-302777842.html",
+        summary: "20 พ.ค. 2026 — HCLTech เผยแพร่รายงานจากการสำรวจ senior executives 467 คนทั่วโลก พบว่า 43% ของ major enterprise AI initiatives คาดว่าจะล้มเหลว สาเหตุหลัก: integration กับ legacy systems (58%), ขาด AI talent (51%), ไม่มี governance framework (47%) และ ROI ไม่ชัดเจน (44%) ขณะที่ pressure จาก leadership ให้แสดงผลเร็วขึ้นเรื่อยๆ",
+        context: "รายงานนี้ออกมาตรงกับช่วงที่ enterprise กำลัง invest ใน AI สูงมาก — เป็น reality check ว่า enthusiasm ด้าน AI deployment ยังไม่ได้แปลเป็น execution success เสมอไป 'AI Execution Gap' กำลังกว้างขึ้น",
+        impact: "iPAD ควรใช้ข้อมูลนี้เพื่อ justify การลงทุนใน 4 ด้านที่เป็น root cause: (1) integration layer สำหรับ AVEVA/SAP, (2) upskill AI champions ใน maintenance team, (3) สร้าง AI governance doc, (4) กำหนด KPI วัด ROI ที่ชัดเจนสำหรับแต่ละ pilot",
+        tags: ["Enterprise AI","AI Failure","Governance","ROI","HCLTech","Survey"]
+      },
+      {
+        title: "🔍 Google Search เข้าสู่ Era of Agents — Information Agents ทำงาน Background 24/7",
+        source: "blog.google",
+        link: "https://blog.google/products-and-platforms/products/search/search-io-2026/",
+        summary: "19 พ.ค. 2026 — Google ประกาศ Information Agents ใน Search ให้ผู้ใช้สร้าง customize และจัดการ AI agents หลายตัวใน Google Search โดย agents ทำงาน background 24/7 ติดตาม topics ที่สนใจและส่ง update หรือ action กลับมาโดยอัตโนมัติ Gemini 3.5 Flash กลายเป็น default model ใน AI Mode สำหรับทุกคนทั่วโลกแล้ว",
+        context: "Google กำลัง transform Search จาก 'query-response' เป็น 'persistent intelligence layer' ที่ทำงานแทนผู้ใช้ — นี่คือ paradigm shift ที่ใหญ่ที่สุดของ Search ในรอบ 20 ปี",
+        impact: "Concept Information Agent ที่ monitor topics แบบ background สามารถประยุกต์ใน iPAD เพื่อสร้าง agent ที่ monitor technology trends ด้าน industrial AI และ alert team เมื่อมี breakthrough ที่ relevant กับ SCG use cases",
+        tags: ["Google Search","Information Agent","Google I/O 2026","Agentic Search","24/7 Monitoring"]
+      }
+    ],
+    tooling: [
+      {
+        name: "Gemini 3.5 Flash",
+        type: "model",
+        caps: ["Default model ใน Gemini app และ AI Mode ทั่วโลก","4× faster output tokens per second vs frontier models","ราคา < ครึ่งหนึ่งของ comparable frontier models","SOTA บน coding, agentic, multimodal benchmarks","Available บน Vertex AI, AI Studio, Gemini API"],
+        benchmarks: [{ label: "Speed vs Frontier", val: "4× faster", pct: 90, color: "#58a6ff" },
+                     { label: "Cost vs Comparable", val: "<50%", pct: 65, color: "#3fb950" }],
+        limit: "Pro tier (Gemini 3.5 Pro) ยังอยู่ระหว่าง internal testing — GA กำหนด มิ.ย. 2026",
+        link: "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/"
+      },
+      {
+        name: "Gemini Omni",
+        type: "model",
+        caps: ["Any-to-any multimodal: text, image, video, audio","Video output available first — Omni Flash ทันที","Iterative editing: feed output กลับเข้า input ได้","Available: Gemini app, Google Flow, YouTube Shorts","Omni Pro via API สำหรับ developer"],
+        impact: "Any-to-any capability หมายความว่า iPAD สามารถส่ง thermal image + vibration data audio + maintenance log text เข้า Omni พร้อมกัน และรับ structured fault report กลับมา — ลดขั้นตอน preprocessing",
+        link: "https://betanews.com/article/google-io-2026-gemini-flash-omni-spark-search/"
+      },
+      {
+        name: "Gemini Spark",
+        type: "tool",
+        caps: ["Persistent 24/7 agent บน Google Cloud VM","ทำงานต่อเนื่องแม้ device ปิด","Integrate native กับ Google Workspace (Docs, Gmail, Sheets)","Personal VM ของแต่ละผู้ใช้ — ไม่ share state","Available: US Google AI Ultra ($100/month) เร็วๆ นี้"],
+        limit: "เริ่มต้นสำหรับ US Google AI Ultra เท่านั้น — global rollout ยังไม่กำหนด",
+        impact: "Architecture Persistent Agent บน VM เป็น blueprint ที่ iPAD ควรนำมา design AVEVA Monitor Agent — deploy บน VM ภายใน SCG network เพื่อ monitor ต่อเนื่องตลอด 24/7 โดยไม่พึ่ง user session",
+        link: "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/"
+      },
+      {
+        name: "Claude Managed Agents (Dreaming)",
+        type: "tool",
+        caps: ["Dreaming: agent review past sessions เพื่อ self-improve","Multi-agent orchestration: lead + parallel specialist agents","Enterprise: self-hosted sandbox — execute tools ใน on-prem","MCP tunnel: connect private MCP servers ใน enterprise boundary","Financial services: 10 ready-to-run agent templates"],
+        impact: "Self-hosted sandbox + MCP tunnel ทำให้ Claude agents เชื่อมต่อกับ AVEVA OPC-UA และ SAP PM API ภายใน OT/IT network โดยไม่ส่งข้อมูลออกนอก — ตอบโจทย์ data sovereignty ของ SCG โดยตรง",
+        link: "https://9to5mac.com/2026/05/19/anthropic-enhances-claude-managed-agents-with-two-new-privacy-and-security-features/"
+      },
+      {
+        name: "Mistral + Emmi AI (Physics Simulation)",
+        type: "tool",
+        caps: ["Physics-informed AI สำหรับ industrial simulation","Airflow, heat transfer, material stress modeling","เชี่ยวชาญ manufacturing, aerospace, automotive, semiconductor","European AI — GDPR compliant และ data sovereignty ดี","Open-weight model options ที่ on-premise ได้"],
+        impact: "Physics simulation AI เปิดโอกาสใหม่สำหรับ iPAD: simulate heat exchanger fouling ใน LDPE plant หรือ stress analysis ของ pressure vessel โดยใช้ operating data จริง เพื่อ predict failure window ก่อนที่ maintenance จะ critical",
+        link: "https://www.crescendo.ai/news/latest-ai-news-and-updates"
+      },
+      {
+        name: "NVIDIA Omniverse Digital Twin (Factory)",
+        type: "tool",
+        caps: ["Factory digital twin สำหรับ Caterpillar, Foxconn, Toyota, TSMC","Virtual commissioning ก่อน physical deployment","Real-time sync ระหว่าง physical กับ virtual factory","Collaborative robots design + testing บน digital twin","NVIDIA 3-computer architecture สำหรับ autonomous robot"],
+        limit: "ต้องการ NVIDIA infrastructure investment สูง — ยังเหมาะสำหรับ large enterprise เป็นหลัก",
+        impact: "Toyota และ Foxconn ที่กำลัง build Omniverse twin เป็น reference case ที่ iPAD สามารถศึกษา approach เพื่อนำมา apply กับ SCG plant ขนาด pilot — เริ่มจาก single production unit ก่อนขยาย",
+        link: "https://nvidianews.nvidia.com/news/nvidia-and-corning-announce-long-term-partnership-to-strengthen-us-manufacturing-for-ai-infrastructure"
+      }
+    ],
+    community: [
+      {
+        icon: "🚀",
+        title: "Google I/O 2026 — ยุค 'Agents' ทางการแล้ว: Spark ทำงาน 24/7 เปลี่ยน Paradigm",
+        desc: "AI community ตื่นเต้นกับ Google I/O 2026 โดยเฉพาะ Gemini Spark ที่ทำงาน 24/7 บน VM ของ Google Cloud แม้ device ผู้ใช้ปิด — หลายคนมองว่านี่คือ 'real AI agent' ตัวแรกที่ accessible สำหรับ consumer ไม่ใช่แค่ demo บน stage ขณะที่นักพัฒนาถกเถียงว่า Antigravity 2.0 CLI ของ Google จะแย่ง market share จาก Cursor และ Claude Code หรือไม่",
+        link: "https://www.tomsguide.com/news/live/google-io-2026-live-news-updates"
+      },
+      {
+        icon: "💭",
+        title: "Anthropic 'Dreaming' — AI ที่ Improve ตัวเองจากประสบการณ์ กระตุ้นถกเถียง",
+        desc: "Feature 'dreaming' ของ Claude Managed Agents ที่ให้ AI review past sessions และ self-improve สร้างการถกเถียงใหญ่ใน AI research community: กลุ่มหนึ่งมองว่าเป็นก้าวสำคัญสู่ continual learning ในระดับ production; อีกกลุ่มตั้งข้อกังวลด้าน alignment — agent ที่ self-modify behavior อาจ drift ออกจาก original objective โดยไม่รู้ตัว Anthropic ระบุว่ายังเป็น research preview และ session memory ถูกจำกัด scope ไว้",
+        link: "https://letsdatascience.com/blog/anthropic-dreaming-claude-managed-agents-self-improving-may-6"
+      },
+      {
+        icon: "⚠️",
+        title: "HCLTech 43% Failure Warning — AI Execution Gap ที่ Community กำลังเผชิญจริง",
+        desc: "รายงาน HCLTech ที่ระบุ 43% failure rate ก่อให้เกิดถกเถียงใน enterprise tech community อย่างกว้างขวาง — CIOs และ IT leaders ใน LinkedIn และ Hacker News ต่างยืนยันว่า 'gap ระหว่าง AI hype กับ execution เป็นเรื่องจริง' สาเหตุหลักที่ถูกพูดถึงมากที่สุดคือ legacy system integration และ unclear ROI ซึ่งตรงกับสิ่งที่ IBM ก็เตือนไว้ที่ Think 2026 ว่า AI divide กำลังขยาย",
+        link: "https://www.prnewswire.com/news-releases/hcltech-report-warns-43-of-enterprise-ai-initiatives-may-fail-as-leaders-face-shrinking-timelines-for-impact-302777842.html"
+      },
+      {
+        icon: "🏭",
+        title: "Factory Digital Twin Momentum — Toyota, Foxconn, Caterpillar ล้วนใช้ NVIDIA Omniverse",
+        desc: "ข่าว NVIDIA ที่เผยว่า Toyota, Foxconn, Caterpillar และ TSMC ต่างกำลัง build factory digital twins บน Omniverse ทำให้ manufacturing community เริ่มมองว่า digital twin ไม่ใช่ optional อีกต่อไป — เป็น baseline ของ smart factory ยุคหน้า Manufacturing Dive รายงานว่า organizations ที่ลงทุน digital twin มีอัตรา unplanned downtime ลดลงเฉลี่ย 35% ใน 18 เดือนแรกหลัง deployment",
+        link: "https://nvidianews.nvidia.com/news/nvidia-us-manufacturing-robotics-physical-ai"
+      }
+    ],
+    ipadSummary: "สัปดาห์ Google I/O 2026 (16–22 พ.ค.) มี 4 signal สำคัญสำหรับ iPAD: (1) Persistent 24/7 Agent Architecture ถึง Production แล้ว — Gemini Spark และ Claude Managed Agents (self-hosted) ทั้งคู่ชี้ทิศทางเดียวกัน: deploy agent บน VM ภายใน network ขององค์กร ทำงานต่อเนื่องไม่หยุด iPAD ควรออกแบบ AVEVA Monitor Agent ตาม pattern นี้ โดยใช้ Claude Managed Agents with MCP tunnel เพื่อ connect กับ AVEVA OPC-UA server ภายใน OT network; (2) Any-to-Any Multimodal เปิดโอกาสใหม่ด้าน Sensor Fusion — Gemini Omni ที่รับ image+audio+text พร้อมกันและ output report เดียว ช่วยให้ iPAD ออกแบบ inspection agent ที่ fuse ข้อมูลจาก thermal camera, vibration sensor และ operator note ในขั้นตอนเดียวโดยไม่ต้อง pre-process แยก; (3) Physics AI เป็น Frontier ใหม่ที่ยังไม่มีใครครอง — การซื้อ Emmi AI ของ Mistral เปิด gap ที่ iPAD สามารถ exploit ด้วย physics-informed predictive maintenance model สำหรับ heat exchanger, reactor หรือ rotating equipment ที่ general LLM ยังทำได้ไม่ดี; (4) Governance ก่อน Scale เป็น Lesson ที่ต้องฟัง — HCLTech 43% failure ยืนยันว่า iPAD ต้องลงทุนสร้าง AI Governance Framework พร้อมๆ กับ expand deployment ไม่ใช่หลังจาก scale แล้วค่อยมาแก้ ควรกำหนด KPI, audit trail และ model documentation สำหรับทุก agent ที่ deploy ในโรงงาน"
+  },
+
+  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
+  "2026-05-29": {
+    weekLabel: "23–29 พฤษภาคม 2026",
+    publishDate: "29 พฤษภาคม 2026",
     stats: { news: 0, tools: 0, community: 0, industrial: 0 },
     sources: "",
     bigMoves: [],
