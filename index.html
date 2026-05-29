@@ -997,10 +997,179 @@ const REPORTS = {
     ipadSummary: "สัปดาห์ Google I/O 2026 (16–22 พ.ค.) มี 4 signal สำคัญสำหรับ iPAD: (1) Persistent 24/7 Agent Architecture ถึง Production แล้ว — Gemini Spark และ Claude Managed Agents (self-hosted) ทั้งคู่ชี้ทิศทางเดียวกัน: deploy agent บน VM ภายใน network ขององค์กร ทำงานต่อเนื่องไม่หยุด iPAD ควรออกแบบ AVEVA Monitor Agent ตาม pattern นี้ โดยใช้ Claude Managed Agents with MCP tunnel เพื่อ connect กับ AVEVA OPC-UA server ภายใน OT network; (2) Any-to-Any Multimodal เปิดโอกาสใหม่ด้าน Sensor Fusion — Gemini Omni ที่รับ image+audio+text พร้อมกันและ output report เดียว ช่วยให้ iPAD ออกแบบ inspection agent ที่ fuse ข้อมูลจาก thermal camera, vibration sensor และ operator note ในขั้นตอนเดียวโดยไม่ต้อง pre-process แยก; (3) Physics AI เป็น Frontier ใหม่ที่ยังไม่มีใครครอง — การซื้อ Emmi AI ของ Mistral เปิด gap ที่ iPAD สามารถ exploit ด้วย physics-informed predictive maintenance model สำหรับ heat exchanger, reactor หรือ rotating equipment ที่ general LLM ยังทำได้ไม่ดี; (4) Governance ก่อน Scale เป็น Lesson ที่ต้องฟัง — HCLTech 43% failure ยืนยันว่า iPAD ต้องลงทุนสร้าง AI Governance Framework พร้อมๆ กับ expand deployment ไม่ใช่หลังจาก scale แล้วค่อยมาแก้ ควรกำหนด KPI, audit trail และ model documentation สำหรับทุก agent ที่ deploy ในโรงงาน"
   },
 
-  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
+  /* ─── WEEK: 23–29 พฤษภาคม 2026 ─────────────────── */
   "2026-05-29": {
     weekLabel: "23–29 พฤษภาคม 2026",
     publishDate: "29 พฤษภาคม 2026",
+    stats: { news: 8, tools: 6, community: 4, industrial: 4 },
+    sources: "Anthropic News · OpenAI News · Fortune · Build Fast with AI · LLM Stats · CNN Business · MarkTechPost · TokenMix · Cybersecurity Insiders · CSA · Microsoft Security Blog · Seedance AI · Moonshot AI",
+
+    bigMoves: [
+      /* ── โมเดลใหม่ สหรัฐฯ & ยุโรป ── */
+      {
+        title: "🤖 Anthropic Mythos — Reasoning Model ที่จุดชนวนให้รัฐบาลสหรัฐฯ ทบทวนนโยบาย AI",
+        source: "fortune.com",
+        link: "https://fortune.com/2026/05/06/trump-administration-embraces-ai-oversight-policies-it-once-rejected-anthropic-mythos-caisi/",
+        summary: "Anthropic เปิดตัว 'Mythos' โมเดล reasoning ขั้นสูงสำหรับการวางแผนเชิงกลยุทธ์และการวิเคราะห์แบบหลายขั้นตอน โมเดลดังกล่าวสามารถค้นพบช่องโหว่ในระบบ legacy ได้ด้วยตัวเอง จนเป็นตัวเร่งให้ Trump administration ที่เคยต่อต้าน AI oversight เปลี่ยนมาสนับสนุน pre-deployment testing อย่างเต็มตัว หัวหน้าฝ่ายนโยบาย Anthropic ประเมินโอกาส 60% ที่ AI จะเริ่ม self-improve แบบวนซ้ำได้ภายในปี 2028",
+        context: "Mythos เป็นสัญญาณที่ชัดที่สุดถึงปัจจุบันว่า AI เริ่มมีความสามารถค้นพบ vulnerability ในระบบที่ซับซ้อนโดยไม่ต้องมนุษย์ guide — นี่คือ capability ที่ทั้งมีประโยชน์มหาศาลและอันตรายหากตกอยู่ในมือที่ผิด",
+        impact: "Reasoning model เฉพาะทางแบบ Mythos เปิดโอกาสสำหรับ iPAD ในการสร้าง SCG-specific reasoning model ที่วิเคราะห์ AVEVA fault pattern ได้ลึกกว่า general LLM — เฉพาะอย่างยิ่งสำหรับ Root Cause Analysis ที่ต้องการ multi-step logical reasoning บน sensor data",
+        tags: ["Anthropic","Reasoning AI","AI Safety","Policy","Mythos"]
+      },
+      {
+        title: "🚀 OpenAI GPT-5.4 Pro + DeployCo $4B — Enterprise AI Deployment เข้าสู่ยุค Production",
+        source: "openai.com",
+        link: "https://openai.com/news/",
+        summary: "OpenAI เปิดตัว GPT-5.4 และ GPT-5.4 Pro โมเดล frontier สำหรับงานมืออาชีพที่มี native computer use, Agentic workflows ขั้นสูง และ context window สูงสุด 1 ล้าน token พร้อมกันนั้น OpenAI เปิดตัว DeployCo บริษัทที่ปรึกษา AI ในเครือมูลค่ากว่า $4 พันล้าน ควบรวมกับ Tomoro (วิศวกร Applied AI 150 คน) และปล่อย Frontier platform สำหรับ orchestrate AI agents ระดับองค์กร",
+        context: "การเปิดตัว DeployCo พร้อมกันกับ GPT-5.4 Pro ชี้ให้เห็นว่า OpenAI กำลัง verticalize ทั้ง model capability และ deployment services ในครั้งเดียว — เป็นการแข่งขันโดยตรงกับ Accenture, Deloitte และ big SI อื่นๆ ในตลาด enterprise AI integration",
+        impact: "GPT-5.4 Pro ที่ใช้คอมพิวเตอร์ได้โดยตรงและมี context 1M token เปิดโอกาส iPAD สร้าง agent ที่อ่าน P&ID ทั้งฉบับ, maintenance log หลายปี และ AVEVA alert history พร้อมกันในการ query เดียว โดยไม่ต้อง chunk document",
+        tags: ["OpenAI","GPT-5.4","Computer Use","DeployCo","Agentic Platform","Enterprise AI"]
+      },
+      {
+        title: "💰 Anthropic ปิดรอบ $30B+ + คาดรายได้ Q2 ที่ $10.9B — กำไรการดำเนินงานครั้งแรก",
+        source: "buildfastwithai.com",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-may-28-2026",
+        summary: "รอบระดมทุนประวัติศาสตร์ของ Anthropic ปิดในสัปดาห์ที่ 26 พ.ค. 2569 ร่วมนำโดย Sequoia Capital, Dragoneer, Altimeter Capital และ Greenoaks Capital Partners ขณะเดียวกัน Anthropic ประกาศคาดการณ์รายได้ Q2 ที่ $10.9 พันล้าน — กำไรการดำเนินงานครั้งแรกในประวัติศาสตร์บริษัท สะท้อนว่าการเติบโตจากลูกค้าองค์กร (KPMG, Goldman Sachs, Big Four) กำลัง convert เป็นรายได้จริงอย่างรวดเร็ว",
+        context: "ใน 12 เดือนที่ผ่านมา Anthropic พลิกจาก 9% ส่วนแบ่งลูกค้าองค์กรเป็น 34.4% — เกิน OpenAI ที่ 32.3% trajectory นี้เร็วกว่าที่ market คาดไว้มาก และชี้ให้เห็นว่า 'reliability-first' strategy ของ Anthropic ได้รับการยืนยันจากตลาด",
+        impact: "ความแข็งแกร่งทางการเงินของ Anthropic ยืนยันความมั่นคงของ Claude เป็น AI backbone สำหรับ iPAD ระยะยาว — ลดความเสี่ยงที่ provider จะหยุดให้บริการหรือ pivot strategy อย่างฉับพลัน",
+        tags: ["Anthropic","Funding","Revenue","Profitability","Claude","Enterprise AI"]
+      },
+      /* ── AI จีน ── */
+      {
+        title: "🇨🇳 DeepSeek V4 Pro & Flash — ทำงานบนชิป Huawei ไม่พึ่ง Nvidia แข่งได้ทุกเวที",
+        source: "cnn.com",
+        link: "https://www.cnn.com/2026/04/24/tech/chinas-ai-deepseek-v4-intl-hnk",
+        summary: "DeepSeek ปล่อย V4-Pro และ V4-Flash ทำงานบนชิป Huawei และ Cambricon ของจีนอย่างสมบูรณ์ ไม่พึ่งพา Nvidia อีกต่อไป V4-Pro ชนะ open-source model ทุกตัวในด้านคณิตศาสตร์และเขียนโค้ด ตามหลังเพียง Gemini 3.1-Pro ในด้าน world knowledge V4-Flash ทำงานเร็วและประหยัด compute มากกว่า ทั้งคู่รองรับ Agentic workflows ขั้นสูง",
+        context: "การที่ DeepSeek สามารถ match ผลลัพธ์ระดับโลกด้วยชิปในประเทศ พิสูจน์ว่า chip sanctions ของสหรัฐฯ ไม่ได้หยุด China AI advancement ได้อย่างที่หวัง — เป็นสัญญาณสำคัญว่า AI race กำลังแตกเป็น 2 track: US-led และ China-led",
+        impact: "DeepSeek V4 Pro ในฐานะ open-source model ที่มีประสิทธิภาพสูงเป็นทางเลือกที่น่าประเมินสำหรับ local deployment บน SCG OT network — ลด API cost และ data sovereignty concern แต่ต้องประเมิน compliance และ supply chain risk ก่อน",
+        tags: ["DeepSeek","China AI","Huawei Chip","Open Source","Agentic AI","Chip Independence"]
+      },
+      {
+        title: "🐉 Alibaba Qwen Ecosystem — 100K+ Derivatives บน HuggingFace + Wan 2.7 Video AI + Qwen3.5-Omni",
+        source: "tokenmix.ai",
+        link: "https://tokenmix.ai/blog/best-chinese-ai-models-2026-comparison-guide",
+        summary: "ตระกูลโมเดล Qwen ของ Alibaba สร้างสถิติใหม่ด้วย Derivative กว่า 100,000 โมเดลบน Hugging Face — มากกว่าทุก model family อื่นในโลก รุ่นล่าสุด Qwen3.5-Omni รวม text, ภาพ, เสียง และวิดีโอในระบบเดียว แข่งตรงกับ Gemini 3.1 Pro ด้านความสามารถ multimodal ส่วน Wan 2.7 โมเดลวิดีโอ 27B พารามิเตอร์ รองรับการกำหนดเฟรมแรก สร้างวิดีโอยาวสูงสุด 15 วินาที บน Diffusion Transformer architecture",
+        context: "ขนาด Ecosystem ของ Qwen ที่ใหญ่กว่า Llama, Gemma หรือ GPT รวมกันบน HuggingFace บ่งชี้ว่า developer community ทั่วโลกเลือก Qwen เป็น foundation สำหรับ fine-tuning จำนวนมาก — เป็น network effect ที่แข็งแกร่งมาก",
+        impact: "Qwen3.5-Omni ที่ราคาประหยัดและ multimodal เต็มรูปแบบเป็นทางเลือกที่น่าทดสอบสำหรับ iPAD Inspection Agent ที่ต้องการ process ทั้งภาพ thermal, เสียง vibration และข้อความ log ในขั้นตอนเดียว",
+        tags: ["Alibaba","Qwen","Wan 2.7","Multimodal","Video AI","Open Source","China AI","HuggingFace"]
+      },
+      {
+        title: "🤖 Kimi K2.6 (Moonshot AI) — Open Model แรกที่ชนะ GPT-5.4 บน SWE-Bench, Agent Swarm 300 ตัว",
+        source: "marktechpost.com",
+        link: "https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/",
+        summary: "Moonshot AI ปล่อย Kimi K2.6 โมเดล open-weight MoE 1 ล้านล้านพารามิเตอร์ (activate 32B ต่อ token) กลายเป็น open-source model แรกที่เอาชนะ GPT-5.4 บน SWE-Bench Pro benchmark รองรับ context 256K token, Agent Swarm สูงสุด 300 ตัวพร้อมกัน 4,000 ขั้นตอนต่อเนื่อง เผยแพร่ภายใต้ Modified MIT license ใช้งานเชิงพาณิชย์ได้",
+        context: "K2.6 ยืนยันว่า open-weight model จากจีน ไม่ได้แค่ตามหลัง proprietary model อีกต่อไปแล้ว — การที่ beat GPT-5.4 Pro บน coding benchmark เป็นสัญญาณว่า capability gap ระหว่าง open และ closed กำลังปิดตัวเร็วมาก",
+        impact: "Agent Swarm 300 ตัวที่ K2.6 รองรับได้คือ blueprint สำหรับ iPAD multi-plant monitoring system — agent แต่ละตัว monitor โรงงานแต่ละแห่ง หรือ asset แต่ละ loop พร้อมกันโดยมี lead agent รวบรวม summary ส่ง on-call engineer",
+        tags: ["Kimi K2.6","Moonshot AI","China AI","Agent Swarm","Open Source","SWE-Bench","MoE"]
+      },
+      /* ── นโยบาย & ความปลอดภัย ── */
+      {
+        title: "🛡️ CAISI ลงนามครบ 5 Lab + OpenAI Frontier Governance + EU AI Act สิงหาคม 2026",
+        source: "openai.com",
+        link: "https://openai.com/news/",
+        summary: "29 พ.ค. 2569 สามเหตุการณ์ด้านกฎระเบียบสำคัญเกิดขึ้นพร้อมกัน: (1) CAISI ของกระทรวงพาณิชย์สหรัฐฯ ลงนามข้อตกลงประเมิน AI ก่อนเปิดตัวครบทั้ง 5 lab ชั้นนำ (OpenAI, Anthropic, Google DeepMind, Microsoft, xAI) — ทุก major US model release ต้องผ่านการตรวจสอบก่อน launch (2) OpenAI เผย Frontier Governance Framework ระบุความมุ่งมั่นด้านความปลอดภัยและความโปร่งใส (3) กฎ Transparency ของ EU AI Act มีผลบังคับใช้สิงหาคม 2569 กระทบทุกผู้ให้บริการในยุโรป",
+        context: "ทั้ง 3 เหตุการณ์นี้รวมกันบ่งชี้ว่า AI governance กำลังเปลี่ยนจาก voluntary guidelines เป็น mandatory compliance framework — ทั้งในสหรัฐฯ และ EU ในเวลาใกล้เคียงกัน เป็นสัญญาณว่าองค์กรที่ deploy AI ต้องเตรียม compliance documentation ทันที",
+        impact: "iPAD ควรเริ่มสร้าง AI Governance documentation สำหรับ AVEVA monitoring agents ทุกตัว: (1) Model card ระบุ provider และ version (2) Data flow diagram แสดงว่า process data ไหลไปที่ใด (3) Audit log สำหรับทุก AI decision ที่ส่งผลต่อ maintenance action — เพื่อเตรียมความพร้อมสำหรับ regulatory audit ในอนาคต",
+        tags: ["CAISI","AI Governance","Regulation","EU AI Act","OpenAI","Policy","Compliance"]
+      },
+      {
+        title: "🏢 KPMG + Claude 276,000 คน · Big Four 3/4 ใช้ Claude · Cohere+Aleph Alpha $20B Sovereign AI",
+        source: "buildfastwithai.com",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-may-28-2026",
+        summary: "สัปดาห์นี้มีการ deploy AI ระดับองค์กรขนาดใหญ่ 3 รายการ: (1) KPMG Digital Gateway ใช้ Claude กับพนักงาน 276,000 คนใน 138 ประเทศ — หนึ่งในการ deploy AI องค์กรที่ใหญ่ที่สุดในประวัติศาสตร์ (2) 3 จาก 4 บริษัท Big Four Audit ทั่วโลกลงนามสัญญา Claude ขนาดใหญ่แล้ว ครอบคลุม Tax, Audit และ Advisory (3) Cohere ควบรวมกับ Aleph Alpha (เยอรมนี) สร้าง Sovereign AI มูลค่า $20B เป็นทางเลือกแบบ Transatlantic จากการครอบงำของสหรัฐฯ-จีน",
+        context: "การที่ Big Four ส่วนใหญ่เลือก Claude ยืนยันว่า Anthropic กำลัง win ตลาด high-stakes professional services ที่ต้องการ accuracy และ safety สูงสุด — เป็น reference ที่ทรงพลังสำหรับ enterprise AI procurement",
+        impact: "KPMG case study เป็น benchmark ที่ iPAD สามารถนำเสนอต่อ SCG leadership เพื่อ justify การ expand Claude deployment จาก pilot สู่ organization-wide — scale ของ KPMG ยืนยันว่า production readiness ของ Claude เพียงพอสำหรับองค์กรขนาดใหญ่",
+        tags: ["KPMG","Claude","Big Four","Enterprise AI","Cohere","Aleph Alpha","Sovereign AI","Anthropic"]
+      }
+    ],
+
+    tooling: [
+      {
+        name: "Anthropic Mythos",
+        type: "model",
+        caps: ["Advanced multi-step reasoning สำหรับ strategic planning","ค้นพบ vulnerabilities ใน legacy systems ได้อัตโนมัติ","เหมาะสำหรับ RCA ที่ต้องการ causal reasoning ลึก","ยังอยู่ใน limited access — contact Anthropic สำหรับ enterprise"],
+        benchmarks: [{ label: "Reasoning Depth", val: "Frontier", pct: 95, color: "#bc8cff" },
+                     { label: "Security Analysis", val: "Best-in-class", pct: 92, color: "#f85149" }],
+        limit: "Limited access — รัฐบาลสหรัฐฯ กำลัง review ก่อนเปิด broader access",
+        link: "https://fortune.com/2026/05/06/trump-administration-embraces-ai-oversight-policies-it-once-rejected-anthropic-mythos-caisi/"
+      },
+      {
+        name: "OpenAI GPT-5.4 Pro + Frontier Platform",
+        type: "tool",
+        caps: ["Context window 1 ล้าน token — อ่าน P&ID ทั้งฉบับได้ในครั้งเดียว","Native computer use — agent ควบคุมซอฟต์แวร์ได้โดยตรง","Frontier platform: orchestrate, deploy และ audit agents ระดับองค์กร","Shared context ระหว่าง agents — ลด workflow silos"],
+        benchmarks: [{ label: "Context Window", val: "1M tokens", pct: 95, color: "#58a6ff" },
+                     { label: "Agentic Capability", val: "High", pct: 88, color: "#3fb950" }],
+        limit: "Computer use ยังอยู่ใน beta — ควรทดสอบ reliability บน critical workflow ก่อน",
+        impact: "Frontier platform เป็นทางเลือกสำหรับ iPAD orchestration layer — evaluate เทียบกับ Claude Managed Agents และ watsonx Orchestrate เพื่อเลือก control plane ที่เหมาะสมที่สุด",
+        link: "https://openai.com/news/"
+      },
+      {
+        name: "DeepSeek V4 Pro (Open Source)",
+        type: "model",
+        caps: ["ชนะ open-source ทุกตัวด้าน math และ coding","ทำงานบนชิป Huawei + Cambricon — ไม่ต้องพึ่ง Nvidia","Available บน HuggingFace — deploy ได้ทันที","Agentic capabilities: ทำงานแทนผู้ใช้ได้อัตโนมัติ"],
+        impact: "ทางเลือก open-source ที่มีประสิทธิภาพสูงสุดสำหรับ local deployment บน SCG OT network — ต้องประเมิน compliance risk ด้าน data sovereignty กับ Chinese software ก่อน deploy ใน critical environment",
+        limit: "ต้องประเมิน cybersecurity risk ของ software ที่มาจาก China ตาม SCG IT/OT security policy ก่อน",
+        link: "https://www.cnn.com/2026/04/24/tech/chinas-ai-deepseek-v4-intl-hnk"
+      },
+      {
+        name: "Kimi K2.6 — Agent Swarm (Open Weight)",
+        type: "model",
+        caps: ["MoE 1T params, 32B active — ประสิทธิภาพสูง compute ต่ำ","Agent Swarm: 300 sub-agents, 4,000 coordinated steps","Context 256K token — เหมาะสำหรับ long-horizon task","MIT license: ใช้งานเชิงพาณิชย์ได้ฟรี","ชนะ GPT-5.4 บน SWE-Bench Pro — coding SOTA open model"],
+        benchmarks: [{ label: "SWE-Bench Pro", val: "Best Open", pct: 89, color: "#58a6ff" },
+                     { label: "Agent Swarm Scale", val: "300 agents", pct: 95, color: "#bc8cff" }],
+        impact: "Multi-agent swarm architecture ของ K2.6 เป็น blueprint ที่น่าสนใจสำหรับ iPAD สำหรับ monitor หลาย plant พร้อมกัน — แต่ต้องประเมิน supply chain risk ของ software จาก Chinese lab ก่อนนำมา deploy ใน production",
+        link: "https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/"
+      },
+      {
+        name: "Wan 2.7 — AI Video Model (Alibaba)",
+        type: "model",
+        caps: ["Diffusion Transformer + Flow Matching, ~27B params","สร้างวิดีโอยาวสูงสุด 15 วินาที","First-frame & last-frame control — กำหนดจุดเริ่มต้นและจุดสิ้นสุดได้","Available ผ่าน WaveSpeedAI API และ Alibaba Cloud DashScope"],
+        impact: "Video generation ที่ควบคุม frame ได้อาจนำมาใช้ใน training data สำหรับ computer vision model — สร้าง synthetic video ของ equipment failure scenario เพื่อ train inspection AI โดยไม่ต้องรอ real incident",
+        limit: "ต้องประเมิน IP และ data policy ของ Alibaba Cloud ก่อน use สำหรับ proprietary process video",
+        link: "https://seedance20.net/blog/wan-2-7-video-generator"
+      },
+      {
+        name: "Microsoft Multi-Model Agentic Security System",
+        type: "tool",
+        caps: ["Multi-model agent ประสานงานเพื่อ threat detection real-time","ผ่าน benchmark อุตสาหกรรมชั้นนำด้านความเร็วการตรวจจับ","ครอบคลุม Endpoint, Cloud และ Identity surface","AI-powered counter-discovery สำหรับ zero-day threats"],
+        impact: "Architecture นี้ตรงกับความต้องการด้าน OT/ICS security ของ SCG — multi-agent approach ที่ agent แต่ละตัว monitor ส่วนต่างๆ ของ network (SCADA, DCS, Historian) สามารถ detect anomaly ที่ single-point system พลาดได้",
+        link: "https://www.microsoft.com/en-us/security/blog/2026/05/12/defense-at-ai-speed-microsofts-new-multi-model-agentic-security-system-tops-leading-industry-benchmark/"
+      }
+    ],
+
+    community: [
+      {
+        icon: "🇨🇳",
+        title: "China AI Wave — DeepSeek, Qwen, Kimi ล้วน Match หรือ Beat ค่าย US แล้วในหลาย Benchmark",
+        desc: "AI community ทั่วโลกพูดถึง 'China AI convergence' — ใน 3 เดือนที่ผ่านมา DeepSeek V4 ชนะ open-source ทุกตัว, Kimi K2.6 ชนะ GPT-5.4 บน coding, Qwen มี ecosystem ใหญ่สุดบน HuggingFace ชุมชนนักพัฒนาถกเถียงว่า open-source เป็น 'trojan horse' ที่ทำให้จีน gain adoption จากนักพัฒนาทั่วโลกโดยไม่ต้องผ่าน enterprise sales",
+        link: "https://tokenmix.ai/blog/best-chinese-ai-models-2026-comparison-guide"
+      },
+      {
+        icon: "💰",
+        title: "Anthropic $30B+ — AI Community: 'Safety-First กำไรได้จริงแล้ว'",
+        desc: "ข่าว Anthropic ปิดรอบระดมทุน $30B+ และประกาศกำไรการดำเนินงานครั้งแรกสร้างกระแสใน AI community — นักวิเคราะห์หลายคนมองว่านี่คือ validation ที่ชัดที่สุดว่า 'responsible AI' ไม่จำเป็นต้องเสียสละ commercial success กับ OpenAI ที่ยังขาดทุนอยู่ คำถามที่ community กำลังถกคือ Anthropic จะเร่ง scale หรือยังคง 'safety-paced' ต่อไป",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-may-28-2026"
+      },
+      {
+        icon: "🛡️",
+        title: "92% ของ Security Leaders กังวลเรื่อง AI Agents — Governance Gap ขยาย",
+        desc: "CSA State of AI Cybersecurity 2026 พบว่า 92% ของผู้เชี่ยวชาญความปลอดภัยกังวลเรื่อง AI agents ขณะที่มีเพียง 37% ที่มีนโยบาย AI อย่างเป็นทางการ — gap นี้กำลังขยายตัว security community กำลังถกว่า 'AI agent' ควรถูก treat เหมือน employee, software, หรือ contractor ในแง่ของ access control และ liability เมื่อ agent ทำผิดพลาด",
+        link: "https://cloudsecurityalliance.org/blog/2026/05/27/state-of-ai-cybersecurity-2026-92-of-security-professionals-concerned-about-the-impact-of-ai-agents"
+      },
+      {
+        icon: "🌍",
+        title: "Sovereign AI คือ Trend ใหม่ — Cohere+Aleph Alpha $20B เปิดทางเลือก Non-US/China",
+        desc: "การรวมตัวของ Cohere และ Aleph Alpha สร้าง 'third pole' ใน AI race — European และ Asian enterprise ที่ไม่ต้องการพึ่งพา US-China duopoly มีทางเลือกใหม่ ชุมชนถกเถียงว่า Sovereign AI จะ viable ระยะยาวหรือไม่ เมื่อ US-China ยังมีความได้เปรียบด้าน compute และ talent อย่างมาก อย่างไรก็ตาม regulatory pressure ของ EU กำลังเป็น tailwind สำคัญสำหรับ Sovereign AI providers",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-may-28-2026"
+      }
+    ],
+
+    ipadSummary: "สัปดาห์ 23–29 พ.ค. 2569 มี 4 signal สำคัญสำหรับ iPAD: (1) China AI ไม่ใช่แค่ 'follower' อีกต่อไป — DeepSeek V4 บนชิป Huawei, Kimi K2.6 ที่ชนะ GPT-5.4, และ Qwen ecosystem 100K+ derivatives ยืนยันว่าจีนเป็น peer competitor ที่แท้จริง iPAD ควรประเมิน Chinese open-source models (โดยเฉพาะ DeepSeek และ Qwen) เป็น on-premise alternative ที่ประหยัด cost — แต่ต้องมี clear policy ด้าน data governance และ supply chain risk ก่อน (2) AI Governance กลายเป็น Mandatory Compliance — CAISI agreements + EU AI Act + OpenAI Governance Framework ที่ออกพร้อมกันในสัปดาห์เดียวบ่งชี้ว่า regulatory wave มาถึงแล้ว iPAD ต้องสร้าง AI governance documentation (model cards, data flow, audit logs) ภายใน Q3/2026 ก่อนที่จะถูกบังคับ; (3) Enterprise AI Adoption เร่งตัวอย่างมีนัย — KPMG 276,000 คน, Big Four 3/4 ใช้ Claude, Goldman Sachs automation ยืนยันว่า production-grade AI deployment ใน high-stakes environment ทำได้จริง iPAD ควรเร่ง expand จาก AVEVA monitoring pilot ไปสู่ SAP PM integration และ cross-plant deployment; (4) Agent Swarm เป็น Architecture ถัดไปที่ต้องเรียนรู้ — K2.6 ที่รองรับ 300 sub-agents และ Claude Managed Agents ที่ multi-agent orchestration ชี้ทิศทางเดียวกัน: iPAD ควรออกแบบ architecture ที่ agent แต่ละตัวดูแล loop หรือ asset เฉพาะ แล้วมี master agent รวบรวม summary และ escalate เฉพาะ high-priority alert ให้ on-call engineer"
+  },
+
+  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
+  "2026-06-05": {
+    weekLabel: "30 พ.ค. – 5 มิ.ย. 2026",
+    publishDate: "5 มิถุนายน 2026",
     stats: { news: 0, tools: 0, community: 0, industrial: 0 },
     sources: "",
     bigMoves: [],
