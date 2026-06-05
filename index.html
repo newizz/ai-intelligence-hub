@@ -1168,10 +1168,10 @@ const REPORTS = {
 
   /* ─── WEEK: 30 พฤษภาคม – 2 มิถุนายน 2026 ────────── */
   "2026-05-30": {
-    weekLabel: "30 พ.ค. – 2 มิ.ย. 2026",
-    publishDate: "2 มิถุนายน 2026",
-    stats: { news: 8, tools: 6, community: 4, industrial: 4 },
-    sources: "Anthropic Blog · TechCrunch · Google DeepMind · CNBC · The Next Web · Manufacturing Dive · COMPUTEX 2026",
+    weekLabel: "30 พ.ค. – 5 มิ.ย. 2026",
+    publishDate: "5 มิถุนายน 2026",
+    stats: { news: 12, tools: 10, community: 6, industrial: 6 },
+    sources: "Anthropic Blog · TechCrunch · Google DeepMind · CNBC · The Next Web · Manufacturing Dive · COMPUTEX 2026 · White House · Gartner · McKinsey · The AI Track · AIapps.com",
 
     bigMoves: [
       // ── US / Europe Models ──────────────────────────
@@ -1249,6 +1249,43 @@ const REPORTS = {
         impact: "SCG ในฐานะบริษัทที่มีธุรกิจระดับโลก อาจต้องเตรียม AI governance documentation สำหรับ models ที่ใช้งานใน production ก่อน EU AI Act deadline",
         link: "https://www.cnn.com/2026/05/05/tech/microsoft-google-xai-government-test-ai-models",
         tags: ["Policy", "AI Governance", "Security", "EU AI Act"]
+      },
+      // ── June 3–5 Updates ────────────────────────────
+      {
+        title: "⚡ DeepSeek V4 Pro ลดราคา 75% — Commodity AI เร็วกว่าคาด",
+        source: "theaitrack.com",
+        link: "https://theaitrack.com/ai-news-june-2026-in-depth-and-concise/",
+        summary: "DeepSeek V4 Pro ประกาศลดราคา 75% ทำให้โมเดล frontier-class กลายเป็น commodity สำหรับ AI agents, coding tools และ long-context workflows บริษัทที่ต้องประมวลผลเอกสารจำนวนมาก (SOP, maintenance log, P&ID) จะได้ประโยชน์ทันที",
+        context: "DeepSeek เป็นตัวเร่งสำคัญที่ทำให้ OpenAI และ Anthropic ต้องแข่งกันลดราคา — คาดว่า API pricing สำหรับ million-token context จะลด 50-70% ภายใน H2 2026",
+        impact: "ต้นทุน AI query สำหรับ iPAD จะลดลงอย่างมีนัยสำคัญ — โดยเฉพาะ use case ที่ส่ง long context เช่น plant documentation Q&A หรือ multi-turn maintenance chat",
+        tags: ["DeepSeek","Cost Reduction","AI Economics","Long Context"]
+      },
+      {
+        title: "🖥️ Microsoft MAI-Code-1-Flash — Microsoft เปิดตัว Proprietary Coding Model ตัวแรก",
+        source: "cnbc.com",
+        link: "https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html",
+        summary: "2 มิ.ย. 2026 — Microsoft เปิดตัว MAI-Code-1-Flash โมเดล code generation ตัวแรกของบริษัทเองเพื่อลด dependency บน OpenAI รับ text description แล้ว generate source code โดยตรง รันบน Azure AI Foundry",
+        context: "Microsoft ใช้เวลากว่า 5 ปีเป็น customer ของ OpenAI ก่อน build proprietary model ตัวแรก — สัญญาณว่า hyperscalers ทุกเจ้าจะ internalize AI capability แทนพึ่ง third-party",
+        impact: "หาก SCG ใช้ Azure เป็น cloud หลัก MAI-Code-1-Flash ผ่าน Azure AI Foundry จะช่วย automate IEC 61131 PLC code generation หรือ Python script สำหรับ data pipeline โดยไม่ต้องพึ่ง external LLM",
+        tags: ["Microsoft","MAI-Code","Coding AI","Azure","Enterprise AI"]
+      },
+      {
+        title: "🔬 OpenAI พิสูจน์ทฤษฎีคณิตศาสตร์ขั้นสูง + AI Climate Model เร็วขึ้น 25 เท่า",
+        source: "theaitrack.com",
+        link: "https://theaitrack.com/ai-news-june-2026-in-depth-and-concise/",
+        summary: "มิ.ย. 2026 — OpenAI model disprove conjecture ใน discrete geometry ได้สำเร็จ บ่งชี้ว่า AI สามารถทำ frontier mathematical reasoning ได้จริง ในขณะเดียวกัน UC San Diego เผยแพร่ AI climate model ที่รันเร็วขึ้น 25 เท่าด้วย hybrid generative+physics approach",
+        context: "Scientific reasoning ใน AI กำลัง spillover จาก pure math ไปสู่ engineering domain — ปี 2027-2028 อาจเห็น AI ที่ solve complex process engineering problems ได้อัตโนมัติ",
+        impact: "AI reasoning ที่แข็งแกร่งขึ้นหมายถึง Root Cause Analysis บน complex fault patterns จะแม่นยำขึ้น — multi-variable failure ที่ engineer ต้องใช้เวลาหลายชั่วโมงวิเคราะห์ อาจลดเหลือไม่กี่นาที",
+        tags: ["Scientific AI","Math Reasoning","Research Breakthrough","RCA","Digital Twin"]
+      },
+      {
+        title: "🏛️ White House AI Executive Order — ลด Regulatory Barrier เร่ง Innovation",
+        source: "whitehouse.gov",
+        link: "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+        summary: "2 มิ.ย. 2026 — ประธานาธิบดีสหรัฐออก Executive Order ส่งเสริม AI innovation และ security ประกาศลด bureaucratic constraints บน AI developers ขณะที่ยังรักษา security standards สำหรับ critical systems — US signal ชัดว่าจะ accelerate AI deployment",
+        context: "Policy shift นี้ตามหลัง EU AI Act ที่มีแนวทางเข้มงวดกว่า ทำให้เกิด regulatory divergence ระหว่าง US และ EU — บริษัท global ต้องออกแบบ AI governance ที่ flexible รองรับทั้งสองมาตรฐาน",
+        impact: "SCG ที่มีพาร์ทเนอร์ทั้ง US และ EU ควรออกแบบ AI governance framework ที่ compliant กับทั้งสองมาตรฐาน เพื่อรองรับ global AI tools ได้ไม่ติดขัด",
+        tags: ["AI Policy","US Government","Regulation","AI Governance","EU AI Act"]
       }
     ],
 
@@ -1306,6 +1343,35 @@ const REPORTS = {
         limit: "ต้องการ SAP S/4HANA — ไม่รองรับ legacy ERP",
         impact: "ถ้า SCG ใช้ SAP — นี่คือ fastest path สู่ agentic PM workflow โดยไม่ต้องสร้างเอง",
         link: "https://news.sap.com/2026/04/sap-at-hannover-messe-2026-agentic-ai-resilient-manufacturing/"
+      },
+      {
+        name: "Microsoft MAI-Code-1-Flash",
+        type: "model",
+        caps: ["Text-to-code generation จาก natural language","Azure AI Foundry native — deploy ง่าย","ลด OpenAI dependency สำหรับ Azure customers","เหมาะกับ script generation สำหรับ data pipeline"],
+        impact: "สร้าง automation script สำหรับ AVEVA data export, Excel report generation โดยใช้ natural language instruction",
+        link: "https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html"
+      },
+      {
+        name: "DeepSeek V4 Pro (75% Price Cut)",
+        type: "model",
+        caps: ["Frontier-class reasoning ในราคา commodity","Long-context processing (>200K tokens) ราคาต่ำ","เหมาะกับ batch processing document ขนาดใหญ่","Open-weight alternative สำหรับ on-premise deployment"],
+        benchmarks: [{ label: "Cost vs. GPT-5.5", val: "-75%", pct: 25, color: "#3fb950" }],
+        impact: "ใช้สำหรับ bulk document analysis เช่น scan maintenance history 5 ปีเพื่อ identify failure pattern — ประหยัด API cost อย่างมาก",
+        link: "https://theaitrack.com/ai-news-june-2026-in-depth-and-concise/"
+      },
+      {
+        name: "OpenAI Real-Time Audio Models (3 Models)",
+        type: "model",
+        caps: ["3 models: conversational agent, translation, transcription","Real-time processing < 300ms latency","Multi-language support รวม Thai","API integration สำหรับ voice-first applications"],
+        impact: "Voice maintenance reporting — technician พูดบันทึกสภาพ equipment ภาษาไทย AI แปลงเป็น structured CMMS entry อัตโนมัติ ลดเวลา documentation",
+        link: "https://openai.com/"
+      },
+      {
+        name: "AI Climate Model — 25x Speed (UC San Diego)",
+        type: "paper",
+        caps: ["รัน simulation เร็วขึ้น 25 เท่าด้วย generative AI","ผสมผสาน physics-based + ML approach","Validated ใน real-world climate research","Blueprint สำหรับ industrial process simulation"],
+        impact: "แนวทาง hybrid physics+ML เหมาะสำหรับ digital twin ของ reactor ที่ predict ค่า yield และ temperature ได้เร็วขึ้นมาก",
+        link: "https://blog.mean.ceo/latest-ai-breakthroughs-news-june-2026/"
       }
     ],
 
@@ -1333,24 +1399,26 @@ const REPORTS = {
         title: "Agentic AI ใน Manufacturing: Deloitte คาดโต 4x ภายในสิ้นปี 2026",
         desc: "Deloitte วิเคราะห์ว่า agentic AI adoption ใน manufacturing จะโตจาก 6% เป็น 24% ภายในสิ้นปี 2026 และตลาดจะแตะ $45B ภายในปี 2030 (จาก $8.5B ปัจจุบัน) — ชุมชน industrial AI มองว่าตัวเลขนี้ conservative เพราะไม่รวม edge AI hardware",
         link: "https://www.manufacturingdive.com/news/agentic-ai-potential-rattle-manufacturing-status-quo-deloitte/816325/"
+      },
+      {
+        icon: "📈",
+        title: "Q2 AI Funding $42.6B — Agentic AI คว้าครึ่ง; Gartner: 40% Enterprise Apps จะมี Agent ปลายปี",
+        desc: "Q2 2026 AI funding รวม $42.6B ใน 312 rounds โดย Agentic AI startups คว้าไป $20B — เกือบครึ่งทั้งหมด Gartner คาด 40% ของ enterprise applications จะ integrate AI agents ภายในสิ้นปี 2026 แต่ McKinsey เตือนว่าองค์กรที่ scale จริงมีเพียง 23% — gap นี้คือ competitive advantage สำหรับองค์กรที่ลงมือก่อน",
+        link: "https://aistartupedge.com/ai-news-june-2026/"
+      },
+      {
+        icon: "💾",
+        title: "SK Hynix $1 Trillion — AI Memory Chip เป็น New Oil",
+        desc: "SK Hynix แตะ $1T market cap รายที่ 3 ต่อจาก Samsung และ Micron ขับเคลื่อนทั้งหมดโดย HBM (High Bandwidth Memory) สำหรับ AI GPU demand ยืนยันว่า AI infrastructure investment cycle ไม่ได้ชะลอ — ยังเร่งขึ้นเรื่อยๆ",
+        link: "https://theaitrack.com/ai-news-june-2026-in-depth-and-concise/"
       }
     ],
 
-    ipadSummary: "สัปดาห์ 30 พ.ค.–2 มิ.ย. 2569 มี 4 signal สำคัญสำหรับ iPAD: (1) Anthropic Opus 4.8 + Dynamic Workflows เป็น game changer สำหรับ multi-agent architecture — iPAD ควรทดสอบ Dynamic Workflows กับ use case AVEVA+UHM+SAP orchestration ใน Q3/2026; (2) Agentic Commerce จีน (Qwen+Taobao, Doubao+Douyin) แสดง pattern ที่ใช้ได้กับ industrial: AI agent ที่ execute transaction โดยตรง ไม่ใช่แค่ recommend — blueprint สำหรับ iPAD agent ที่สั่ง work order ใน SAP PM อัตโนมัติ; (3) SAP Production Planning Agent GA ใน Q2/2026 คือ fastest path สู่ agentic PM workflow — iPAD ควรประเมิน integration กับ existing SAP ก่อนสร้าง custom solution; (4) AI Governance เข้มขึ้นทั้งสองฝั่งโลก (Microsoft/Google/xAI แชร์ model กับรัฐบาล, EU AI Act สิงหาคม) — iPAD ต้องสร้าง AI governance documentation ก่อน Q4/2026"
+    ipadSummary: "สัปดาห์ 30 พ.ค.–5 มิ.ย. 2569 มี 6 signal สำคัญสำหรับ iPAD: (1) Anthropic Opus 4.8 + Dynamic Workflows เป็น game changer สำหรับ multi-agent architecture — iPAD ควรทดสอบ Dynamic Workflows กับ use case AVEVA+UHM+SAP orchestration ใน Q3/2026; (2) Agentic Commerce จีน (Qwen+Taobao, Doubao+Douyin) แสดง pattern ที่ใช้ได้กับ industrial: AI agent ที่ execute transaction โดยตรง ไม่ใช่แค่ recommend — blueprint สำหรับ iPAD agent ที่สั่ง work order ใน SAP PM อัตโนมัติ; (3) SAP Production Planning Agent GA ใน Q2/2026 คือ fastest path สู่ agentic PM workflow — iPAD ควรประเมิน integration กับ existing SAP ก่อนสร้าง custom solution; (4) AI Commodity ราคา — DeepSeek -75% และ Microsoft MAI-Code เร่งต้นทุน inference ลด ควรออกแบบ model routing ที่ swap ได้ตาม cost-performance แทน lock-in; (5) Voice AI เปิด use case ใหม่ — OpenAI real-time audio transcription เหมาะสำหรับ voice maintenance reporting บน shopfloor; (6) AI Governance เข้มขึ้นทั้ง US (White House EO 2 มิ.ย.) และ EU (AI Act สิงหาคม) — iPAD ต้องสร้าง governance documentation ก่อน Q4/2026"
   },
 
-  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ──────────────────
-  "2026-06-05": {
-    weekLabel: "3–9 มิ.ย. 2026",
-    publishDate: "9 มิถุนายน 2026",
-    stats: { news: 0, tools: 0, community: 0, industrial: 0 },
-    sources: "",
-    bigMoves: [],
-    tooling: [],
-    community: [],
-    ipadSummary: ""
-  },
-  ────────────────────────────────────────────────── */
+  /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ─────────────────── */
+
 };
 
 /* ════════════════════════════════════════════════
