@@ -1417,6 +1417,173 @@ const REPORTS = {
     ipadSummary: "สัปดาห์ 30 พ.ค.–5 มิ.ย. 2569 มี 6 signal สำคัญสำหรับ iPAD: (1) Anthropic Opus 4.8 + Dynamic Workflows เป็น game changer สำหรับ multi-agent architecture — iPAD ควรทดสอบ Dynamic Workflows กับ use case AVEVA+UHM+SAP orchestration ใน Q3/2026; (2) Agentic Commerce จีน (Qwen+Taobao, Doubao+Douyin) แสดง pattern ที่ใช้ได้กับ industrial: AI agent ที่ execute transaction โดยตรง ไม่ใช่แค่ recommend — blueprint สำหรับ iPAD agent ที่สั่ง work order ใน SAP PM อัตโนมัติ; (3) SAP Production Planning Agent GA ใน Q2/2026 คือ fastest path สู่ agentic PM workflow — iPAD ควรประเมิน integration กับ existing SAP ก่อนสร้าง custom solution; (4) AI Commodity ราคา — DeepSeek -75% และ Microsoft MAI-Code เร่งต้นทุน inference ลด ควรออกแบบ model routing ที่ swap ได้ตาม cost-performance แทน lock-in; (5) Voice AI เปิด use case ใหม่ — OpenAI real-time audio transcription เหมาะสำหรับ voice maintenance reporting บน shopfloor; (6) AI Governance เข้มขึ้นทั้ง US (White House EO 2 มิ.ย.) และ EU (AI Act สิงหาคม) — iPAD ต้องสร้าง governance documentation ก่อน Q4/2026"
   },
 
+
+  /* ─── WEEK: 6–12 มิถุนายน 2026 ────────────────── */
+  "2026-06-12": {
+    weekLabel: "6–12 มิถุนายน 2026",
+    publishDate: "12 มิถุนายน 2026",
+    stats: { news: 8, tools: 6, community: 4, industrial: 4 },
+    sources: "Anthropic Blog · CNBC · TechCrunch · Apple WWDC · NPR · TechTimes · Manufacturing Digital · AIWeekly · buildfastwithai.com · Fortune · Bloomberg",
+
+    bigMoves: [
+      {
+        title: "🤖 Anthropic ปล่อย Claude Fable 5 (Mythos-Class) — AI ที่ค้นพบ Zero-Day Exploit ได้เอง",
+        source: "cnbc.com",
+        link: "https://www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html",
+        summary: "9 มิ.ย. 2026 — Anthropic ปล่อย Claude Fable 5 สู่สาธารณะ ซึ่งเป็นรุ่น public ของ Mythos-class model ที่พิสูจน์ความสามารถค้นพบและเชื่อม zero-day exploits ข้าม OS และเบราว์เซอร์หลักได้อัตโนมัติ ตั้งแต่ preview ใน Project Glasswing มีราคาประมาณ 2 เท่าของ Opus โดยมีการ safeguard ปิดกั้นพื้นที่ความเสี่ยงสูงอย่าง cybersecurity และชีววิทยา เปิดให้ enterprise customers และ paid subscribers ใช้งานแล้ว",
+        context: "Claude Fable 5 เป็น model ที่ทรงพลังที่สุดที่ Anthropic เคยปล่อย — capability ในการ chain exploit อัตโนมัติบ่งชี้ว่า AI กำลังเข้าสู่ territory ที่ต้องการ safeguard ใหม่ที่ยังไม่เคยมีมาก่อน",
+        impact: "สำหรับ iPAD Fable 5 เปิดโอกาสใหม่สำหรับ automated root cause analysis บน complex multi-system faults — การ 'chain' ที่ agent ค้นพบ เชื่อม และวิเคราะห์ fault pattern ข้ามระบบโดยไม่ต้องมีคนนำทาง คือ use case ที่ตรงที่สุดกับ iPAD AVEVA monitoring",
+        tags: ["Anthropic","Claude Fable 5","Mythos","Security AI","Reasoning","Enterprise AI"]
+      },
+      {
+        title: "🍎 Apple WWDC 2026 — iOS 27 Extensions: Claude, ChatGPT, Gemini แทน Siri ได้แล้ว",
+        source: "aiweekly.co",
+        link: "https://aiweekly.co/node/2611",
+        summary: "8 มิ.ย. 2026 — Apple เปิดตัว iOS 27 Extensions ใน WWDC 2026 ครั้งสุดท้ายของ Tim Cook ผู้ใช้สามารถตั้ง Claude, ChatGPT, Google Gemini หรือ Grok เป็น default AI แทน Siri ทั่วทุก Apple Intelligence feature ผ่าน Settings Siri ถูก rebuild ด้วย Google Gemini 1.2T parameter model ที่ Apple จ่าย ~$1B/ปี รองรับ on-screen awareness, multi-step tasks ข้าม apps และ personal data context",
+        context: "iOS 27 Extensions คือ 'AI Marketplace' ครั้งแรกในระบบ OS ระดับโลก — Apple เปลี่ยน AI จาก feature เป็น infrastructure ที่เปิดให้ third-party AI providers แข่งขันกันในระดับ OS layer",
+        impact: "Claude ได้ channel ใหม่ผ่าน Apple ecosystem ที่มี iPhone กว่า 1.2 พันล้านเครื่องทั่วโลก — สำหรับ iPAD นี่หมายความว่า field engineer ที่ใช้ iPhone สามารถ query AVEVA data ผ่าน Siri (powered by Claude) บน shopfloor ได้โดยไม่ต้องเปิด app แยก",
+        tags: ["Apple","WWDC 2026","iOS 27","Claude","Siri","Gemini","AI Marketplace","Extensions"]
+      },
+      {
+        title: "📈 Anthropic ยื่น S-1 ลับ IPO + รายได้ Run Rate $47B — ใกล้ Trillion-Dollar Mark",
+        source: "cnbc.com",
+        link: "https://www.cnbc.com/2026/06/01/anthropic-ipo-s1-prospectus.html",
+        summary: "1 มิ.ย. 2026 — Anthropic ยื่น S-1 confidentially กับ SEC เตรียม IPO ปลายปี 2026 มูลค่าบริษัทแตะ $965B revenue run rate พุ่งสู่ $47B (จาก $10B ปลายปี 2025) มีลูกค้า enterprise ที่จ่ายเงิน >$1M/ปีกว่า 1,000 ราย Google ลงทุน $40B พร้อม 10 gigawatts of compute ร่วมกับ Broadcom คาด IPO ราว Q4/2026 สร้าง valuation เกิน $1T",
+        context: "Revenue growth ของ Anthropic จาก $10B สู่ $47B ใน 6 เดือน — trajectory ที่เร็วกว่า OpenAI ในช่วงเวลาเดียวกัน ยืนยันว่า enterprise market ตอบรับ 'safety-first' strategy อย่างชัดเจน",
+        impact: "IPO filing ยืนยันความมั่นคงระยะยาวของ Claude เป็น production AI platform สำหรับ iPAD — public company status จะเพิ่ม transparency ด้าน roadmap และ SLA ที่สำคัญสำหรับ enterprise deployment",
+        tags: ["Anthropic","IPO","Revenue","Valuation","Google","Compute","Enterprise AI"]
+      },
+      {
+        title: "🚀 SpaceX/xAI IPO $75B — IPO ใหญ่สุดในประวัติศาสตร์ OpenAI ยื่นตาม",
+        source: "npr.org",
+        link: "https://www.npr.org/2026/06/11/nx-s1-5853199/spacex-ipo-price-elon-musk",
+        summary: "11 มิ.ย. 2026 — SpaceX ระดมทุน $75B จาก IPO ที่ใหญ่ที่สุดในประวัติศาสตร์ (555,555,555 หุ้น ที่ $135/หุ้น) ซึ่งรวม xAI (Grok, X, Colossus supercomputer) ในฐานะส่วนหนึ่งของบริษัท ตามมาด้วย OpenAI ที่ยื่น IPO อย่างเป็นทางการ ขณะที่ Wall Street กำลังเตรียมตัวสำหรับคลื่น AI IPO ที่ใหญ่ที่สุดที่เคยมี รวม Anthropic ที่คาดจะตาม",
+        context: "AI กำลังเข้าสู่ตลาดทุนสาธารณะอย่างเป็นทางการ — SpaceX+xAI, OpenAI, Anthropic จะซื้อขายในตลาดหุ้นทั้งหมดภายในปี 2026 เปลี่ยน dynamic ของ AI funding จาก private VC สู่ public market accountability",
+        impact: "การที่ AI labs ทั้งหมด IPO หมายความว่า transparency ด้าน model capability, safety และ financials จะสูงขึ้นมาก — ข้อมูลเหล่านี้จะเป็นประโยชน์สำหรับ iPAD ในการ evaluate AI vendors ตาม public financial health",
+        tags: ["SpaceX","xAI","IPO","OpenAI","Anthropic","Public Market","Elon Musk","AI Finance"]
+      },
+      {
+        title: "⚡ Google Gemini 3.5 Pro — Context 2M Token, Deep Think Reasoning ใกล้ GA",
+        source: "techtimes.com",
+        link: "https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm",
+        summary: "6 มิ.ย. 2026 — Gemini 3.5 Pro ใกล้ launch อย่างเป็นทางการ โดดเด่นด้วย context window 2 ล้าน token (2 เท่าของ Flash) และ Deep Think mode สำหรับ multi-step reasoning ลึก ขณะนี้อยู่ใน limited Vertex preview — Sundar Pichai ให้สัญญาณ 'give us until this month' ที่ Google I/O ราคาคาดอยู่ที่ $3.5/$14 ต่อล้าน token",
+        context: "Gemini 3.5 Pro เป็น direct competitor กับ Claude Fable 5 ด้าน reasoning ลึก แต่ชูจุดแข็ง multimodal (ภาพ, เสียง, วิดีโอ) และ context ยาวที่ Claude ยังตามอยู่ — ทั้งสองทีมแข่งกัน push frontier อย่างรวดเร็ว",
+        impact: "Context 2M token ของ Gemini 3.5 Pro เหมาะมากสำหรับ iPAD use case ที่ต้องส่ง P&ID ทั้งโรงงาน + maintenance log หลายปีในครั้งเดียว — ควรทดสอบเทียบกับ Claude Fable 5 เพื่อเลือก model ที่เหมาะกับแต่ละ use case",
+        tags: ["Google","Gemini 3.5 Pro","Long Context","Deep Think","Multimodal","Reasoning"]
+      },
+      {
+        title: "🏛️ Great American AI Act — กฎหมาย AI Federal ฉบับแรกของสหรัฐ 269 หน้า",
+        source: "buildfastwithai.com",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-june-6-2026",
+        summary: "4 มิ.ย. 2026 — สมาชิกสภา Jay Obernolte และ Lori Trahan เผยแพร่ draft 269 หน้าของ Great American AI Act กฎหมาย federal AI ที่ครอบคลุมที่สุดในประวัติศาสตร์สหรัฐฯ ประเด็นหลัก: preemption ของ state AI laws 3 ปี สำหรับ frontier AI model development รวมถึง mandatory pre-deployment testing และ transparency requirements",
+        context: "สหรัฐฯ กำลังเปลี่ยนจาก 'accelerate innovation' ของ White House EO (มิ.ย.) มาสู่ 'comprehensive framework' จากฝ่ายนิติบัญญัติ — ทั้งสองทิศทางทำงานพร้อมกันเป็นครั้งแรก",
+        impact: "iPAD ควรเฝ้าติดตาม Great American AI Act เนื่องจากจะกำหนด standard สำหรับ frontier model providers ที่ iPAD ใช้ (Anthropic, OpenAI, Google) — โดยเฉพาะ transparency requirements ที่อาจส่งผลต่อ SLA และ disclosure ของ model behavior",
+        tags: ["AI Policy","Great American AI Act","US Congress","Regulation","Frontier AI","Compliance"]
+      },
+      {
+        title: "💻 Anthropic: 80% ของโค้ด Production ถูกเขียนโดย Claude — เรียกร้อง Global Pause Protocol",
+        source: "buildfastwithai.com",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-june-6-2026",
+        summary: "Anthropic เปิดเผยว่าในเดือนพฤษภาคม 2026 มากกว่า 80% ของโค้ดที่ merge เข้า production codebase ถูกเขียนโดย Claude พร้อมกันนั้น Anthropic เรียกร้องให้ frontier AI labs ทุกเจ้าตกลงกัน coordinated way เพื่อชะลอหรือ pause development หาก AI systems เริ่ม improve ตัวเองเร็วกว่าที่สังคมรับมือได้ โดยย้ำว่า pause ใด ๆ ต้องมี verification, shared rules และทุก lab เข้าร่วม",
+        context: "การที่ AI เขียนโค้ดตัวเองมากกว่า 80% ใน production lab ที่ leading ที่สุดในโลก เป็น milestone ที่ unprecented — นี่คือสิ่งที่ Anthropic เรียกว่า 'recursive self-improvement threshold'",
+        impact: "สัญญาณ 'AI writing AI' แสดงว่าความเร็วของ AI capability development จะเร่งตัวขึ้นอีก — iPAD ต้องวางแผน model update cycle ที่สั้นลง และออกแบบ abstraction layer ที่ swap model ได้โดยไม่ต้อง rewrite workflow",
+        tags: ["Anthropic","Self-Improvement","AI Safety","Recursive AI","Code Generation","AI Governance"]
+      },
+      {
+        title: "🛸 Google จ่าย SpaceX $920M/เดือน สำหรับ Compute — AI Infrastructure War ดุเดือด",
+        source: "techcrunch.com",
+        link: "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/",
+        summary: "5 มิ.ย. 2026 — Google ทำสัญญาจ่าย SpaceX $920 ล้าน/เดือน ตั้งแต่ ต.ค. 2026 ถึง มิ.ย. 2029 เพื่อ access GPU ~110,000 ตัว, CPU, memory จาก SpaceX data centers เป็นหลักฐานชัดว่า hyperscalers กำลังต่อสู้ เพื่อ compute capacity ในทุกช่องทางที่มี รวมถึง non-traditional providers อย่าง SpaceX",
+        context: "สัญญา $33B รวมสามปีของ Google กับ SpaceX ใหญ่กว่า GDP ของประเทศกำลังพัฒนาหลายแห่ง — AI infrastructure war กำลังเปลี่ยน landscape ของธุรกิจ compute อย่างสิ้นเชิง",
+        impact: "Cost ของ AI inference จะยังสูงอยู่ในระยะกลาง แม้ pricing ต่อ token จะลดลง เนื่องจาก hyperscalers ลงทุน infrastructure ขนาดมหาศาล — iPAD ควรออกแบบ cost-aware model routing ที่ใช้ Lite model สำหรับ routine task และ premium model เฉพาะ high-value analysis",
+        tags: ["Google","SpaceX","Compute","AI Infrastructure","GPU","Cloud","Cost"]
+      }
+    ],
+
+    tooling: [
+      {
+        name: "Claude Fable 5 (Mythos-Class)",
+        type: "model",
+        caps: ["Multi-step security reasoning + zero-day chain detection","Complex Root Cause Analysis บน multi-system fault","Enterprise safeguards สำหรับ cybersecurity + biology high-risk zones","รองรับ agentic workflow ที่ require deep causal reasoning","ราคา ~2x Opus — เหมาะสำหรับ high-value analysis task เท่านั้น"],
+        benchmarks: [
+          { label: "Reasoning Depth", val: "Frontier", pct: 97, color: "#bc8cff" },
+          { label: "Agentic Capability", val: "Best-in-class", pct: 95, color: "#58a6ff" }
+        ],
+        limit: "ราคาสูงกว่า Opus 2 เท่า — ควรใช้เฉพาะ RCA ที่ซับซ้อน ไม่ใช่ routine monitoring",
+        impact: "ใช้สำหรับ deep RCA บน recurring fault pattern ที่ general model วิเคราะห์ไม่ได้ — หรือ multi-plant fault correlation ที่ต้องการ reasoning หลายขั้นตอน",
+        link: "https://www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html"
+      },
+      {
+        name: "Google Gemini 3.5 Pro",
+        type: "model",
+        caps: ["Context window 2M token — P&ID + log หลายปีในครั้งเดียว","Deep Think mode: multi-step reasoning สำหรับ complex analysis","Multimodal: ภาพ, เสียง, วิดีโอ ในระบบเดียว","Vertex AI integration — enterprise-grade deployment","ราคาคาด $3.5/$14 ต่อล้าน token (Flash ถูกกว่า 4x)"],
+        limit: "ยังอยู่ใน Vertex limited preview — GA date ยังไม่ confirmed",
+        impact: "ทดสอบสำหรับ plant documentation Q&A ที่ต้องการส่ง context ยาว เช่น อ่าน SOP + P&ID + maintenance history ทั้งหมดในครั้งเดียว",
+        link: "https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm"
+      },
+      {
+        name: "iOS 27 Extensions — AI Marketplace บน iPhone",
+        type: "tool",
+        caps: ["Claude, ChatGPT, Gemini, Grok เป็น default AI แทน Siri ได้","Siri กลายเป็น AI routing layer — ส่ง query ไปยัง AI ที่ถนัด","On-screen awareness: AI เห็นและ interact กับ app ที่กำลังเปิด","Personal context: email, calendar, contacts, photos","App Store marketplace สำหรับ third-party AI extensions"],
+        limit: "iOS 27 developer beta เท่านั้น — public beta กรกฎาคม, GA ปลายปี 2026",
+        impact: "Field engineer ใช้ iPhone query AVEVA data ผ่าน Siri (Claude) บน shopfloor โดยไม่ต้องเปิด app — use case ที่ลด friction ของ AI adoption ใน OT environment ได้มากที่สุด",
+        link: "https://aiweekly.co/node/2611"
+      },
+      {
+        name: "Siemens Intelligence Center X",
+        type: "tool",
+        caps: ["Hybrid workforce: คน + AI agents ทำงานร่วมกันบน shared context","Mendix low-code + Graph Studio + AI Studio orchestration","95% ลด manual effort, 85% faster production issue resolution","Scalable จาก pilot สู่ enterprise โดยไม่ rebuild","เชื่อม Siemens Xcelerator ecosystem ทั้งหมด"],
+        limit: "ผูกกับ Siemens Xcelerator — migration cost สูงหาก vendor lock-in เป็นข้อกังวล",
+        impact: "Architecture pattern ของ Intelligence Center X (shared context + orchestrated agents) คือ blueprint ที่ iPAD สามารถนำมาออกแบบ AVEVA + UHM + SAP agent orchestration layer",
+        link: "https://news.siemens.com/en-us/siemens-intelligence-center-x/"
+      },
+      {
+        name: "Siemens Eigen Engineering Agent",
+        type: "tool",
+        caps: ["Plan, execute และ validate engineering tasks end-to-end","เขียน automation code + configure systems อัตโนมัติ","50% engineering efficiency สูงขึ้น, 2–5x faster execution","80% higher solution quality เทียบกับ human-only","ทำงานใน real engineering systems ไม่ใช่ sandbox"],
+        impact: "Eigen คือ first commercially available industrial engineering agent ที่พิสูจน์ว่า AI สามารถ execute (ไม่แค่ suggest) บน industrial system จริง — iPAD ควรประเมิน Eigen สำหรับ PLC/DCS config automation",
+        link: "https://manufacturingdigital.com/articles/how-siemens-ai-engineering-agent-eigen-works"
+      },
+      {
+        name: "Anthropic Claude Partner Network — Services Track",
+        type: "tool",
+        caps: ["Partner Hub: marketplace สำหรับ Claude integrations","Services Track: certified partners สำหรับ implementation + support","AWS, Microsoft, Apple, CrowdStrike เป็น launch partners","เชื่อมกับ Enterprise API + Claude Fable 5","Accelerated onboarding สำหรับ enterprise deployment"],
+        limit: "Partner Network ยังใหม่ — ecosystem เพิ่งเปิดตัว 3 มิ.ย. 2026",
+        impact: "iPAD สามารถค้นหา implementation partner ผ่าน Partner Hub เพื่อเร่ง AVEVA-Claude integration โดยไม่ต้องพัฒนาทุกอย่างเอง",
+        link: "https://www.anthropic.com/news"
+      }
+    ],
+
+    community: [
+      {
+        icon: "🔒",
+        title: "Claude Fable 5 — Security Community: 'นี่คือ AI ที่อันตราย หรือ เครื่องมือ Red Team ที่ดีที่สุด?'",
+        desc: "การเปิดตัว Claude Fable 5 ที่สามารถค้นพบและ chain zero-day exploits อัตโนมัติสร้าง polarizing debate ใน security community: ฝ่าย Blue Team กังวลว่าแม้ Anthropic จะ safeguard ไว้ แต่ capability นี้จะ proliferate สู่ adversaries ไม่ช้าก็เร็ว ขณะที่ Red Team กลับตื่นเต้นว่านี่คือ penetration testing tool ที่ดีที่สุดในประวัติศาสตร์ นักวิจัย Anthropic ระบุว่า 'controlled dual-use' คือ approach ที่ยั่งยืนที่สุดในสถานการณ์นี้",
+        link: "https://www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html"
+      },
+      {
+        icon: "📱",
+        title: "WWDC 2026 — 'AI กลายเป็น OS Infrastructure แล้ว ไม่ใช่ Feature อีกต่อไป'",
+        desc: "iOS 27 Extensions ที่ให้ Claude, Gemini, ChatGPT แทน Siri ได้เป็นสิ่งที่ developer community เรียกว่า 'OS-level AI pluralism' ครั้งแรก นักพัฒนาถกเถียงว่า Apple กำลัง commoditize AI models หรือเพิ่ม value ให้ ecosystem — ขณะที่ Tim Cook ใช้ WWDC นี้เป็นครั้งสุดท้ายก่อน retire สร้างกระแสพูดถึงทิศทาง Apple หลัง Cook มาก",
+        link: "https://aiweekly.co/node/2611"
+      },
+      {
+        icon: "📊",
+        title: "Claude +306% Market Share — อะไรทำให้ Claude โตเร็วที่สุดใน AI Market?",
+        desc: "ตัวเลข Claude 8.2% global market share ที่โต 306% ใน 1 quarter ขณะที่ ChatGPT ลดจาก 76.5% เหลือ 54.7% กำลังถูกถกเถียงกันอย่างกว้างขวาง ชุมชนมองว่าสาเหตุหลักคือ enterprise adoption (KPMG, Big Four) ที่ drive volume ไม่ใช่ consumer — analyst บอกว่า Claude กำลัง win ตลาด 'high-value per query' ในขณะที่ ChatGPT ยัง dominate 'volume' market",
+        link: "https://www.cnbc.com/2026/06/01/anthropic-ipo-s1-prospectus.html"
+      },
+      {
+        icon: "🏭",
+        title: "Siemens Eigen + Intelligence Center X — 'Industrial AI เข้า Execution Phase แล้ว'",
+        desc: "ชุมชน industrial AI ตื่นเต้นกับ Siemens Eigen ที่เป็น commercial industrial engineering agent ตัวแรกที่ execute งานจริง (ไม่ใช่แค่ suggest) ใน production environment Manufacturing Digital รายงานว่า early adopters ของ Intelligence Center X ได้ 95% reduction ใน manual effort และ 85% faster issue resolution — ตัวเลขที่ community ถกเถียงว่าจะ sustainable ในระยะยาวหรือไม่ แต่ proof-of-concept ชัดแล้ว",
+        link: "https://manufacturingdigital.com/articles/how-siemens-ai-engineering-agent-eigen-works"
+      }
+    ],
+
+    ipadSummary: "สัปดาห์ 6–12 มิ.ย. 2569 มี 4 signal สำคัญสำหรับ iPAD: (1) Claude Fable 5 คือ Reasoning AI ที่ทรงพลังที่สุดที่เคยมี — ความสามารถ chain fault analysis ข้ามระบบอัตโนมัติเปิดโอกาส iPAD สร้าง deep RCA agent ที่วิเคราะห์ AVEVA + UHM + SAP พร้อมกันได้ ควรทดสอบ Fable 5 กับ 3–5 historical fault case ที่ยาก เพื่อพิสูจน์ ROI ก่อน expand; (2) iOS 27 Extensions ทำให้ Claude เข้าถึง field engineer ผ่าน iPhone โดยตรง — iPAD ควรออกแบบ 'Siri Extension' สำหรับ AVEVA alert query ที่ field engineer ใช้ voice หรือ text บน iPhone ได้ทันทีโดยไม่ต้อง login app; (3) Siemens Eigen พิสูจน์ว่า Industrial AI ที่ execute งานจริงบน production system เป็นไปได้แล้ว — iPAD ควรประเมิน Eigen สำหรับ PLC/DCS config automation ใน SCG plants โดยเริ่มจาก low-risk configuration task ก่อน; (4) AI IPO Wave (SpaceX/xAI, OpenAI, Anthropic) กำลังเปลี่ยน AI market เป็น public company — transparency ด้าน model roadmap และ financial health จะสูงขึ้นมาก iPAD ควรเตรียม vendor evaluation framework ที่ใช้ public financial data เป็นส่วนหนึ่งของการ assess AI provider reliability"
+  },
+
   /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ─────────────────── */
 
 };
