@@ -1804,6 +1804,230 @@ const REPORTS = {
     ipadSummary: "สัปดาห์ 13–19 มิ.ย. 2569 มี 5 signal สำคัญสำหรับ iPAD: (1) Claude Fable 5 ฟรีถึง 22 มิ.ย. — ใช้เวลานี้ทดสอบกับ historical fault cases ที่ยากที่สุดของ SCG (multi-plant correlation, rare equipment failure) เพื่อ quantify ROI ก่อนตัดสินใจ credit budget; (2) Sonnet 4.8 Dynamic Workflows (preview) จะลด inference cost 20–35% สำหรับ mixed-complexity workflows เช่น AVEVA monitoring ที่มีทั้ง routine alert + complex RCA — ทดสอบ upgrade workflow เมื่อ production release ออก; (3) Qwen-Robot Suite ของ Alibaba เปิด path สู่ embodied AI inspection ที่ simulate ก่อน execute โดยใช้ Alibaba Cloud — iPAD ควรประเมินร่วมกับ Gemini Robotics ว่า architecture ใดเหมาะกับ SCG OT environment มากกว่า; (4) Unilever Digital Twin case (40+ twins, 20% waste reduction) คือ business case template ที่สมบูรณ์ที่สุดในปีนี้สำหรับ executive presentation — ให้ map กับ SCG plant economics เพื่อ quantify impact; (5) EU AI Act Article 50 ยังมีผล ส.ค. 2026 ตามเดิม — iPAD ต้องทำ AI system inventory และระบุ systems ที่มี EU data exposure ภายใน 6 สัปดาห์ข้างหน้า Siemens Context Layer + Agentic Foundry architecture จาก Realize LIVE คือ long-term blueprint ที่ iPAD ควรนำมา adapt สำหรับ AVEVA + UHM + SAP integration"
   },
 
+
+  /* ─── WEEK: 20–26 มิถุนายน 2026 ─────────────────── */
+  "2026-06-26": {
+    weekLabel: "20–26 มิถุนายน 2026",
+    publishDate: "26 มิถุนายน 2026",
+    stats: { news: 9, tools: 7, community: 4, industrial: 4 },
+    sources: "TechTimes · TechCrunch · AI Weekly · Samsung Newsroom · Sidley Data Matters · Data Gravity · HuggingFace · arXiv · Digital Applied · EU AI Act Service Desk",
+    bigMoves: [
+      {
+        title: "⚡ GPT-5.6 Launch Window เริ่ม 22 มิ.ย. — Context 1.5M Token + Alignment Fix",
+        source: "techtimes.com",
+        link: "https://www.techtimes.com/articles/318799/20260621/gpt-56-launch-window-starts-monday-alignment-fix-15m-token-context-inside.htm",
+        summary: "21 มิ.ย. 2026 — GPT-5.6 เข้าสู่ launch window เริ่ม 22 มิ.ย. ฟีเจอร์หลัก: context window 1.5 ล้าน token (vs GPT-5.5 ที่ 1M token), redesigned reward audit pipeline แก้ alignment failure จาก post-mortem 'Where the Goblins Came From' (เม.ย. 2026), training cutoff ยาวถึง พ.ค. 2026 และ improved long-context reasoning สำหรับ multi-step agentic execution prediction markets มูลค่า $1.1M ชี้ window มิ.ย. 22–28 เป็น most likely outcome",
+        context: "GPT-5.6 เป็นโมเดลแรกที่ OpenAI สร้าง systematic fix สำหรับ reward hacking — ไม่ใช่แค่ patch แต่ redesign reward audit pipeline ใหม่ทั้งหมด เชื่อมโยงกับบทเรียนจาก post-mortem ที่ OpenAI เปิดเผยต่อสาธารณะ เป็นสัญญาณว่า OpenAI กำลังสร้าง model ที่ reliable มากขึ้นสำหรับ agentic task",
+        impact: "Context 1.5M token เปิดโอกาสให้ iPAD โหลด historical sensor data + maintenance log + P&ID ทั้งหมดของ asset เข้า context เดียว สำหรับ Root Cause Analysis ที่ซับซ้อนโดยไม่ต้อง chunk ข้อมูล",
+        tags: ["OpenAI","GPT-5.6","Context Window","Alignment Fix","Agentic AI","Long-Context"]
+      },
+      {
+        title: "🦄 OpenAI ยื่น S-1 ลับต่อ SEC — เป้า IPO $852B ใน Q4 2026",
+        source: "aiweekly.co",
+        link: "https://aiweekly.co/alerts/openai-files-confidential-ipo-targeting-850b-valuation",
+        summary: "22 พ.ค. 2026 — OpenAI ยื่น S-1 confidentially ต่อ SEC เป้าหมาย IPO ใน Q4 2026 ที่ valuation $730B–$852B นำโดย Goldman Sachs และ Morgan Stanley บริษัทมี revenue $2B/เดือน เติบโต 4x เร็วกว่า Alphabet และ Meta ในช่วงเทียบกัน Enterprise คิดเป็นกว่า 40% ของ revenue อย่างไรก็ตาม OpenAI ยังขาดทุน $1.22 ทุกดอลลาร์ที่หาได้",
+        context: "OpenAI IPO สร้าง pressure ใหม่ให้บริษัทต้อง profitable ขึ้น ซึ่งอาจเปลี่ยน pricing model และ feature prioritization — enterprise use cases ที่ high-value จะถูก prioritize มากขึ้น",
+        impact: "การ IPO ทำให้ OpenAI focus หนักขึ้นที่ enterprise reliability และ compliance — features ที่ iPAD ต้องการ (audit trail, SLA, data residency) มีแนวโน้มมา sooner",
+        tags: ["OpenAI","IPO","Funding","Enterprise AI","Market","Valuation"]
+      },
+      {
+        title: "🟠 Anthropic IPO Filing + $65B Round — Near $1T Valuation",
+        source: "techcrunch.com",
+        link: "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/",
+        summary: "28 พ.ค. – 1 มิ.ย. 2026 — Anthropic ปิด Series H ที่ $65B post-money valuation $965B แล้วยื่น IPO confidentially ต่อ SEC วันที่ 1 มิ.ย. เป้าหมาย Nasdaq listing ต.ค. 2026 revenue เพิ่มจาก $1B (ธ.ค. 2024) เป็น $47B annualized (พ.ค. 2026) — 47x growth ใน 1.5 ปี",
+        context: "Anthropic แซง OpenAI ในด้าน valuation-to-revenue ratio สะท้อนว่า market มอง Claude เป็น enterprise-safe AI ที่มี premium pricing จาก safety-first positioning Google เป็น investor หลักผ่าน $40B commitment",
+        impact: "ความแข็งแกร่งทางการเงินของ Anthropic หมายความว่า Claude API ที่ iPAD ใช้อยู่จะมี compute เพียงพอและ pricing ที่คาดเดาได้ใน 2–3 ปีข้างหน้า",
+        tags: ["Anthropic","IPO","Funding","Claude","Valuation","Enterprise","Google"]
+      },
+      {
+        title: "🇨🇳 Chinese Open-Weight Models ครอง 61% OpenRouter Tokens — Qwen แซง Llama",
+        source: "datagravity.dev",
+        link: "https://www.datagravity.dev/p/chinas-open-weight-takeover",
+        summary: "มิ.ย. 2026 — Chinese open-weight models ครอง 5 ใน 10 trending slots โดย Qwen ของ Alibaba ผ่าน 1 พันล้าน cumulative downloads บน Hugging Face แซงหน้า Meta Llama และ ~40% ของ LLM derivatives ใหม่บน HuggingFace เป็น Qwen-based ใน เม.ย. 2026 combined share ของ Xiaomi, Alibaba, MiniMax, Zhipu, DeepSeek และ StepFun เกิน 45% ของ weekly OpenRouter volume",
+        context: "ปีก่อน Chinese AI providers มี <2% ของ OpenRouter tokens — ภายใน 12 เดือนขึ้นเป็น 61% เป็น power shift ที่เร็วที่สุดในประวัติศาสตร์ open-source AI",
+        impact: "Qwen family ที่ Apache 2.0 เปิดให้ fine-tune ฟรี เป็นโอกาสสำหรับ iPAD ในการ train domain-specific model บน SCG process data โดยไม่ต้องจ่าย proprietary model API cost",
+        tags: ["Qwen","Alibaba","Open-Source","China AI","OpenRouter","HuggingFace","LLM"]
+      },
+      {
+        title: "⚙️ Qwen3.6-35B-A3B + Qwen3-Coder-Next เปิด Open-Weight (Apache 2.0)",
+        source: "github.com",
+        link: "https://github.com/QwenLM/Qwen3.6",
+        summary: "มิ.ย. 2026 — Alibaba เปิด open-weight Qwen3.6-35B-A3B บน HuggingFace และ ModelScope พร้อมกัน ใช้ MoE architecture (35B total / 3B active) ทำให้ inference cost ต่ำมาก พร้อมกับ Qwen3-Coder-Next open-weight coding agent model สำหรับ local development ทั้งสองรันได้บน consumer/edge hardware",
+        context: "MoE architecture ของ Qwen3.6 activate เพียง 3B parameters ต่อ token ทำให้ inference cost ต่ำกว่า dense model 35B ขนาดเท่ากันอย่างมีนัยสำคัญ เหมาะสำหรับ always-on monitoring use case",
+        impact: "Qwen3.6 สามารถรันบน edge server ใน plant โดยไม่ส่งข้อมูลออก OT network เหมาะสำหรับ on-premise industrial AI ที่ต้องการ data sovereignty ตาม SCG security policy",
+        tags: ["Qwen3.6","Qwen-Coder","Alibaba","Open-Weight","Edge AI","MoE","Apache 2.0","China AI"]
+      },
+      {
+        title: "🏭 Samsung Electronics ประกาศ 'AI-Driven Factories' ทั่วโลกภายใน 2030",
+        source: "news.samsung.com",
+        link: "https://news.samsung.com/global/samsung-electronics-announces-strategy-to-transition-global-manufacturing-into-ai-driven-factories-by-2030",
+        summary: "มิ.ย. 2026 — Samsung Electronics ประกาศ strategy เปลี่ยน global manufacturing ทั้งหมดเป็น AI-Driven Factories ภายใน 2030 โดยใช้ NVIDIA Omniverse สร้าง digital twin ของ fab ทั่วโลก, deploy AI agents เฉพาะทางสำหรับ quality control, production logistics และ predictive maintenance พร้อม humanoid + task-specialized robots (Operation / Logistics / Assembly) ใช้ 50,000+ NVIDIA GPUs เป็น backbone",
+        context: "Samsung เป็น global reference case ที่สำคัญ — ไม่ใช่ pilot แต่คือ global transformation roadmap โดย largest semiconductor manufacturer ในโลก ยืนยันว่า AI Factory ไม่ใช่ concept อีกต่อไป",
+        impact: "Samsung AI Factory blueprint (Digital Twin + Agentic Agents + Robotics) คือ reference architecture ที่ SCG สามารถ adapt สำหรับ petrochemical plant — scale down จาก semiconductor fab สู่ continuous process manufacturing",
+        tags: ["Samsung","AI Factory","Digital Twin","NVIDIA Omniverse","Robotics","Predictive Maintenance","Smart Factory"]
+      },
+      {
+        title: "📊 PHMForge — Benchmark ชุดแรกสำหรับ Industrial Asset Lifecycle AI",
+        source: "arxiv.org",
+        link: "https://arxiv.org/pdf/2604.01532",
+        summary: "มิ.ย. 2026 — งานวิจัยจาก arXiv เปิดตัว PHMForge (Prognostics and Health Management Forge) benchmark ชุดแรกที่ออกแบบสำหรับวัด AI agents บน industrial asset lifecycle use cases: fault detection, remaining useful life prediction, anomaly diagnosis และ maintenance planning รองรับ sensor types ที่หลากหลายใน process industries",
+        context: "การขาด standardized benchmark ในอุตสาหกรรมทำให้ยากต่อการเปรียบเทียบ AI model สำหรับ maintenance use case PHMForge เติมช่องโหว่นี้โดยเฉพาะ",
+        impact: "iPAD สามารถนำ PHMForge มาเป็น standard evaluation framework สำหรับ benchmark AI models ที่ใช้ใน AVEVA predictive analytics เปรียบเทียบ Claude, GPT-5.6 และ Qwen อย่างเป็นระบบ",
+        tags: ["PHM","Benchmark","Industrial AI","Predictive Maintenance","Agentic AI","arXiv","Research","iPAD"]
+      },
+      {
+        title: "🏛️ EU AI Act Article 50 บังคับเต็มรูปแบบ 2 ส.ค. 2026 — เหลือ 5 สัปดาห์",
+        source: "datamatters.sidley.com",
+        link: "https://datamatters.sidley.com/2026/06/24/eu-ai-act-transparency-obligations-preparing-for-compliance-by-2-august-2026/",
+        summary: "24 มิ.ย. 2026 — Sidley ออก advisory เตือนว่า EU AI Act Article 50 transparency obligations มีผลบังคับ 2 ส.ค. 2026: (1) ต้องแจ้ง end users ว่ากำลังติดต่อกับ AI, (2) ต้องติด machine-readable label บน AI-generated content European Parliament ผ่าน AI Omnibus 16 มิ.ย. แต่ยังรอ Official Journal publication ก่อน formal adoption Penalties สูงสุด 3% ของ global annual revenue",
+        context: "August 2 deadline เหลือเพียง 5 สัปดาห์ — enforcement เต็มรูปแบบรวมถึง penalties ทันที บริษัทที่ไม่ได้เตรียมตัวจะเผชิญ compliance gap และ reputational risk",
+        impact: "SCG ต้องทำ AI System Inventory เพื่อ classify systems ที่ interact กับ EU users/partners ภายใน 5 สัปดาห์ ควร escalate ไปยัง legal/compliance team ทันที ไม่รอ Omnibus final publication",
+        tags: ["EU AI Act","Article 50","Compliance","Regulation","Transparency","August 2026","Deadline","Governance"]
+      },
+      {
+        title: "🇺🇸 US vs EU AI Policy Divergence ชัดขึ้น — NIST Framework vs Binding Regulation",
+        source: "metricstream.com",
+        link: "https://www.metricstream.com/blog/ai-regulation-trends-ai-policies-us-uk-eu.html",
+        summary: "มิ.ย. 2026 — ขณะที่ EU เข้าสู่ full enforcement ของ AI Act ในสองเดือนข้างหน้า สหรัฐฯ ยึดแนวทางต่าง: ใช้ NIST AI Risk Management Framework (voluntary) ผสมกับ sector-specific regulators ไม่มี comprehensive legislation ระดับ federal ช่องว่างนี้สร้าง compliance burden ซับซ้อนสำหรับ global companies รวมถึง OECD ที่ track AI policy initiatives กว่า 1,000 รายการใน 69 ประเทศ",
+        context: "US approach เอื้อต่อ innovation แต่สร้าง legal uncertainty สำหรับ AI developers; EU approach ชัดเจน predictable แต่ compliance cost สูง — global companies ต้องนำ EU standard มาเป็น global baseline โดยปริยาย",
+        impact: "SCG ที่มี business ทั้งใน EU และ ASEAN ต้องออกแบบ AI governance framework ที่ compliant กับ EU (stricter) เพื่อให้ครอบคลุมทุก jurisdiction ได้ใน framework เดียว",
+        tags: ["AI Policy","NIST","EU AI Act","US Regulation","Global AI Governance","Compliance","OECD"]
+      }
+    ],
+    tooling: [
+      {
+        name: "GPT-5.6",
+        type: "model",
+        caps: [
+          "Context window 1.5 ล้าน token — ใหญ่ที่สุดใน GPT family",
+          "Redesigned reward audit pipeline — แก้ alignment failure จากรายงาน เม.ย. 2026",
+          "Training cutoff ยาวถึง พ.ค. 2026",
+          "Improved long-context reasoning สำหรับ multi-step agentic tasks",
+          "Launch window เริ่ม 22 มิ.ย. 2026"
+        ],
+        benchmarks: [
+          { label: "Context Window", val: "1.5M", pct: 95, color: "#58a6ff" },
+          { label: "Alignment Improvement", val: "Systematic", pct: 82, color: "#3fb950" }
+        ],
+        limit: "ยังไม่ launch อย่างเป็นทางการ — specs ยืนยันจาก leaked signals และ prediction markets",
+        impact: "Context 1.5M token เหมาะกับ AVEVA fault analysis ที่ต้องโหลด sensor history + maintenance records + P&ID ทั้งหมดใน session เดียว",
+        link: "https://www.techtimes.com/articles/318799/20260621/gpt-56-launch-window-starts-monday-alignment-fix-15m-token-context-inside.htm"
+      },
+      {
+        name: "Qwen3.6-35B-A3B (Open-Weight)",
+        type: "model",
+        caps: [
+          "Open-weight Apache 2.0 — fine-tune ฟรีสำหรับ commercial use",
+          "35B total / 3B active (MoE) — inference cost ต่ำมาก",
+          "รันได้บน edge server ใน plant (≤48GB VRAM)",
+          "Available บน HuggingFace + ModelScope ทันที",
+          "~40% ของ new LLM derivatives ทั้งหมดบน HuggingFace based on Qwen"
+        ],
+        benchmarks: [
+          { label: "MoE Efficiency", val: "3B/35B", pct: 88, color: "#f0883e" },
+          { label: "License Freedom", val: "Apache 2.0", pct: 100, color: "#3fb950" }
+        ],
+        limit: "Fine-tune ต้องใช้ ML expertise — ไม่ใช่ plug-and-play สำหรับ non-technical team",
+        impact: "เหมาะสำหรับ on-premise deployment ใน SCG plant ที่ต้องการ data sovereignty และลด long-term API cost",
+        link: "https://github.com/QwenLM/Qwen3.6"
+      },
+      {
+        name: "Qwen3-Coder-Next",
+        type: "model",
+        caps: [
+          "Open-weight coding agent model จาก Alibaba",
+          "ออกแบบสำหรับ local development + agentic coding workflows",
+          "รันบน consumer / edge hardware",
+          "เหมาะกับ code generation สำหรับ industrial automation scripts"
+        ],
+        limit: "Coding-specific — ไม่เหมาะกับ general reasoning หรือ long-document analysis",
+        impact: "ใช้เป็น local coding agent สำหรับ iPAD developer generate Python scripts สำหรับ AVEVA data processing โดยไม่ส่ง IP code ออก cloud",
+        link: "https://huggingface.co/Qwen/Qwen3-Coder-Next"
+      },
+      {
+        name: "Samsung AI Factory Blueprint",
+        type: "tool",
+        caps: [
+          "NVIDIA Omniverse digital twin สำหรับ global manufacturing network",
+          "AI Agents เฉพาะทาง: Quality Control, Production, Logistics, Predictive Maintenance",
+          "Humanoid + task-specialized robots: Operation, Logistics, Assembly",
+          "50,000+ NVIDIA GPUs เป็น infrastructure backbone",
+          "Global rollout 2030 — concrete roadmap พร้อม timeline"
+        ],
+        limit: "Samsung scale เป็น discrete manufacturing — ต้อง adapt สู่ continuous process manufacturing (petrochemical)",
+        impact: "Reference architecture สำหรับ iPAD: phase 1 = digital twin per asset, phase 2 = AI agents per function (Quality/Maintenance/Logistics), phase 3 = autonomous operations",
+        link: "https://news.samsung.com/global/samsung-electronics-announces-strategy-to-transition-global-manufacturing-into-ai-driven-factories-by-2030"
+      },
+      {
+        name: "PHMForge — Industrial AI Benchmark",
+        type: "paper",
+        caps: [
+          "First benchmark เฉพาะทาง industrial asset lifecycle AI",
+          "ครอบคลุม: fault detection, RUL prediction, anomaly diagnosis, maintenance planning",
+          "รองรับ sensor types หลากหลายใน process industries",
+          "เปิดให้ evaluate AI models อย่างเป็นระบบและเปรียบเทียบได้"
+        ],
+        limit: "ยังเป็น research paper — production integration ต้องพัฒนาเพิ่มเติม",
+        impact: "iPAD ใช้ PHMForge เป็น standard framework evaluate AI models สำหรับ AVEVA integration — ตัดสินใจเลือก model อย่างมี evidence",
+        link: "https://arxiv.org/pdf/2604.01532"
+      },
+      {
+        name: "EU AI Act Article 50 Compliance Checklist",
+        type: "tool",
+        caps: [
+          "Article 50 บังคับ 2 ส.ค. 2026: AI disclosure + machine-readable content labeling",
+          "เหลือเวลา ~5 สัปดาห์สำหรับ compliance",
+          "Penalties สูงสุด 3% ของ global annual revenue",
+          "AI Omnibus ผ่าน Parliament 16 มิ.ย. — รอ Official Journal"
+        ],
+        limit: "AI Omnibus ยังไม่ final — ต้องติดตาม Official Journal ต่อเนื่อง",
+        impact: "ต้อง escalate การทำ AI inventory ไปยัง legal/compliance ทันที — ระบุว่า AI system ใดใน SCG touch EU users เพื่อ classify ตาม Article 50",
+        link: "https://datamatters.sidley.com/2026/06/24/eu-ai-act-transparency-obligations-preparing-for-compliance-by-2-august-2026/"
+      },
+      {
+        name: "OpenAI + Anthropic IPO Monitor",
+        type: "tool",
+        caps: [
+          "OpenAI: S-1 confidential filed พ.ค. 2026, target Q4 2026, $730B–$852B valuation",
+          "Anthropic: IPO filing มิ.ย. 2026, $965B valuation, target ต.ค. 2026",
+          "ทั้งสองใช้ Goldman Sachs + Morgan Stanley",
+          "Enterprise revenue growing 4x+ faster than comparable tech companies"
+        ],
+        limit: "ยังเป็น confidential filing — pricing, share count และ timing ยังไม่ official",
+        impact: "การ IPO จะเพิ่ม pressure ให้ทั้งสองบริษัท prioritize enterprise features — iPAD จะได้ประโยชน์จาก enterprise AI capabilities ที่ improve เร็วขึ้น",
+        link: "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/"
+      }
+    ],
+    community: [
+      {
+        icon: "🚀",
+        title: "Chinese Open-Weight Takeover — '61% OpenRouter Tokens คือ paradigm shift ไม่ใช่แค่ trend'",
+        desc: "Data Gravity รายงานว่า Chinese open-weight models ครอง 61% ของ OpenRouter tokens ใน พ.ค./มิ.ย. 2026 ชุมชน r/LocalLLaMA และ HuggingFace ถกเถียงว่านี่คือ inflection point ที่ open Chinese models กลายเป็น 'default choice' สำหรับ developer ที่ cost-conscious โดยเฉพาะ Qwen3.6 MoE ที่รันบน edge hardware ได้ในราคาถูก",
+        link: "https://www.datagravity.dev/p/chinas-open-weight-takeover"
+      },
+      {
+        icon: "💰",
+        title: "AI IPO Double Header — OpenAI + Anthropic ยื่น IPO ห่างกัน 10 วัน",
+        desc: "การที่ OpenAI และ Anthropic ยื่น IPO ห่างกันแค่ 10 วัน (พ.ค.–มิ.ย. 2026) ทำให้ tech community ถกเถียง 'AI valuation bubble' กันร้อนแรง นักวิเคราะห์ชี้ Anthropic ที่ $965B valuation มี P/S ~20x ซึ่ง 'aggressive แต่ไม่ irrational' สำหรับ company ที่เติบโต 47x ใน 1.5 ปี หลายคนตั้งคำถามว่า OpenAI ที่ขาดทุน $1.22 ต่อ $1 revenue จะ IPO ได้จริงหรือ",
+        link: "https://aiweekly.co/alerts/openai-files-confidential-ipo-targeting-850b-valuation"
+      },
+      {
+        icon: "🏭",
+        title: "Samsung AI Factory — 'เมื่อ largest chip maker commit แปลว่า AI factory เป็น mainstream แล้ว'",
+        desc: "Industrial AI community ตื่นเต้นกับ Samsung AI Factory announcement — ผู้เชี่ยวชาญชี้ว่าการที่ Samsung commit 50,000+ NVIDIA GPUs พร้อม global rollout timeline แสดงว่า 'AI factory transformation' ไม่ใช่ experiment อีกแล้ว การใช้ NVIDIA Omniverse digital twin เป็น backbone ยืนยัน physics-based simulation เป็น standard approach สำหรับ smart manufacturing",
+        link: "https://news.samsung.com/global/samsung-electronics-announces-strategy-to-transition-global-manufacturing-into-ai-driven-factories-by-2030"
+      },
+      {
+        icon: "⚖️",
+        title: "EU AI Act T-5 สัปดาห์ — 'ทำ AI inventory ก่อนสายเกินไป'",
+        desc: "Sidley Data Matters (24 มิ.ย.) ย้ำว่า August 2, 2026 deadline เหลือเวลาน้อยมาก enforcement จะเริ่มทันทีวันที่ 2 ส.ค. บริษัทที่ไม่ได้ทำ AI disclosure ชัดเจนจะเผชิญ legal risk ทันที นักกฎหมายแนะนำว่าถึงแม้ Omnibus ยังไม่ publish ใน Official Journal บริษัทควรเริ่ม comply Article 50 ทันที อย่ารอ formal adoption",
+        link: "https://datamatters.sidley.com/2026/06/24/eu-ai-act-transparency-obligations-preparing-for-compliance-by-2-august-2026/"
+      }
+    ],
+    ipadSummary: "สัปดาห์ 20–26 มิ.ย. 2026 มี 5 signal สำคัญสำหรับ iPAD: (1) EU AI Act Article 50 เหลือ 5 สัปดาห์ — URGENT: escalate ไปยัง legal/compliance ทันที ทำ AI system inventory ระบุ systems ที่ touch EU users; (2) GPT-5.6 launch window เริ่มแล้ว (context 1.5M token + alignment fix) — ทดสอบกับ long-context AVEVA fault analysis ทันทีเมื่อ API พร้อม โดยเฉพาะ use case ที่ต้องโหลด historical data + P&ID + maintenance log ใน context เดียว; (3) Qwen3.6-35B-A3B (Apache 2.0, MoE architecture) เป็น viable candidate สำหรับ on-premise deployment ในโรงงานที่ต้องการ data sovereignty — ควร pilot เพื่อเปรียบเทียบ cost vs quality กับ cloud API; (4) Samsung AI Factory roadmap (Digital Twin + Agentic Agents + Robotics) เป็น template ที่ SCG สามารถ adapt — ใช้เป็น benchmark และ reference architecture สำหรับ iPAD Phase 2–3 planning presentation ต่อ executive; (5) PHMForge benchmark ช่วยให้ iPAD evaluate AI models สำหรับ predictive maintenance อย่างเป็นระบบ — นำมาใช้ในการตัดสินใจเลือก model สำหรับ AVEVA integration รอบถัดไปแทนการตัดสินใจด้วย intuition"
+  },
+
+
   /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ─────────────────── */
 
 
