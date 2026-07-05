@@ -2028,6 +2028,207 @@ const REPORTS = {
   },
 
 
+  /* ─── WEEK: 27 มิ.ย. – 3 ก.ค. 2026 ─────────────────── */
+  "2026-07-03": {
+    weekLabel: "27 มิถุนายน – 3 กรกฎาคม 2026",
+    publishDate: "3 กรกฎาคม 2026",
+    stats: { news: 8, tools: 6, community: 4, industrial: 3 },
+    sources: "Anthropic News · MacRumors · TechCrunch · TechTimes · BusinessToday · Manufacturing Dive · Infor+AWS · SAP Sapphire · Kiteworks · LW.com · Pandaily · arXiv",
+    bigMoves: [
+      {
+        title: "🟠 Anthropic เปิดตัว Claude Sonnet 5 — Agentic Model ที่ถูกที่สุดในระดับ Frontier",
+        source: "anthropic.com",
+        link: "https://www.anthropic.com/news/claude-sonnet-5",
+        summary: "1 ก.ค. 2026 — Claude Sonnet 5 เปิดตัวเป็น default model บน Claude.ai ทุก plan ราคา $2/M input · $10/M output (ถึง 31 ส.ค.) จุดเด่น: สามารถ build plans, ใช้ browser/terminal, ทำ multi-step task ได้โดยไม่ต้องมีคนดูแล — agentic capability ที่เคยต้องใช้ Opus ขนาดใหญ่กว่า Sonnet 5 เปิดตัวพร้อมกับการ redeploy Fable 5 และ Mythos 5 ที่ถูก suspend ตั้งแต่ 12 มิ.ย.",
+        context: "Sonnet 5 ลดต้นทุน agentic AI อย่างมีนัย — near-Opus 4.8 performance ในราคาต่ำกว่า 3–4x ทำให้ enterprise สามารถ run agent workflows หลายพันรายการต่อวันในงบประมาณที่ควบคุมได้",
+        impact: "iPAD สามารถใช้ Sonnet 5 เป็น primary model สำหรับ agentic monitoring tasks (เช่น AVEVA data pull → analysis → alert → email) ที่เดิมต้อง trade-off ระหว่าง cost และ capability",
+        tags: ["Claude Sonnet 5","Anthropic","Agentic AI","Pricing","Agent Workflow"]
+      },
+      {
+        title: "🔓 Fable 5 + Mythos 5 กลับมาให้บริการทั่วโลก — หลัง Amazon Patch Safety Bypass",
+        source: "anthropic.com",
+        link: "https://www.anthropic.com/news/redeploying-fable-5",
+        summary: "1 ก.ค. 2026 — Anthropic redeploy Fable 5 และ Mythos 5 หลังถูก suspend ตั้งแต่ 12 มิ.ย. เนื่องจาก US export control directive สาเหตุ: นักวิจัยจาก Amazon ค้นพบวิธี bypass safety controls ของ Fable 5 ทำให้โมเดลระบุ software vulnerabilities และสร้าง exploit code ได้ Anthropic พัฒนา automated classifier ใหม่ปิดช่องโหว่ ก่อน Commerce Department อนุมัติ global rollout",
+        context: "เหตุการณ์นี้เป็นครั้งแรกที่ US government บังคับระงับ frontier model เนื่องจาก cybersecurity vulnerability — แสดงว่า AI safety กลายเป็น national security issue อย่างเต็มรูปแบบ",
+        impact: "SCG OT/IT security team ควร monitor closely: cybersecurity-capable frontier models กำลังถูก regulate อย่างเข้มข้น — หาก iPAD ใช้ Fable 5/Mythos 5 ใน security-sensitive context ต้องมี access control ที่ชัดเจน",
+        tags: ["Fable 5","Mythos 5","Anthropic","Export Control","Cybersecurity","Safety","US Government"]
+      },
+      {
+        title: "🚨 White House สั่งชะลอ GPT-5.6 — Staged Rollout ครั้งแรกในประวัติศาสตร์ AI",
+        source: "techcrunch.com",
+        link: "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/",
+        summary: "26 มิ.ย. 2026 — White House (Office of the National Cyber Director + OSTP) ขอให้ OpenAI ชะลอ GPT-5.6 launch เพื่อ safety checks — ถือเป็น precedent ครั้งแรกที่รัฐบาลสหรัฐฯ formally stage frontier AI model release GPT-5.6 มีความสามารถทัดเทียม Claude Mythos (frontier cybersecurity model) ทำให้เกิด national security concern OpenAI จะปล่อยให้ selected partners เข้าถึง โดย Sam Altman ระบุว่ารัฐบาลจะ 'approve access customer by customer'",
+        context: "นี่คือ inflection point ของ US AI governance: รัฐบาลเริ่ม treat frontier AI models เหมือน dual-use technology ที่ต้อง review ก่อน release — แนวทางเดียวกับที่ใช้กับ advanced semiconductors และ cryptographic software",
+        impact: "Enterprise ที่วางแผนใช้ GPT-5.6 สำหรับ advanced tasks (รวมถึง cybersecurity-adjacent use case) อาจต้อง join waitlist หรือ apply สำหรับ vetted access — iPAD ควร monitor access approval timeline",
+        tags: ["GPT-5.6","OpenAI","White House","AI Governance","National Security","Staged Rollout","Safety"]
+      },
+      {
+        title: "⚡ OpenAI + Broadcom เปิดตัวชิป Jalapeño — ลด Inference Cost 50%",
+        source: "techtimes.com",
+        link: "https://www.techtimes.com/articles/319172/20260626/openai-cerebras-bet-spawns-jalapeno-chip-gpt-56-faces-government-gate.htm",
+        summary: "26 มิ.ย. 2026 — OpenAI เปิดตัว Jalapeño ชิป inference เฉพาะทางที่พัฒนาร่วมกับ Broadcom เป้าหมาย: ลด inference cost 50% เทียบกับ NVIDIA GPU เป็นส่วนหนึ่งของ strategy ที่ OpenAI ต้องการควบคุม entire stack ตั้งแต่ hardware ถึง model ลดการพึ่งพา NVIDIA และเพิ่ม margin ระยะยาว",
+        context: "OpenAI ขาดทุน ~$1.22 ทุกดอลลาร์รายได้ การลด compute cost ด้วยชิป in-house คือกลยุทธ์หลักสู่ profitability ก่อน IPO Jalapeño เดินตามรอย Google TPU และ Amazon Trainium",
+        impact: "Inference cost ที่ลดลงในระยะยาวจะ translate เป็น API pricing ที่ถูกลงสำหรับ enterprise — iPAD ควรติดตาม OpenAI pricing roadmap ปลาย 2026 เมื่อ Jalapeño เข้าสู่ production scale",
+        tags: ["Jalapeño Chip","OpenAI","Broadcom","Inference Cost","AI Hardware","IPO","Custom Silicon"]
+      },
+      {
+        title: "🇨🇳 DeepSeek ระดมทุน $7.5B ที่ Valuation $58.9B — AI Fundraise ใหญ่ที่สุดในประวัติศาสตร์จีน",
+        source: "pandaily.com",
+        link: "https://pandaily.com/deepseek-record-funding-domestic-compute-agi-jul2026",
+        summary: "มิ.ย. 2026 — DeepSeek ปิด external funding round แรก ระดมทุน 51B หยวน (~$7.5B) ที่ valuation ~400B หยวน ($58.9B) — ใหญ่ที่สุดใน AI ของจีน นำโดย China Big Fund (กองทุนรัฐบาลจีนเดียวกับที่ back semiconductor industry) Tencent และ CATL เป็น co-investor Liang Wenfeng ผู้ก่อตั้งลงทุนส่วนตัว $2.9B เงินทุนมุ่งเป้า domestic computing infrastructure และ AGI research",
+        context: "Big Fund ที่ back DeepSeek เป็นสัญญาณ state-directed AI strategy: รัฐบาลจีนมองว่า AI frontier labs คือ national strategic asset เทียบเท่า semiconductor — investment level นี้จะ accelerate DeepSeek's model development อย่างมีนัยสำคัญ",
+        impact: "DeepSeek V4 ที่มาพร้อม state-level compute budget จะเป็น stronger open-weight alternative — iPAD ควรเฝ้าดู DeepSeek V4/R2 release ในไตรมาส 3–4 2026 เพื่อพิจารณา on-premise deployment option",
+        tags: ["DeepSeek","China AI","Funding","Big Fund","Valuation","State-Directed AI","AGI","Open-Weight"]
+      },
+      {
+        title: "🏭 Agentic AI ใน Manufacturing: จาก Pilot สู่ Production Scale",
+        source: "manufacturingdive.com",
+        link: "https://www.manufacturingdive.com/news/agentic-ai-manufacturing-adoption-data-gaps-evolution/822789/",
+        summary: "ก.ค. 2026 — Industry report ยืนยัน agentic AI ใน manufacturing ผ่านช่วง pilot แล้ว: กว่า 50% ของ supply chain executive รายงาน deploy AI agents ใน workflows จริง ตัวเลขที่น่าสนใจ: Suzano (Pulp & Paper) ลด query time 95%, Danfoss อัตโนมัติ 80% ของ order processing decisions Gartner คาดว่า semi-autonomous AI agents จะ orchestrate 10% ของ key production operations ภายใน 2030 (จาก 2% วันนี้) arXiv paper ใหม่ (2507.01376) map framework 'AI Agents and Agentic AI for Future Manufacturing'",
+        context: "2026 เป็นปีที่ manufacturing AI ข้ามจาก 'interesting pilot' สู่ 'must-have operational tool' — บริษัทที่ไม่ deploy จะเสีย competitive advantage ต่อ early adopters ใน 18–24 เดือน",
+        impact: "iPAD ควรใช้ตัวเลขเหล่านี้ (95% query time reduction, 80% automation) ใน business case presentation ต่อ executive — real-world ROI จาก process industries ที่คล้าย SCG (Suzano = process manufacturing) เป็น reference ที่แข็งแกร่ง",
+        tags: ["Agentic AI","Manufacturing","Suzano","Danfoss","Gartner","Predictive Maintenance","ROI","arXiv","Process Industry"]
+      },
+      {
+        title: "⚖️ EU AI Act: Annex III High-Risk ขยายถึง Dec 2027 แต่ Chatbot Transparency บังคับ 2 ส.ค.",
+        source: "kiteworks.com",
+        link: "https://www.kiteworks.com/regulatory-compliance/eu-ai-act-deadline-compliance/",
+        summary: "มิ.ย. 2026 — European Parliament อนุมัติ 16 มิ.ย. ขยายเส้นตาย Annex III standalone high-risk AI systems จาก 2 ส.ค. 2026 เป็น 2 ธ.ค. 2027 (+16 เดือน) ครอบคลุม 8 หมวด: biometric ID, critical infrastructure, education, employment, essential services, law enforcement, migration, justice แต่: (1) Chatbot AI disclosure ยังบังคับ 2 ส.ค. 2026 ตามเดิม, (2) AI-generated content labeling ขยายเล็กน้อยถึง 2 ธ.ค. 2026 เท่านั้น Penalties: สูงสุด 3% ของ global annual revenue",
+        context: "Extension ไม่ใช่ vacation — EU regulators ย้ำว่าจะ enforce ทันทีเมื่อถึง deadline ใหม่ บริษัทที่รอจะเจอ compressed timeline ใน 2027",
+        impact: "SCG ต้องแยก compliance track: (A) Chatbot-facing AI systems → comply 2 ส.ค. 2026 (เหลือ ~1 เดือน), (B) High-risk standalone AI (เช่น automated HR, credit scoring) → comply 2 ธ.ค. 2027 ควรใช้เวลาพิเศษนี้ทำ AI system inventory ให้สมบูรณ์",
+        tags: ["EU AI Act","Annex III","High-Risk AI","Compliance","Extension","Chatbot Transparency","August 2026","Governance"]
+      },
+      {
+        title: "🇨🇳 จีน Block US Investment ใน AI Firms — Moonshot, StepFun, ByteDance",
+        source: "fortune.com",
+        link: "https://fortune.com/2026/05/19/deepseek-china-ai-venture-capital-nvidia-pitchbook-trends-term-sheet/",
+        summary: "ปลาย เม.ย. – มิ.ย. 2026 — China's top economic planning body สั่งห้าม Moonshot AI, StepFun และ ByteDance รับเงินลงทุนจากสหรัฐฯ สะท้อน US-China AI decoupling ที่เร่งตัวขึ้น รัฐบาลจีนเปลี่ยนจาก 'ยอมรับ foreign VC' เป็น 'state-directed domestic investment' — Big Fund เป็น lead investor แทน ขณะเดียวกัน government-linked deals ใน AI ของจีนเพิ่มจาก <10/ปี (ก่อน 2018) เป็น >140 deals ใน 2025",
+        context: "AI sector กำลัง follow semiconductor sector ในเรื่อง US-China decoupling — Chinese AI models อาจถูก US export control ในอนาคต ในขณะที่ Chinese government จะ accelerate domestic alternatives ยิ่งขึ้น",
+        impact: "SCG ในฐานะ regional company ที่ operate ใน ASEAN ต้องวางแผน AI vendor strategy ที่ hedge ระหว่าง US API (OpenAI/Anthropic) และ Chinese open-weight (Qwen/DeepSeek) เพื่อลด geopolitical supply risk",
+        tags: ["China AI Policy","US-China Decoupling","ByteDance","Moonshot","StepFun","Investment Restriction","Geopolitics","AI Supply Chain"]
+      }
+    ],
+    tooling: [
+      {
+        name: "Claude Sonnet 5",
+        type: "model",
+        caps: [
+          "Most agentic Sonnet model — build plans, use browser/terminal autonomously",
+          "Near-Opus 4.8 performance ในราคา $2/M input · $10/M output (intro)",
+          "Default model บน Claude.ai free และ paid plans",
+          "Multi-step task execution without human supervision",
+          "Available ผ่าน API และ Claude.ai ทันที (1 ก.ค. 2026)"
+        ],
+        benchmarks: [
+          { label: "Cost vs Capability", val: "High ROI", pct: 92, color: "#3fb950" },
+          { label: "Agentic Autonomy", val: "Near-Opus", pct: 88, color: "#58a6ff" }
+        ],
+        limit: "Intro pricing ถึง 31 ส.ค. เท่านั้น — หลังจากนั้น $3/$15 per million tokens",
+        impact: "Primary model สำหรับ iPAD agentic workflows: AVEVA monitoring → analysis → alert → email แทน Opus 4.8 เพื่อลด cost",
+        link: "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      {
+        name: "Jalapeño Inference Chip (OpenAI + Broadcom)",
+        type: "tool",
+        caps: [
+          "Custom AI inference chip — ไม่พึ่งพา NVIDIA อย่างสมบูรณ์",
+          "เป้าหมาย: ลด inference cost 50% จาก GPU baseline",
+          "สร้างร่วมกับ Broadcom เป็น ASIC เฉพาะทาง",
+          "ส่วนหนึ่งของ strategy OpenAI ควบคุม full AI stack"
+        ],
+        limit: "ยังไม่อยู่ใน production scale — ผลต่อ API pricing จะเห็นชัดใน H2 2026–2027",
+        impact: "หาก OpenAI ลด inference cost สำเร็จ → API pricing ถูกลง → iPAD สามารถ run more agents ในงบเดิม",
+        link: "https://www.techtimes.com/articles/319172/20260626/openai-cerebras-bet-spawns-jalapeno-chip-gpt-56-faces-government-gate.htm"
+      },
+      {
+        name: "Infor + AWS Agentic Manufacturing Agents",
+        type: "tool",
+        caps: [
+          "Industry-specific AI agents built native บน AWS",
+          "รองรับ discrete + process manufacturing",
+          "Agents: Profitable Project Management, On-Time Delivery, Process Mining",
+          "Reason, plan, and act across complex business workflows",
+          "Enterprise-grade infrastructure สำหรับ mission-critical workloads"
+        ],
+        limit: "ต้องมี Infor ERP เป็น backbone — integration cost สูงสำหรับ legacy system",
+        impact: "Reference architecture สำหรับ iPAD: agentic layer บน ERP → automate maintenance scheduling, parts ordering, production adjustment ในวงเดียว",
+        link: "https://press.aboutamazon.com/aws/2026/4/infor-and-aws-bring-agentic-ai-to-manufacturing-at-enterprise-scale"
+      },
+      {
+        name: "SAP Autonomous Enterprise (Joule AI)",
+        type: "tool",
+        caps: [
+          "50+ domain-specific Joule Assistants (Finance, Supply Chain, HCM, Procurement)",
+          "Orchestrates 200+ specialized agents",
+          "End-to-end autonomous enterprise operations",
+          "Native integration กับ SAP ecosystem ทั้งหมด",
+          "Unveiled SAP Sapphire 2026 (พ.ค.)"
+        ],
+        limit: "ล็อค-อยู่ใน SAP ecosystem — ไม่เหมาะถ้า SCG ไม่ใช้ SAP เป็น core ERP",
+        impact: "SCG ที่ใช้ SAP ERP สามารถ activate Joule agents สำหรับ MRO procurement, maintenance scheduling และ inventory management โดยตรงโดยไม่ต้องสร้าง agent จากศูนย์",
+        link: "https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/"
+      },
+      {
+        name: "DeepSeek V4 (State-Funded Open-Weight)",
+        type: "model",
+        caps: [
+          "ระดมทุน $7.5B จาก China Big Fund + Tencent + CATL",
+          "เน้น domestic compute infrastructure + AGI research",
+          "Open-weight model ที่ใกล้เคียง frontier US models",
+          "State-backed → sustained compute budget ระยะยาว",
+          "Apache 2.0 license — fine-tune ได้ฟรีสำหรับ commercial use"
+        ],
+        limit: "ถูก restrict ไม่ให้รับ US investment — potential geopolitical risk สำหรับ enterprise ที่ต้องการ vendor neutrality",
+        impact: "DeepSeek V4 ที่ state-backed compute จะเป็น strong on-premise option สำหรับ iPAD ใน 2026 H2 — monitor release และ benchmark เทียบกับ Qwen3.6",
+        link: "https://pandaily.com/deepseek-record-funding-domestic-compute-agi-jul2026"
+      },
+      {
+        name: "EU AI Act Compliance Framework (Dual Timeline)",
+        type: "tool",
+        caps: [
+          "Track A — Aug 2, 2026: Chatbot AI disclosure + transparency obligations (ไม่ขยาย)",
+          "Track B — Dec 2, 2026: AI-generated content machine-readable labeling",
+          "Track C — Dec 2, 2027: Standalone high-risk AI (Annex III) — ขยายจาก Aug 2026",
+          "Track D — Aug 2, 2028: High-risk AI embedded ใน regulated products",
+          "Penalties: สูงสุด 3% global annual revenue"
+        ],
+        limit: "Extension ≠ grace period — EU enforcement เริ่มทันทีเมื่อถึง deadline ใหม่",
+        impact: "SCG compliance priority: (1) Audit chatbot-facing AI ทุกตัว → comply ภายใน 1 เดือน, (2) ทำ AI system inventory classify high-risk → วางแผน comply Dec 2027",
+        link: "https://www.kiteworks.com/regulatory-compliance/eu-ai-act-deadline-compliance/"
+      }
+    ],
+    community: [
+      {
+        icon: "🚨",
+        title: "White House + GPT-5.6 — 'รัฐบาลสหรัฐฯ เริ่ม treat AI เหมือน dual-use weapons แล้ว'",
+        desc: "การที่ White House บังคับชะลอ GPT-5.6 ทำให้ AI community ถกเถียงร้อนแรง: นี่เป็นครั้งแรกที่รัฐบาลสหรัฐฯ formally intervene ใน frontier model release เหมือนกับที่เคยทำกับ cryptographic software ในยุค 90s ผู้เชี่ยวชาญ cybersecurity บอกว่า 'ถ้า GPT-5.6 ทำสิ่งเดียวกับ Fable 5 (ค้นหา exploit + สร้าง code) ได้จริง การ stage release ก็สมเหตุสมผล' ส่วน AI advocates กังวลว่านี่อาจเป็นจุดเริ่มต้นของ licensing regime ที่ฉุดรั้ง innovation",
+        link: "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/"
+      },
+      {
+        icon: "💰",
+        title: "Sonnet 5 Price Drop — 'Frontier-class Agents ตอนนี้ราคาเท่า coffee'",
+        desc: "AI developer community ตื่นเต้นกับ Sonnet 5 introductory pricing: $2/M tokens input หมายความว่าการ run agent 1 ล้าน tokens (session ยาวมาก) ราคาเพียง $2 ชุมชน r/ClaudeAI และ r/LocalLLaMA ถกเถียงว่านี่คือ 'moment agentic AI กลายเป็น commodity' เหมือนตอน AWS ทำให้ server กลายเป็น utility หลายคนเปรียบเทียบว่า GPT-4 launch ปี 2023 ราคา $30/M — ตอนนี้ near-frontier model เหลือ $2/M ใน 3 ปี",
+        link: "https://www.anthropic.com/news/claude-sonnet-5",
+        ipadNote: "ราคา Sonnet 5 เปิดโอกาสให้ iPAD ขยาย agentic use case โดยไม่กระทบงบประมาณ AI อย่างมีนัย"
+      },
+      {
+        icon: "🇨🇳",
+        title: "DeepSeek Big Fund — 'เมื่อรัฐ direct-invest ใน AI frontier labs คือ arms race อย่างเป็นทางการ'",
+        desc: "Tech community ทั่วโลกตกใจกับ DeepSeek funding round: Big Fund ที่เคย back SMIC และ YMTC (chipmakers) ตอนนี้ bet ใหญ่ใน AI labs — pattern เดียวกับที่จีนทำใน semiconductor ก่อนหน้านี้ นักวิเคราะห์บน X/Twitter ชี้ว่า 'ถ้า DeepSeek ได้ Big Fund + Tencent + CATL compute เต็มที่ ใน 12 เดือน V4 อาจแซง GPT-5.5' ส่วน Western investors บน LinkedIn ถกเถียงว่า state-backed AI model ต่างจาก commercial model อย่างไรใน terms ของ trustworthiness",
+        link: "https://pandaily.com/deepseek-record-funding-domestic-compute-agi-jul2026"
+      },
+      {
+        icon: "⚖️",
+        title: "EU AI Act Extension — 'High-risk extension ≠ compliance vacation อย่าหยุดทำ inventory'",
+        desc: "Legal community ใน LinkedIn และ law firm blogs ย้ำเตือน: extension ของ Annex III ถึง Dec 2027 ทำให้บางองค์กรชะลอ compliance effort อย่างผิดพลาด Kiteworks รายงานว่า 'most organizations are not ready' สำหรับ August 2 deadline (chatbot transparency) ที่ไม่ได้ขยาย EU regulators ยืนยันว่าจะ enforce ทันที — ต่างจาก GDPR ที่มี grace period หลายเดือน บริษัทใน ASEAN ที่มี EU operations ต้องพิจารณาว่า AI chatbot ตัวไหน touch EU users",
+        link: "https://www.kiteworks.com/regulatory-compliance/eu-ai-act-deadline-compliance/"
+      }
+    ],
+    ipadSummary: "สัปดาห์ 27 มิ.ย. – 3 ก.ค. 2026 มี 5 signal เร่งด่วนสำหรับ iPAD: (1) Claude Sonnet 5 เปิดตัวแล้ว — upgrade monitoring workflows จาก Opus 4.8 เป็น Sonnet 5 ทันที ลด cost 3–4x สำหรับ agentic tasks ที่ run daily เช่น AVEVA alert email; (2) EU AI Act: chatbot transparency บังคับ 2 ส.ค. 2026 เหลือ ~1 เดือน — audit AI interfaces ที่ touch EU partners/users ทันที ส่ง checklist ไปยัง legal/compliance สัปดาห์นี้; (3) White House GPT-5.6 staging = signal ชัดว่า frontier AI กำลังเข้าสู่ regulatory regime — iPAD ควรทำ AI system classification ว่า system ใดใช้ 'frontier-tier' models เพื่อเตรียม compliance หาก US ออก framework คล้าย EU; (4) DeepSeek $7.5B state-funded = ใน 12 เดือน open-weight landscape จะมี DeepSeek V4 เพิ่มเป็น option on-premise ควร include ใน vendor evaluation roadmap ปี 2027; (5) Agentic AI in manufacturing ROI data (Suzano 95% query reduction, Danfoss 80% automation) เป็น evidence ที่แข็งแกร่งสำหรับ iPAD business case — นำตัวเลขเหล่านี้ไปใส่ใน ROI presentation ต่อ SCG executive"
+  },
+
+
+
   /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ─────────────────── */
 
 
