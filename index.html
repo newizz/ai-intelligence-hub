@@ -2229,6 +2229,223 @@ const REPORTS = {
 
 
 
+
+  /* ─── WEEK: 4–10 กรกฎาคม 2026 ─────────────────── */
+  "2026-07-10": {
+    weekLabel: "4–10 กรกฎาคม 2026",
+    publishDate: "10 กรกฎาคม 2026",
+    stats: { news: 9, tools: 6, community: 4, industrial: 3 },
+    sources: "Anthropic News · TechCrunch · CNBC · The Next Web · Bloomberg · TechNode · Time · Yahoo Finance · Cloud Wars · IIoT-World · Manufacturing Dive · EU AI Act · AI Certs · Holland & Knight · buildfastwithai.com",
+    bigMoves: [
+      {
+        title: "🔥 OpenAI เปิดตัว GPT-5.6 Sol, Terra, Luna — ครบ Tier ตั้งแต่ $1 ถึง Frontier",
+        source: "buildfastwithai.com",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-july-9-2026",
+        summary: "9 ก.ค. 2026 — OpenAI launch GPT-5.6 ครบ 3 tier: Sol (premium), Terra ($2.50/$15 per M tokens สำหรับ production workload), และ Luna ($1/$6 per M tokens สำหรับ budget tier) ราคา Luna ต่ำกว่า Claude Sonnet 5 อย่างมีนัย แต่ยังอยู่ภายใต้ staged rollout ที่ White House สั่งเมื่อสัปดาห์ก่อน — บาง enterprise tier ยังต้อง apply สำหรับ vetted access",
+        context: "การที่ OpenAI ปล่อย 3 model พร้อมกันในสัปดาห์เดียวกับที่ Grok 4.5 launch สะท้อน 'model arms race' ที่เร่งตัว — frontier pricing กำลัง compress อย่างรวดเร็ว ทำให้ enterprise ต้องประเมิน portfolio ของ AI vendor ใหม่ทุก quarter",
+        impact: "GPT-5.6 Luna ที่ $1/M tokens เปิดโอกาสให้ iPAD ใช้ OpenAI สำหรับ high-volume, cost-sensitive tasks (เช่น log parsing, batch document tagging) ควบคู่กับ Claude Sonnet 5 สำหรับ agentic reasoning",
+        tags: ["GPT-5.6","OpenAI","Sol","Terra","Luna","Pricing","Model Release","Staged Rollout"]
+      },
+      {
+        title: "⚡ Grok 4.5 เปิดตัว — SpaceXAI ประกาศ Reasoning Performance เทียบ Frontier",
+        source: "buildfastwithai.com",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-july-9-2026",
+        summary: "8–9 ก.ค. 2026 — SpaceXAI (xAI) เปิดตัว Grok 4.5 พร้อมประกาศ reasoning performance ที่ทัดเทียม frontier models ในหลาย benchmark รวมถึง math, coding และ STEM tasks Grok 4.5 เข้าถึงได้ผ่าน X Premium+ และ xAI API ต่างจาก Grok รุ่นก่อนที่เน้น real-time X data, Grok 4.5 เพิ่ม extended thinking mode",
+        context: "การ launch ของ Grok 4.5 ทำให้ตลาด frontier AI มีผู้เล่นครบ 4 ราย (OpenAI, Anthropic, Google, xAI) ที่แข่งขันใน reasoning tier อย่างจริงจัง — competition ที่เพิ่มขึ้นจะกดดัน pricing และเร่ง capability ต่อเนื่อง",
+        impact: "iPAD ควร track Grok 4.5 benchmark บน domain-specific tasks (engineering, chemistry) เพื่อพิจารณาเป็น alternative สำหรับ technical analysis ที่ต้องการ STEM reasoning",
+        tags: ["Grok 4.5","xAI","SpaceXAI","Reasoning","Frontier","Benchmark","xAI API"]
+      },
+      {
+        title: "💰 Anthropic แซง OpenAI — Revenue Run Rate ทะลุ $30B, Valuation $965B",
+        source: "cloudwars.com",
+        link: "https://cloudwars.com/ai/openai-google-cloud-anthropic-pump-billions-into-ai-deployment-wars/",
+        summary: "ก.ค. 2026 — Anthropic ทำ annualized revenue run rate ทะลุ $30B — แซง OpenAI ที่อยู่ราว $24–25B เป็นครั้งแรก Anthropic valuation แตะ $965B (post-money จาก Series H, $65B ใน พ.ค.) สูงกว่า OpenAI ที่ $852B Microsoft, OpenAI และ Anthropic ร่วมกัน commit $8B สำหรับ enterprise AI deployment ventures เน้น mid-market ที่ยังขาด in-house AI expertise",
+        context: "Anthropic ที่ revenue แซง OpenAI เป็นสัญญาณว่า enterprise market ให้ความสำคัญกับ 'reliability, safety และ agentic capability' มากกว่า brand name — Claude เป็น model ของเลือกสำหรับ regulated industries",
+        impact: "ยืนยัน strategic fit ของ iPAD ในการใช้ Claude เป็น primary model — Anthropic trajectory ดี ลด vendor risk สำหรับ long-term agentic deployment ที่ SCG",
+        tags: ["Anthropic","Revenue","Valuation","OpenAI","Enterprise AI","Series H","Claude"]
+      },
+      {
+        title: "🇨🇳 จีนเตรียม Block โมเดล AI ชั้นนำออกนอกประเทศ — Qwen, Doubao, DeepSeek R1 บนรายชื่อ",
+        source: "thenextweb.com",
+        link: "https://thenextweb.com/news/china-curbing-overseas-access-top-ai-models",
+        summary: "7 ก.ค. 2026 — China Ministry of Commerce เรียก Alibaba, ByteDance, Z.ai (Zhipu) ประชุมหารือแผน restrict overseas access ของ frontier AI models รวมถึง Qwen, Doubao, GLM-5.2 และ DeepSeek R1 ระบบที่เสนอมี 3 tier: (1) basic open-source → ลงทะเบียน; (2) capable models → security review; (3) frontier models → ห้าม public release หรือจำกัดเฉพาะใช้ในประเทศ ยังไม่มีกำหนดการบังคับใช้ชัดเจน",
+        context: "จีนกำลัง mirror strategy ของ US ด้านเทคโนโลยีเชิงยุทธศาสตร์ — ถ้า restriction นี้มีผลบังคับ โมเดลจีนชั้นนำจะไม่ใช่ freely accessible API อีกต่อไป การ bifurcation ของ AI ecosystem (US vs. China) จะเป็นจริงอย่างสมบูรณ์",
+        impact: "iPAD ควรเร่ง evaluate และ snapshot Qwen3.6 / DeepSeek R3 ก่อนที่ restriction จะมีผล — ถ้าต้องการใช้ Chinese open-weight บน on-premise ควรดาวน์โหลดและ test ตอนนี้ ก่อนที่ access จะถูกจำกัด",
+        tags: ["China AI","Qwen","Doubao","DeepSeek","Export Restriction","Ministry of Commerce","Bifurcation","On-Premise"]
+      },
+      {
+        title: "🚫 ByteDance + Alibaba ปิด AI Agent Features 15 ก.ค. — กฎ 'Anthropomorphic AI' จีนมีผล",
+        source: "technode.com",
+        link: "https://technode.com/2026/07/06/bytedances-doubao-and-alibabas-qwen-to-shut-down-ai-agent-features-on-july-15/",
+        summary: "6 ก.ค. 2026 — ByteDance ประกาศปิด feature สร้าง AI persona บน Doubao วันที่ 15 ก.ค. 2026 Alibaba Qwen ปิด AI companion creation features พร้อมกัน สาเหตุ: China's Interim Measures for the Administration of Anthropomorphic AI Interaction Services มีผลบังคับ 15 ก.ค. — บังคับ watermark, prohibition ใน crisis counseling, ห้ามปลอมแปลงเป็นรัฐบาล/เจ้าหน้าที่ กฎนี้เป็นครั้งแรกในโลกที่ regulate AI persona/companion services อย่างชัดเจน",
+        context: "จีน regulate AI persona ก่อน EU และ US — สะท้อนความกังวลเรื่อง social impact ของ AI companion ที่ประชากรจำนวนมากใช้เป็น emotional support รัฐบาลจีนเป็นห่วงเรื่อง addiction, manipulation และ political content ผ่าน AI persona",
+        impact: "ถ้า iPAD หรือ SCG ต้องการพัฒนา AI assistant ที่ interact กับพนักงานในรูปแบบ 'persona' ควร monitor กฎ anthropomorphic AI ทั้งจีนและ EU เพื่อ design compliance framework ล่วงหน้า",
+        tags: ["ByteDance","Doubao","Alibaba","Qwen","Anthropomorphic AI","China Regulation","AI Companion","July 15"]
+      },
+      {
+        title: "🏭 Cognitive Digital Twins ปี 2026 — จาก Replica สู่ AI Decision Engine",
+        source: "rtinsights.com",
+        link: "https://www.rtinsights.com/digital-twins-in-2026-from-digital-replicas-to-intelligent-ai-driven-systems/",
+        summary: "ก.ค. 2026 — Industry analysts ยืนยัน: Digital Twins ปี 2026 ไม่ใช่แค่ virtual replica อีกต่อไป แต่กลายเป็น 'Cognitive Digital Twin' ที่ผสาน IIoT sensors + physics-based models + AI เข้าด้วยกัน ผลลัพธ์: ระบบที่เรียนรู้จาก historical pattern, คาดการณ์ failure, optimize performance และ suggest maintenance action โดยอัตโนมัติ Chemical manufacturer ที่ implement cognitive twin รายงาน $2M annual savings จากการลด equipment failure",
+        context: "Predictive Maintenance market โตจาก $10.93B (2024) เป็น >$70B ที่คาดการณ์ปี 2032 (CAGR 26%+) — process industries เช่น petrochemical และ chemical manufacturing เป็น top adopter เพราะ equipment failure cost สูงมาก",
+        impact: "iPAD สามารถ leverage cognitive twin architecture สำหรับ AVEVA monitoring: ผสาน sensor data, process model และ AI analysis เข้าด้วยกัน แทนที่จะ query platform แยกกัน — เป็น architecture ที่ scale ได้กว่า AVEVA-only approach",
+        tags: ["Digital Twin","Cognitive Twin","IIoT","Predictive Maintenance","Chemical","Petrochemical","AVEVA","Process Industry"]
+      },
+      {
+        title: "🤖 Agentic AI ใน Manufacturing: 50% ของ Supply Chain Execs Deploy แล้ว",
+        source: "iiot-world.com",
+        link: "https://www.iiot-world.com/artificial-intelligence-ml/2026-industrial-ai-trends-driving-global-manufacturing-with-agentic-systems/",
+        summary: "ก.ค. 2026 — Industry survey ยืนยัน: มากกว่า 50% ของ supply chain executives รายงาน deploy AI agents ใน production workflows แล้ว (จาก pilot ปีก่อน) Agentic AI ที่ deploy สำเร็จ: Suzano (pulp & paper) ลด query time 95%, Danfoss อัตโนมัติ 80% ของ order processing decisions Gartner คาดว่า semi-autonomous agents จะ orchestrate 10% ของ key production operations ภายใน 2030 (ปัจจุบัน 2%) NVIDIA Nemotron-Labs-TwoTower เปิดตัว open-weight diffusion language model ที่ throughput 2.42x สูงกว่า baseline — เหมาะสำหรับ edge deployment ใน industrial settings",
+        context: "2026 เป็น inflection point ของ industrial AI: จาก 'proof of concept' → 'operational standard' บริษัทที่ล่าช้าในการ adopt จะเสีย competitive position ใน 18–24 เดือน โดยเฉพาะใน process manufacturing",
+        impact: "ROI data จาก process industries ที่คล้าย SCG (Suzano = process mfg) เป็น business case ที่แข็งแกร่ง — ใช้ตัวเลขเหล่านี้ใน executive presentation สำหรับ iPAD expansion ครั้งถัดไป",
+        tags: ["Agentic AI","Manufacturing","Supply Chain","Suzano","Danfoss","NVIDIA Nemotron","Edge AI","Gartner","ROI"]
+      },
+      {
+        title: "🇪🇺 EU AI Act บังคับใช้เต็มรูปแบบ 2 ส.ค. 2026 — US Companies ต้องรีบ Comply",
+        source: "hklaw.com",
+        link: "https://www.hklaw.com/en/insights/publications/2026/04/us-companies-face-eu-ai-acts-possible-august-2026-compliance-deadline",
+        summary: "ก.ค. 2026 — EU AI Act จะ fully enforceable วันที่ 2 ส.ค. 2026 เป็นกฎหมาย AI ที่ครอบคลุมและ binding แห่งแรกของโลก ข้อบังคับสำคัญที่มีผล 2 ส.ค.: (1) Transparency obligations สำหรับ AI chatbots ที่ interact กับ EU users — ต้องแจ้งว่าเป็น AI; (2) General purpose AI (GPAI) model providers (เช่น OpenAI, Anthropic) ต้องลงทะเบียนในฐานะ providers; (3) Prohibited AI practices (social scoring, real-time biometrics) สิ้นสุดลงทันที US companies ที่มี EU operations เหลือเวลาไม่ถึง 1 เดือน",
+        context: "EU AI Act ตามหลัง GDPR ในแง่ของ global reach — US company ที่ serve EU market (แม้ไม่มี EU office) ต้องปฏิบัติตาม นี่จะ set global standard คล้ายกับที่ GDPR ทำ",
+        impact: "SCG ที่ export products ไปยัง EU หรือมี business partners ใน EU: ถ้า deploy AI chatbot ใน customer-facing หรือ partner-facing application ต้อง comply ภายใน 2 ส.ค. — ตรวจสอบ AI disclosure ทันที",
+        tags: ["EU AI Act","August 2026","Compliance","Chatbot Transparency","GPAI","US Companies","Holland Knight","Enforcement"]
+      },
+      {
+        title: "🌐 US ยึดแนว Light-Touch AI Regulation — Congress ยังไม่ผ่านกฎหมาย Federal AI",
+        source: "collibra.com",
+        link: "https://www.collibra.com/blog/ai-regulatory-compliance-in-2026-eu-ai-act-us-orders-and-state-laws-and-how-to-operationalize",
+        summary: "ก.ค. 2026 — สหรัฐฯ ยังไม่มี comprehensive federal AI legislation — แนวทาง: voluntary frameworks + executive orders + sector-specific regulators มี.ค. 2026: White House ออก national policy framework แนะนำ Congress ผ่าน broad preemption ของ state AI laws ภายใต้ light-touch standard แต่ Congress ยังไม่ vote State-level AI laws จาก Colorado, Texas, California บังคับใช้แยกกัน — ทำให้ US landscape fragmented มากกว่า EU",
+        context: "ช่องว่างระหว่าง EU (comprehensive, binding) และ US (voluntary, fragmented) สร้าง compliance complexity สำหรับ multinational enterprise — บริษัทที่ serve ทั้ง EU และ US market ต้องเตรียม dual compliance framework",
+        impact: "SCG ในฐานะ regional company ใน ASEAN: สามารถใช้ EU AI Act เป็น 'gold standard' สำหรับ internal AI governance โดยไม่ต้องรอ ASEAN/Thailand AI regulation — เป็น proactive approach ที่ลด regulatory risk ระยะยาว",
+        tags: ["US AI Policy","Federal AI Law","State Laws","Light-Touch","White House","Congress","Compliance","Fragmented"]
+      }
+    ],
+    tooling: [
+      {
+        name: "GPT-5.6 Luna",
+        type: "model",
+        caps: [
+          "Budget frontier tier: $1/M input · $6/M output — ต่ำที่สุดในบรรดา frontier models",
+          "เหมาะสำหรับ high-volume tasks: log parsing, document tagging, batch analysis",
+          "ยังอยู่ภายใต้ staged rollout — บาง tier ต้องขอ vetted access",
+          "ส่วนหนึ่งของ GPT-5.6 family: Sol (premium), Terra (production), Luna (budget)"
+        ],
+        benchmarks: [
+          { label: "Cost Efficiency", val: "$1/M", pct: 95, color: "#3fb950" },
+          { label: "Capability vs Price", val: "High ROI", pct: 85, color: "#58a6ff" }
+        ],
+        limit: "Staged rollout — enterprise tier ต้องสมัครขอ access แยกต่างหาก ยังไม่ fully available",
+        impact: "ใช้ Luna สำหรับ iPAD tasks ที่ cost-sensitive เช่น parsing AVEVA data logs หรือ batch-tagging maintenance records ก่อนส่งต่อ Sonnet 5 วิเคราะห์",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-july-9-2026"
+      },
+      {
+        name: "Grok 4.5",
+        type: "model",
+        caps: [
+          "Extended thinking mode สำหรับ complex STEM reasoning",
+          "Real-time X/Twitter data access (ข้อได้เปรียบเฉพาะตัวของ Grok)",
+          "Strong performance บน math, coding และ scientific tasks",
+          "เข้าถึงได้ผ่าน X Premium+ และ xAI API"
+        ],
+        benchmarks: [
+          { label: "STEM Reasoning", val: "Frontier", pct: 88, color: "#bc8cff" },
+          { label: "Real-time Data", val: "Unique", pct: 90, color: "#f0883e" }
+        ],
+        limit: "ต้องใช้ X Premium+ หรือ xAI API — ไม่มี free tier สำหรับ extended thinking",
+        impact: "กรณี iPAD ต้องการ monitor AI/tech news real-time หรือ analyze engineering papers ที่ต้องการ STEM reasoning ลึก Grok 4.5 เป็น alternative ที่ควร evaluate",
+        link: "https://www.buildfastwithai.com/blogs/ai-news-today-july-9-2026"
+      },
+      {
+        name: "NVIDIA Nemotron-Labs-TwoTower",
+        type: "model",
+        caps: [
+          "Open-weight diffusion language model — text generation แบบ parallel",
+          "Throughput สูงกว่า baseline 2.42x ที่ quality 98.7% ของ baseline",
+          "เหมาะสำหรับ edge deployment ในสภาพแวดล้อม industrial",
+          "ไม่ต้องการ GPU tier สูง — รันได้บน edge hardware"
+        ],
+        benchmarks: [
+          { label: "Throughput vs Baseline", val: "2.42x", pct: 92, color: "#3fb950" },
+          { label: "Edge Compatibility", val: "High", pct: 85, color: "#58a6ff" }
+        ],
+        limit: "ยังอยู่ใน research stage — ยังไม่ได้รับการยืนยันว่า production-ready สำหรับ industrial use case",
+        impact: "NVIDIA TwoTower เป็น candidate สำหรับ on-site AI inference ใน SCG plants ที่ข้อมูล process sensitive ไม่ต้องการส่งออก cloud",
+        link: "https://aiflashreport.com/model-releases.html"
+      },
+      {
+        name: "Cognitive Digital Twin Framework",
+        type: "tool",
+        caps: [
+          "ผสาน IIoT sensors + physics-based models + AI ในระบบเดียว",
+          "เรียนรู้จาก historical patterns และ real-time sensor data",
+          "คาดการณ์ failure ล่วงหน้า — reduce unplanned downtime",
+          "ROI ที่ documented: $2M/year savings ใน chemical manufacturing",
+          "Market ขยายตัว CAGR 26%+ จนถึง 2032"
+        ],
+        limit: "ต้องการ initial investment $200K–$600K และ 18–36 เดือนถึง full ROI — ไม่ใช่ quick win",
+        impact: "Architecture เป้าหมายสำหรับ iPAD ระยะยาว: ผสาน AVEVA + IIoT sensors + Claude AI เป็น cognitive layer ที่วิเคราะห์และ act แบบ autonomous",
+        link: "https://www.rtinsights.com/digital-twins-in-2026-from-digital-replicas-to-intelligent-ai-driven-systems/"
+      },
+      {
+        name: "EU AI Act Compliance Checklist (Aug 2026)",
+        type: "tool",
+        caps: [
+          "Chatbot transparency: แจ้ง user ว่าพวกเขากำลัง interact กับ AI — บังคับ 2 ส.ค.",
+          "GPAI provider registration: OpenAI/Anthropic ต้องลงทะเบียน — บังคับ 2 ส.ค.",
+          "Prohibited practices ban: social scoring, real-time biometric — บังคับ 2 ส.ค.",
+          "High-risk AI (Annex III standalone) — ขยายถึง 2 ธ.ค. 2027",
+          "Penalties: สูงสุด 3% of global annual revenue"
+        ],
+        limit: "ASEAN ยังไม่มีกฎหมาย AI ที่ binding — แต่ EU AI Act ครอบคลุม ถ้า SCG มี EU market exposure",
+        impact: "SCG Legal/Compliance ต้องทำ AI system inventory ก่อน 2 ส.ค. — ตรวจสอบว่า chatbot หรือ AI interface ใดๆ ที่ face EU users ได้รับการ label ว่าเป็น AI อย่างชัดเจน",
+        link: "https://www.hklaw.com/en/insights/publications/2026/04/us-companies-face-eu-ai-acts-possible-august-2026-compliance-deadline"
+      },
+      {
+        name: "China Anthropomorphic AI Interim Measures (July 15)",
+        type: "tool",
+        caps: [
+          "บังคับ watermark บน AI-generated content ในบริการ persona/companion",
+          "ห้าม AI persona ทำ crisis counseling หรือ emotional dependency",
+          "ห้ามปลอมแปลงเป็นรัฐบาลหรือเจ้าหน้าที่รัฐ",
+          "บังคับ real-name authentication สำหรับ users ของ AI companion services",
+          "มีผลบังคับ 15 ก.ค. 2026 — ByteDance/Alibaba ปิด features แล้ว"
+        ],
+        limit: "ใช้บังคับเฉพาะ Chinese market — แต่เป็น signal ของ regulatory trend ทั่วโลก",
+        impact: "ถ้า iPAD หรือ SCG พัฒนา AI assistant ที่มี 'persona' หรือ 'character' ควรออกแบบให้มี disclosure ที่ชัดเจนตั้งแต่แรก — รองรับ regulatory trend ทั้งจีนและ EU",
+        link: "https://technode.com/2026/07/06/bytedances-doubao-and-alibabas-qwen-to-shut-down-ai-agent-features-on-july-15/"
+      }
+    ],
+    community: [
+      {
+        icon: "🏆",
+        title: "Anthropic แซง OpenAI ใน Revenue — 'Claude เป็น choice ของ enterprise AI จริงๆ แล้ว'",
+        desc: "ข่าว Anthropic revenue run rate ทะลุ $30B แซง OpenAI สร้างความตกใจให้ community — เพราะ OpenAI ยังครองตลาด consumer (ChatGPT) แต่ Anthropic ชนะ enterprise และ agentic use cases นักวิเคราะห์ใน LinkedIn ชี้ว่า 'Claude Sonnet 5 เปิดตัว 1 ก.ค. และ enterprise ย้าย workflow มา Claude จำนวนมากทันที' นักพัฒนาใน r/MachineLearning ถกเถียงว่า 'API reliability และ agentic capability' ที่ดีกว่าเป็นเหตุผลหลัก",
+        link: "https://cloudwars.com/ai/openai-google-cloud-anthropic-pump-billions-into-ai-deployment-wars/",
+        ipadNote: "ยืนยันว่า Claude-first strategy ของ iPAD สอดคล้องกับ enterprise market trend — ไม่ใช่แค่ความชอบส่วนตัว"
+      },
+      {
+        icon: "🇨🇳",
+        title: "China AI Wall — 'เมื่อ Qwen และ DeepSeek กลายเป็น state-controlled asset'",
+        desc: "ข่าว China พิจารณา restrict overseas access ของ frontier AI models สร้างความตื่นตระหนกใน global AI community — developer หลายรายที่ใช้ Qwen API หรือ DeepSeek API ถามว่า 'จะมีผลเมื่อไร?' และ 'ควร backup ไว้เป็น on-premise ตอนนี้เลยไหม?' ผู้เชี่ยวชาญด้าน AI geopolitics ชี้ว่า 'AI ecosystem กำลัง bifurcate เหมือน internet ในทศวรรษที่แล้ว — ต้องวางแผนทั้ง US stack และ China stack แยกกัน'",
+        link: "https://thenextweb.com/news/china-curbing-overseas-access-top-ai-models"
+      },
+      {
+        icon: "🤖",
+        title: "Anthropomorphic AI Rules — 'ByteDance ปิด persona feature คืนเดียว: speed of Chinese regulation'",
+        desc: "ความเร็วที่ ByteDance และ Alibaba ปิด AI agent/persona features (ประกาศ 6 ก.ค. มีผล 15 ก.ค.) ทำให้ global tech community ตกใจ — Western companies ใช้เวลาเป็นปีๆ ในการ comply GDPR แต่ Chinese firms adjust ภายใน 9 วัน นักวิจัย AI ethics ใน Twitter/X ชี้ว่า 'China has first-mover advantage ใน regulating AI social risks' แม้แนวทางจะ top-down มากกว่า EU ที่เน้น rights-based approach",
+        link: "https://technode.com/2026/07/06/bytedances-doubao-and-alibabas-qwen-to-shut-down-ai-agent-features-on-july-15/"
+      },
+      {
+        icon: "⚖️",
+        title: "EU AI Act D-Day ใกล้แล้ว — 'Less than 30 days and most companies are NOT ready'",
+        desc: "ชุมชน compliance และ legal professionals ใน LinkedIn เตือนอย่างเร่งด่วน: เหลือเวลาไม่ถึง 1 เดือนก่อน EU AI Act บังคับใช้เต็มรูปแบบ 2 ส.ค. 2026 แต่ surveys แสดงว่าส่วนใหญ่ขององค์กรที่มี EU exposure ยังไม่ทำ AI system inventory หรือ implement chatbot disclosure อย่างถูกต้อง Holland & Knight รายงานว่า US companies หลายรายที่ serve EU customers ยังไม่รู้ว่าต้องปฏิบัติตาม EU AI Act — คิดผิดว่า 'เป็นกฎของ EU เท่านั้น'",
+        link: "https://www.hklaw.com/en/insights/publications/2026/04/us-companies-face-eu-ai-acts-possible-august-2026-compliance-deadline",
+        ipadNote: "SCG Legal ต้องตรวจสอบว่า AI tool ใดบ้างที่ interface กับ EU counterparts — ต้องมี AI disclosure ชัดเจนก่อน 2 ส.ค."
+      }
+    ],
+    ipadSummary: "สัปดาห์ 4–10 ก.ค. 2026 มี 5 action items เร่งด่วนสำหรับ iPAD: (1) EU AI Act บังคับ 2 ส.ค. — เหลือ 23 วัน: ทำ AI tool inventory ทันที ตรวจว่า chatbot หรือ AI interface ใดๆ ที่ interact กับ EU partners/customers มี disclosure 'This is AI' ที่ชัดเจน ส่งให้ Legal/Compliance ตรวจสอบภายในสัปดาห์นี้; (2) China AI Wall — เร่ง evaluate และ download Qwen3.6 / DeepSeek R3 weights ก่อนที่ overseas access จะถูก restrict — ถ้า iPAD ต้องการ Chinese open-weight model สำหรับ on-premise ทำตอนนี้ก่อนสาย; (3) GPT-5.6 Luna ($1/M tokens) — evaluate สำหรับ high-volume, cost-sensitive iPAD tasks เช่น log parsing, batch document analysis ที่ไม่ต้องการ complex reasoning; (4) Cognitive Digital Twin architecture — เป็น strategic direction ระยะยาวสำหรับ iPAD: ผสาน AVEVA + plant sensor data + AI เป็น unified intelligence layer — ใช้ $2M chemical manufacturer savings case เพื่อ justify investment; (5) Anthropic revenue milestone ($30B, แซง OpenAI) ยืนยัน Claude-first strategy ของ iPAD ถูกต้อง — Anthropic มี enterprise trajectory ที่ดีและ reduce long-term vendor risk"
+  },
+
+
   /* ─── WEEK: ถัดไปจะเพิ่มที่นี่ ─────────────────── */
 
 
